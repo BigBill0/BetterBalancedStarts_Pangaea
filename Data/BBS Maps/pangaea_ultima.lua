@@ -528,9 +528,9 @@ function OptimizeDesert()
             end
         end
     end
-    
-    -- Set target desert count (100-110 tiles)
-    local targetDesertCount = 100 + TerrainBuilder.GetRandomNumber(10, "Desert Count Variation");
+
+    -- Set target desert count (60-70 tiles)
+    local targetDesertCount = 60 + TerrainBuilder.GetRandomNumber(15, "Desert Count Variation");
     
     -- Calculate how many to convert
     local desertToKeep = math.min(initialDesertCount, targetDesertCount);
