@@ -110,17 +110,11 @@ function BBS_NaturalWonderGenerator:__FindValidLocs()
 					row.Score = iBaseScore;
 					table.insert (self.aaPossibleLocs[iI], row);
 				end
-			else
-            --print("placement", customPlacement);
-            local returnValue = false;
-            returnValue = BBSCustomCanHaveFeature(pPlot, self.eFeatureType[iI])
-            --print("return value", returnValue);
-				if (returnValue) then
-					row = {};
-					row.MapIndex = i;
-					row.Score = iBaseScore;
-					table.insert (self.aaPossibleLocs[iI], row);
-				end
+			elseif (BBSCustomCanHaveFeature(pPlot, self.eFeatureType[iI])) then
+				row = {};
+				row.MapIndex = i;
+				row.Score = iBaseScore;
+				table.insert (self.aaPossibleLocs[iI], row);
 			end
 		end
 	end
@@ -229,7 +223,19 @@ function BBS_NaturalWonderGenerator:__PlaceWonders()
 						end
 					end
 				else
-					CustomSetFeatureType(pPlot, eFeatureType);
+					local aPlots = {};
+					if (BBSCustomGetMultiTileFeaturePlotList(pPlot, eFeatureType, aPlots)) then
+						if (#aPlots == 1) then
+							TerrainBuilder.SetFeatureType(pPlot, eFeatureType);
+							ResetTerrain(pPlot:GetIndex());
+						else
+							TerrainBuilder.SetMultiPlotFeatureType(aPlots, eFeatureType);
+							for k, plot in ipairs(aPlots) do
+								SetNaturalCliff(plot);
+								ResetTerrain(plot);
+							end
+						end
+					end
 				end
 				print (" Set Wonder with Feature ID of " .. tostring(eFeatureType) .. " at location (" .. tostring(pPlot:GetX()) .. ", " .. tostring(pPlot:GetY()) .. ")");
 				table.insert (self.aPlacedWonders, iMapIndex);
@@ -275,21 +281,6 @@ function BBSCustomCanHaveFeature(pPlot, eFeatureType)
    --print("custom can have", eFeatureType);
 	return BBSCustomGetMultiTileFeaturePlotList(pPlot, eFeatureType, aPlots);
 end
-
-------------------------------------------------------------------------------
-function CustomSetFeatureType(pPlot, eFeatureType)
-
-	local aPlots = {};
-	if (BBSCustomGetMultiTileFeaturePlotList(pPlot, eFeatureType, aPlots)) then
-		TerrainBuilder.SetMultiPlotFeatureType(aPlots, eFeatureType);
-
-		for k, plot in ipairs(aPlots) do
-			SetNaturalCliff(plot);
-			ResetTerrain(plot);
-		end
-	end
-end
-
 ------------------------------------------------------------------------------
 function BBSCustomGetMultiTileFeaturePlotList(pPlot, eFeatureType, aPlots)
 	-- First check this plot itself
@@ -369,7 +360,7 @@ function BBSCustomGetMultiTileFeaturePlotList(pPlot, eFeatureType, aPlots)
             return false;
         end
 
-		if (pPlot:IsWOfRiver() or pPlot:IsNWOfRiver() or pPlot:IsNEOfRiver()) then
+		if (pPlot:IsWOfRiver()) then
 			return false;
 		end
 
@@ -616,8 +607,8 @@ function BBSCustomGetMultiTileFeaturePlotList(pPlot, eFeatureType, aPlots)
 			local bSEValid:boolean = TerrainBuilder.CanHaveFeature(pSEPlot, eFeatureType, true);
 		local bSWValid:boolean = TerrainBuilder.CanHaveFeature(pSWPlot, eFeatureType, true);
 		if (bSEValid and bSWValid) then
-		table.insert(aPlots, pSEPlot:GetIndex());
-		table.insert(aPlots, pSWPlot:GetIndex());
+			table.insert(aPlots, pSEPlot:GetIndex());
+			table.insert(aPlots, pSWPlot:GetIndex());
 			return true;
 			end
 		end
