@@ -7,6 +7,12 @@
 		
 		
 		<!-- === KARTEN === -->
+		<Replace Tag="LOC_MAP_TEMPERATURE_EXTRA_COLD_NAME" Language="de_DE">
+		  <Text>Lediglich Tundra</Text>
+		</Replace>
+		<Replace Tag="LOC_MAP_TEMPERATURE_EXTRA_COLD_DESCRIPTION" Language="de_DE">
+			<Text>Die Karte ist vollständig mit Tundra bedeckt.</Text>
+		</Replace>
 		<Replace Tag="LOC_MAP_RICH_HIGHLANDS_NAME" Language="de_DE">
             <Text>Reiches Hochland</Text>
         </Replace>
@@ -17,7 +23,7 @@
             <Text>Pangaea Ultima</Text>
         </Replace>
         <Replace Tag="LOC_MAP_PANGAEA_ULTIMA_DESCRIPTION" Language="de_DE">
-            <Text>Superkontinent, mit noch weniger Ocean als Pangäa</Text>
+            <Text>Superkontinent, mit noch weniger Ozean als Pangäa</Text>
         </Replace>
 	
 		<!-- === KARTENGRÖßEN === -->
@@ -37,6 +43,12 @@
 		</Replace>
 		<Replace Tag="LOC_GAME_SPAWN_RECALCULATION_DESC" Language="de_DE">
 			<Text>Versucht, die Zivilisation an einem besseren Startplatz zu platzieren</Text>
+		</Replace>
+		<Replace Tag="LOC_GAME_BBM_EXTRA_HILLS_NAME" Language="de_DE">
+			<Text>Zusätzliche Hügel</Text>
+		</Replace>
+		<Replace Tag="LOC_GAME_BBM_EXTRA_HILLS_DESC" Language="de_DE">
+			<Text>Füge zusätzliche Hügel hinzu, um ein weniger flaches Gelände mit mehr strategischen Möglichkeiten zu schaffen.</Text>
 		</Replace>
 		
 		<!-- = Gebirgsketten-Modifikation = -->
