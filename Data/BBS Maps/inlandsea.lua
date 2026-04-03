@@ -165,6 +165,7 @@ function GetMapInitData(MapSize)
 	local Width = 0;
 	local Height = 0;
 
+	local isWrap = MapConfiguration.GetValue("BBMWraparound") or 1
 	for row in GameInfo.Maps() do
 		if(MapSize == row.Hash) then
 			Width = row.GridWidth;
@@ -172,7 +173,7 @@ function GetMapInitData(MapSize)
 		end
 	end
 
-	local WrapX = false;
+	local WrapX = isWrap == 1;
 
 	return {Width = Width, Height = Height, WrapX = WrapX,}
 end

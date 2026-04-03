@@ -7,12 +7,6 @@
 		
 		
 		<!-- === KARTEN === -->
-		<Replace Tag="LOC_MAP_NAME_TILTED_WRAP" Language="de_DE">
-			<Text>Geneigte Achse</Text>
-		</Replace>
-		<Replace Tag="LOC_MAP_DESC_TILTED_WRAP" Language="de_DE">
-			<Text>Eine Karte der Kontinente mit Polzentrum (mit Weltumrundung).</Text>
-		</Replace>
 		<Replace Tag="LOC_MAP_RICH_HIGHLANDS_NAME" Language="de_DE">
             <Text>Reiches Hochland</Text>
         </Replace>

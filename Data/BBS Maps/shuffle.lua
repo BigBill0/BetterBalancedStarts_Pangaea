@@ -978,3 +978,20 @@ function GenerateCenterRift(plotTypes)
 
 
 end
+
+function GetMapInitData(MapSize)
+	local MapSizeTypes = {};
+	local Width = 0;
+	local Height = 0;
+	local isWrap = MapConfiguration.GetValue("BBMWraparound") or 0
+	for row in GameInfo.Maps() do
+		if(MapSize == row.Hash) then
+			Width = row.GridWidth;
+			Height = row.GridHeight;
+		end
+	end
+
+	local WrapX = isWrap == 0 or isWrap == 1;
+
+	return {Width = Width, Height = Height, WrapX = WrapX,}
+end

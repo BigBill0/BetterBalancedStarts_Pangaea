@@ -1,7 +1,7 @@
 ------------------------------------------------------------------------------
 --	FILE:	 Tilted_Axis.lua
---	AUTHOR:  D. / Jack The Narrator
---	PURPOSE: Base game script - Produces widely varied continents.
+--	AUTHOR:  Banipouz
+--	PURPOSE: Refactored script Tilted Axis for normal and wrap versions
 ------------------------------------------------------------------------------
 --	Copyright (c) 2014 Firaxis Games, Inc. All rights reserved.
 ------------------------------------------------------------------------------
@@ -16,7 +16,9 @@ include "BBS_NaturalWonderGenerator"
 include "BBS_ResourceGenerator"
 include "CoastalLowlands"
 include "AssignStartingPlots"
-include "BBM_AssignStartingPlots";local g_iW, g_iH;
+include "BBM_AssignStartingPlots";
+
+local g_iW, g_iH;
 local g_iFlags = {};
 local g_yCenter;
 local g_xCenter;
@@ -148,10 +150,12 @@ function GenerateMap()
 		MIN_BARBARIAN_FERTILITY = 1,
 		START_CONFIG = startConfig,
 	};
+	print("args",  args)
+	print("args",  args.startConfig)
 	local start_plot_database = BBS_Assign(args)
 
 	local GoodyGen = AddGoodiesBBM(g_iW, g_iH);	
-	
+
 	AreaBuilder.Recalculate();
 	TerrainBuilder.AnalyzeChokepoints();
 end
@@ -984,13 +988,11 @@ function BBS_GenerateTerrainTypes(plotTypes)
 	return terrainTypes; 
 end
 
-------------------------------------------------------------------------------
-
 function GetMapInitData(MapSize)
 	local MapSizeTypes = {};
 	local Width = 0;
 	local Height = 0;
-
+	local isWrap = MapConfiguration.GetValue("BBMWraparound") or 1
 	for row in GameInfo.Maps() do
 		if(MapSize == row.Hash) then
 			Width = row.GridWidth;
@@ -998,7 +1000,7 @@ function GetMapInitData(MapSize)
 		end
 	end
 
-	local WrapX = false;
+	local WrapX = isWrap == 1;
 
 	return {Width = Width, Height = Height, WrapX = WrapX,}
 end

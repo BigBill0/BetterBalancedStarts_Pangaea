@@ -20,13 +20,6 @@
         <Replace Tag="LOC_MAP_RICH_HIGHLANDS_DESCRIPTION" Language="ko_KR">
             <Text>자원이 더 많은 고원 맵</Text>
         </Replace>
-		<Replace Tag="LOC_MAP_NAME_TILTED_WRAP" Language="ko_KR">
-			<Text>기울어진 축 순환</Text>
-		</Replace>
-		<Replace Tag="LOC_MAP_DESC_TILTED_WRAP" Language="ko_KR">
-			<Text>극지 중심의 대륙 맵 (세계 일주 가능).</Text>
-		</Replace>
-
 		<Replace Tag="LOC_MAP_PANGAEA_ULTIMA_NAME" Language="ko_KR">
             <Text>판게아 울티마</Text>
         </Replace>

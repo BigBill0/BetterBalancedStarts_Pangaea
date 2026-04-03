@@ -14,21 +14,12 @@
 		<Replace Tag="LOC_MAPSIZE_ENORMOUS_DESCRIPTION" Language="en_US">
 			<Text>Enormous map for 16 players</Text>
 		</Replace>
-
-		
 		<Replace Tag="LOC_MAP_RICH_HIGHLANDS_NAME" Language="en_US">
             <Text>Rich Highlands</Text>
         </Replace>
         <Replace Tag="LOC_MAP_RICH_HIGHLANDS_DESCRIPTION" Language="en_US">
             <Text>Highlands, with more resources</Text>
         </Replace>
-		<Replace Tag="LOC_MAP_NAME_TILTED_WRAP" Language="en_US">
-			<Text>Tilted Axis Wraparound</Text>
-		</Replace>
-		<Replace Tag="LOC_MAP_DESC_TILTED_WRAP" Language="en_US">
-			<Text>A polar centered continents map (with circumnavigation).</Text>
-		</Replace>
-
 		<Replace Tag="LOC_MAP_PANGAEA_ULTIMA_NAME" Language="en_US">
             <Text>Pangaea Ultima</Text>
         </Replace>
@@ -711,11 +702,32 @@
 		<Replace Tag="LOC_MAP_TEMPERATURE_EXTRA_COLD_DESCRIPTION" Language="en_US">
 			<Text>The map is completely covered by tundra</Text>
 		</Replace>
-		<Replace Tag="LOC_GAME_BBM_EXTRA_HILLS_NAME" language="en">
+		<Replace Tag="LOC_GAME_BBM_EXTRA_HILLS_NAME" language="en_US">
 			<Text>Extra hills</Text>
 		</Replace>
-		<Replace Tag="LOC_GAME_BBM_EXTRA_HILLS_DESC" language="en">
+		<Replace Tag="LOC_GAME_BBM_EXTRA_HILLS_DESC" language="en_US">
 			<Text>Adds additional hills to the map after tectonics to create a less flat terrain with more strategic variety.</Text>
+		</Replace>
+		<Replace Tag="LOC_MAP_WRAPAROUND_NAME" language="en_US">
+			<Text>Wraparound</Text>
+		</Replace>
+		<Replace Tag="BBM_WRAP_DEFAULT_NAME" language="en_US">
+			<Text>Default</Text>
+		</Replace>
+		<Replace Tag="BBM_WRAP_DEFAULT_DESC" language="en_US">
+			<Text>Default map wrap configuration</Text>
+		</Replace>
+		<Replace Tag="BBM_WRAP_YES_NAME" language="en_US">
+			<Text>Wraparound</Text>
+		</Replace>
+		<Replace Tag="BBM_WRAP_YES_DESC" language="en_US">
+			<Text>Map with circumnavigation</Text>
+		</Replace>
+		<Replace Tag="BBM_WRAP_NO_NAME" language="en_US">
+			<Text>No wraparound</Text>
+		</Replace>
+		<Replace Tag="BBM_WRAP_NO_DESC" language="en_US">
+			<Text>Map with no circumnavigation</Text>
 		</Replace>
 	</LocalizedText>
 </GameData>
