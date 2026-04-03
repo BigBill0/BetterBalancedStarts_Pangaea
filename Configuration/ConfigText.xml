@@ -145,22 +145,22 @@
 	<Replace Tag="LOC_MAP_WRAPAROUND_NAME" language="en_US">
 		<Text>Map with wraparound?</Text>
 	</Replace>
-	<Replace Tag="BBM_WRAP_DEFAULT_NAME" language="en_US">
+	<Replace Tag="LOC_BBM_WRAP_DEFAULT_NAME" language="en_US">
 		<Text>Default</Text>
 	</Replace>
-	<Replace Tag="BBM_WRAP_DEFAULT_DESC" language="en_US">
+	<Replace Tag="LOC_BBM_WRAP_DEFAULT_DESC" language="en_US">
 		<Text>Default map wrap configuration</Text>
 	</Replace>
-	<Replace Tag="BBM_WRAP_YES_NAME" language="en_US">
+	<Replace Tag="LOC_BBM_WRAP_YES_NAME" language="en_US">
 		<Text>Wraparound</Text>
 	</Replace>
-	<Replace Tag="BBM_WRAP_YES_DESC" language="en_US">
+	<Replace Tag="LOC_BBM_WRAP_YES_DESC" language="en_US">
 		<Text>Map with circumnavigation</Text>
 	</Replace>
-	<Replace Tag="BBM_WRAP_NO_NAME" language="en_US">
+	<Replace Tag="LOC_BBM_WRAP_NO_NAME" language="en_US">
 		<Text>No wraparound</Text>
 	</Replace>
-	<Replace Tag="BBM_WRAP_NO_DESC" language="en_US">
+	<Replace Tag="LOC_BBM_WRAP_NO_DESC" language="en_US">
 		<Text>Map with no circumnavigation</Text>
 	</Replace>
 

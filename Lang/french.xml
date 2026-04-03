@@ -720,22 +720,22 @@
 		<Replace Tag="LOC_MAP_WRAPAROUND_NAME" language="fr_FR">
 			<Text>Tour du monde</Text>
 		</Replace>
-		<Replace Tag="BBM_WRAP_DEFAULT_NAME" language="fr_FR">
+		<Replace Tag="LOC_BBM_WRAP_DEFAULT_NAME" language="fr_FR">
 			<Text>Défaut</Text>
 		</Replace>
-		<Replace Tag="BBM_WRAP_DEFAULT_DESC" language="fr_FR">
+		<Replace Tag="LOC_BBM_WRAP_DEFAULT_DESC" language="fr_FR">
 			<Text>Configuration par défaut de la carte</Text>
 		</Replace>
-		<Replace Tag="BBM_WRAP_YES_NAME" language="fr_FR">
+		<Replace Tag="LOC_BBM_WRAP_YES_NAME" language="fr_FR">
 			<Text>Tour du monde</Text>
 		</Replace>
-		<Replace Tag="BBM_WRAP_YES_DESC" language="fr_FR">
+		<Replace Tag="LOC_BBM_WRAP_YES_DESC" language="fr_FR">
 			<Text>On peut faire le tour du monde sur la carte</Text>
 		</Replace>
-		<Replace Tag="BBM_WRAP_NO_NAME" language="fr_FR">
+		<Replace Tag="LOC_BBM_WRAP_NO_NAME" language="fr_FR">
 			<Text>Sans tour du monde</Text>
 		</Replace>
-		<Replace Tag="BBM_WRAP_NO_DESC" language="fr_FR">
+		<Replace Tag="LOC_BBM_WRAP_NO_DESC" language="fr_FR">
 			<Text>On ne peut pas faire le tour du monde sur la carte</Text>
 		</Replace>
 	</LocalizedText>
