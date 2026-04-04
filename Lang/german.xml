@@ -54,7 +54,7 @@
 			<Text>Weltumrundung</Text>
 		</Replace>
 		<Replace Tag="LOC_BBM_WRAP_DEFAULT_NAME" Language="de_DE">
-			<Text>Standart</Text>
+			<Text>Standard</Text>
 		</Replace>
 		<Replace Tag="LOC_BBM_WRAP_DEFAULT_DESC" Language="de_DE">
 			<Text>Karteneigenschaften bleiben unverändert.</Text>
