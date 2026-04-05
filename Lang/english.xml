@@ -537,7 +537,7 @@
 			<Text>Mosi-oa-Tunya</Text>
 		</Replace>
 		<Replace Tag="LOC_FEATURE_MOSI_OA_TUNYA_DESCRIPTION" Language="en_US">
-			<Text>One tile impassable natural wonder. Provides +2 [ICON_FOOD] Food to adjacent tiles. Provides +4 Appeal to adjacent tiles isntead of the usual +2. Provides fresh water.</Text>
+			<Text>One tile impassable natural wonder. Provides +2 [ICON_FOOD] Food to adjacent tiles. Provides +4 Appeal to adjacent tiles instead of the usual +2. Provides fresh water.</Text>
 		</Replace>
 		<Replace Tag="LOC_FEATURE_MOSI_OA_TUNYA_QUOTE" Language="en_US">
 			<Text>"Creeping with awe to the verge, I peered down into a large rent and saw that a stream of a thousand yards broad leaped down a hundred feet, and then became suddenly compressed into a space of fifteen or twenty yards, the most wonderful sight I had witnessed in Africa."[NEWLINE]- David Livingstone</Text>
@@ -715,7 +715,7 @@
 			<Text>Default</Text>
 		</Replace>
 		<Replace Tag="LOC_BBM_WRAP_DEFAULT_DESC" language="en_US">
-			<Text>Default map wrap configuration</Text>
+			<Text>Default wrap configuration for selected map</Text>
 		</Replace>
 		<Replace Tag="LOC_BBM_WRAP_YES_NAME" language="en_US">
 			<Text>Wraparound</Text>
