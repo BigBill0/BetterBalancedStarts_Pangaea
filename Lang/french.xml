@@ -105,7 +105,7 @@
 			<Text>Spawn Garanti</Text>
 		</Replace>
 		<Replace Tag="BBS_SRESOURCES_GARANTEED_DESC" Language="fr_FR">
-			<Text>La présence de toutes les ressources stratégiques dans un rayon de 5 case autour du spawn est presque garantie.</Text>
+			<Text>La présence de toutes les ressources stratégiques dans un rayon de 5 cases autour du spawn est presque garantie.</Text>
 		</Replace>
 		<Replace Tag="LOC_GAME_BBM_MIN_DISTANCE_NAME" Language="fr_FR">
 			<Text>Distance minimum entre les joueurs</Text>
@@ -237,7 +237,7 @@
 			<Text>25 cases</Text>
 		</Replace>
 		<Replace Tag="LOC_GAME_BBM_MIN_ATTEMPTS_NAME" Language="fr_FR">
-			  <Text>Nombre d'essais de BBM</Text>
+			<Text>Nombre d'essais de BBM</Text>
 		</Replace>
 		<Replace Tag="LOC_BBM_MAXFLOODPLAINS_SIZE" Language="fr_FR">
 			<Text>Taille maximale des plaines inondables</Text>
