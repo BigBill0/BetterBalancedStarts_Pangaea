@@ -14,6 +14,12 @@
 		<Replace Tag="LOC_MAPSIZE_ENORMOUS_DESCRIPTION" Language="en_US">
 			<Text>Enormous map for 16 players</Text>
 		</Replace>
+		<Replace Tag="LOC_MAP_RICH_HIGHLANDS_ULTIMA_NAME" Language="en_US">
+            <Text>Rich Highlands Ultima</Text>
+        </Replace>
+        <Replace Tag="LOC_MAP_RICH_HIGHLANDS_ULTIMA_DESCRIPTION" Language="en_US">
+            <Text>Highlands with more resources, extra rivers and lakes. Large map size uses Standard (84x54) dimensions.</Text>
+        </Replace>
 		<Replace Tag="LOC_MAP_RICH_HIGHLANDS_NAME" Language="en_US">
             <Text>Rich Highlands</Text>
         </Replace>
