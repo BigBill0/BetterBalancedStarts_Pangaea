@@ -4168,3 +4168,34 @@ function NormalizeContinents(g_iW, g_iH)
     end
     print("----------------------------------------")
 end
+
+---------------------------------------
+-- Shared terrain utility
+---------------------------------------
+
+-- Erodes large mountain clumps by converting interior mountains (4+ adjacent mountains)
+-- to hills. Three passes break up wide blocks from the inside out.
+-- Call after AddCliffs. Safe to use on any map.
+function BreakMountainClumps()
+	local iW, iH = Map.GetGridSize();
+
+	for pass = 1, 3 do
+		for i = 0, (iW * iH) - 1, 1 do
+			local plot = Map.GetPlotByIndex(i);
+			if plot ~= nil and plot:IsMountain() and not plot:IsNaturalWonder() then
+				local adjMountains = 0;
+				for direction = 0, DirectionTypes.NUM_DIRECTION_TYPES - 1, 1 do
+					local adj = Map.GetAdjacentPlot(plot:GetX(), plot:GetY(), direction);
+					if adj ~= nil and adj:IsMountain() then
+						adjMountains = adjMountains + 1;
+					end
+				end
+				-- 4+ adjacent mountains = clump interior; convert to hills.
+				-- Mountain terrain is always hills+1 in the Civ6 enum.
+				if adjMountains >= 4 then
+					TerrainBuilder.SetTerrainType(plot, plot:GetTerrainType() - 1);
+				end
+			end
+		end
+	end
+end

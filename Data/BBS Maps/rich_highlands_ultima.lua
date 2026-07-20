@@ -115,8 +115,10 @@ function GenerateMap()
 	print("Adding cliffs");
 	AddCliffs(plotTypes, terrainTypes);
 
-	print("Breaking mountain clumps");
-	BreakMountainClumps();
+	if MapConfiguration.GetValue("BBMBreakClumps") ~= 0 then
+		print("Breaking mountain clumps");
+		BreakMountainClumps();
+	end
 
 	local args = {
 		numberToPlace = GameInfo.Maps[Map.GetMapSize()].NumNaturalWonders,
@@ -264,60 +266,6 @@ function AddFeaturesFromContinents()
 	print("Adding Features from Continents");
 
 	featuregen:AddFeaturesFromContinents();
-end
-
--- Places single-tile lakes only on flat land (not hills or mountains).
--- Safe to call many times: hills are never converted to water.
--- Erodes large mountain clumps by converting interior mountains (4+ adjacent mountains)
--- to hills. Three passes gradually break up blocks from the inside out.
-function BreakMountainClumps()
-	local iW, iH = Map.GetGridSize();
-
-	for pass = 1, 3 do
-		for i = 0, (iW * iH) - 1, 1 do
-			local plot = Map.GetPlotByIndex(i);
-			if plot ~= nil and plot:IsMountain() and not plot:IsNaturalWonder() then
-				local adjMountains = 0;
-				for direction = 0, DirectionTypes.NUM_DIRECTION_TYPES - 1, 1 do
-					local adj = Map.GetAdjacentPlot(plot:GetX(), plot:GetY(), direction);
-					if adj ~= nil and adj:IsMountain() then
-						adjMountains = adjMountains + 1;
-					end
-				end
-				-- 4+ adjacent mountains = clump interior; convert to hills.
-				-- Mountain terrain is always hills+1 in the Civ6 enum.
-				if adjMountains >= 4 then
-					TerrainBuilder.SetTerrainType(plot, plot:GetTerrainType() - 1);
-				end
-			end
-		end
-	end
-end
-
--- Erodes large mountain clumps by converting interior mountains (4+ adjacent mountains)
--- to hills. Three passes break up wide blocks from the inside out.
-function BreakMountainClumps()
-	local iW, iH = Map.GetGridSize();
-
-	for pass = 1, 3 do
-		for i = 0, (iW * iH) - 1, 1 do
-			local plot = Map.GetPlotByIndex(i);
-			if plot ~= nil and plot:IsMountain() and not plot:IsNaturalWonder() then
-				local adjMountains = 0;
-				for direction = 0, DirectionTypes.NUM_DIRECTION_TYPES - 1, 1 do
-					local adj = Map.GetAdjacentPlot(plot:GetX(), plot:GetY(), direction);
-					if adj ~= nil and adj:IsMountain() then
-						adjMountains = adjMountains + 1;
-					end
-				end
-				-- 4+ adjacent mountains = clump interior.
-				-- Mountain terrain is always hills+1 in the Civ6 enum.
-				if adjMountains >= 4 then
-					TerrainBuilder.SetTerrainType(plot, plot:GetTerrainType() - 1);
-				end
-			end
-		end
-	end
 end
 
 function AddFlatLakes(numPasses)

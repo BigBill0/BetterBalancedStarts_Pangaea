@@ -717,6 +717,12 @@
 		<Replace Tag="LOC_MAP_WRAPAROUND_NAME" language="en_US">
 			<Text>Wraparound</Text>
 		</Replace>
+		<Replace Tag="LOC_BBM_BREAK_CLUMPS_NAME" Language="en_US">
+			<Text>Break Mountain Clumps</Text>
+		</Replace>
+		<Replace Tag="LOC_BBM_BREAK_CLUMPS_DESC" Language="en_US">
+			<Text>Erodes large mountain clumps by converting interior mountains (4+ adjacent mountains) to hills, improving spawn viability near mountain ranges.</Text>
+		</Replace>
 		<Replace Tag="LOC_BBM_WRAP_DEFAULT_NAME" language="en_US">
 			<Text>Default</Text>
 		</Replace>

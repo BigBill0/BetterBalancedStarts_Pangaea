@@ -152,6 +152,11 @@ function GenerateMap()
 	print("Adding cliffs");
 	AddCliffs(plotTypes, terrainTypes);
 
+	if MapConfiguration.GetValue("BBMBreakClumps") ~= 0 then
+		print("Breaking mountain clumps");
+		BreakMountainClumps();
+	end
+
 	local args = {
 		numberToPlace = GameInfo.Maps[Map.GetMapSize()].NumNaturalWonders,
 	};
