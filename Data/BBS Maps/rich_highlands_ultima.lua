@@ -20,6 +20,7 @@ include "BBS_ResourceGenerator"
 include "CoastalLowlands"
 include "AssignStartingPlots"
 include "BBM_AssignStartingPlots"
+include "BBM_MapUtils"
 
 
 local g_iW, g_iH;
@@ -114,11 +115,6 @@ function GenerateMap()
 	
 	print("Adding cliffs");
 	AddCliffs(plotTypes, terrainTypes);
-
-	if MapConfiguration.GetValue("BBMBreakClumps") ~= 0 then
-		print("Breaking mountain clumps");
-		BreakMountainClumps();
-	end
 
 	local args = {
 		numberToPlace = GameInfo.Maps[Map.GetMapSize()].NumNaturalWonders,

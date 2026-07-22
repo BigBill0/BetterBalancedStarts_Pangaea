@@ -4173,12 +4173,15 @@ end
 -- Shared terrain utility
 ---------------------------------------
 
--- Erodes large mountain clumps by converting interior mountains (4+ adjacent mountains)
--- to hills. Three passes break up wide blocks from the inside out.
+-- Erodes large mountain clumps and breaks long chains.
+-- Pass 1 (x3): converts mountains with 4+ adjacent mountains to hills (blob interiors).
+-- Pass 2 (x2): converts mountains that are the middle of a straight chain of 3+
+--              (mountain on both sides of any hex axis) to hills.
 -- Call after AddCliffs. Safe to use on any map.
 function BreakMountainClumps()
 	local iW, iH = Map.GetGridSize();
 
+	-- Pass 1: break blob interiors (4+ adjacent mountains).
 	for pass = 1, 3 do
 		for i = 0, (iW * iH) - 1, 1 do
 			local plot = Map.GetPlotByIndex(i);
@@ -4193,6 +4196,63 @@ function BreakMountainClumps()
 				-- 4+ adjacent mountains = clump interior; convert to hills.
 				-- Mountain terrain is always hills+1 in the Civ6 enum.
 				if adjMountains >= 4 then
+					TerrainBuilder.SetTerrainType(plot, plot:GetTerrainType() - 1);
+				end
+			end
+		end
+	end
+
+	-- Pass 2: break straight chains (mountain on both sides of any hex axis).
+	-- The 3 opposite-direction pairs on a hex grid: (0,3), (1,4), (2,5).
+	local oppositePairs = {{0, 3}, {1, 4}, {2, 5}};
+	for pass = 1, 2 do
+		for i = 0, (iW * iH) - 1, 1 do
+			local plot = Map.GetPlotByIndex(i);
+			if plot ~= nil and plot:IsMountain() and not plot:IsNaturalWonder() then
+				local inChain = false;
+				for _, pair in ipairs(oppositePairs) do
+					local adjA = Map.GetAdjacentPlot(plot:GetX(), plot:GetY(), pair[1]);
+					local adjB = Map.GetAdjacentPlot(plot:GetX(), plot:GetY(), pair[2]);
+					if adjA ~= nil and adjB ~= nil and adjA:IsMountain() and adjB:IsMountain() then
+						inChain = true;
+						break;
+					end
+				end
+				if inChain then
+					TerrainBuilder.SetTerrainType(plot, plot:GetTerrainType() - 1);
+				end
+			end
+		end
+	end
+
+	-- Pass 3: break triangles (3 mutually adjacent mountains).
+	-- On a hex grid, two neighbors are also adjacent to each other when their
+	-- direction indices are consecutive (mod 6). If any two adjacent mountain
+	-- neighbors satisfy this, the current tile is part of a tight triangle.
+	-- 5 passes handles compound formations that require multiple erosion rounds.
+	for pass = 1, 5 do
+		for i = 0, (iW * iH) - 1, 1 do
+			local plot = Map.GetPlotByIndex(i);
+			if plot ~= nil and plot:IsMountain() and not plot:IsNaturalWonder() then
+				local mountainDirs = {};
+				for direction = 0, DirectionTypes.NUM_DIRECTION_TYPES - 1, 1 do
+					local adj = Map.GetAdjacentPlot(plot:GetX(), plot:GetY(), direction);
+					if adj ~= nil and adj:IsMountain() then
+						table.insert(mountainDirs, direction);
+					end
+				end
+				local inTriangle = false;
+				for a = 1, #mountainDirs do
+					for b = a + 1, #mountainDirs do
+						local diff = (mountainDirs[b] - mountainDirs[a]) % 6;
+						if diff == 1 or diff == 5 then
+							inTriangle = true;
+							break;
+						end
+					end
+					if inTriangle then break; end
+				end
+				if inTriangle then
 					TerrainBuilder.SetTerrainType(plot, plot:GetTerrainType() - 1);
 				end
 			end

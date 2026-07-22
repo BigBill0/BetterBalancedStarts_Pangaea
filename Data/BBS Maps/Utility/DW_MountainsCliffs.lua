@@ -276,6 +276,10 @@ function AddCliffs(plotTypes, terrainTypes)
 			end
 		end
 	end
+	if MapConfiguration.GetValue("BBMBreakClumps") == true then
+		print("Breaking mountain clumps");
+		BreakMountainClumps();
+	end
 end
 ------------------------------------------------------------------------------
 function SetCliff(terrainTypes, iX, iY)
