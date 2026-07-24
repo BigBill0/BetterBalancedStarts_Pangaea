@@ -1,9 +1,9 @@
 ------------------------------------------------------------------------------
---	FILE:	 rich_highlands_ultima.lua
+--	FILE:	 rich_riverlands.lua
 --	AUTHOR:  
---	PURPOSE: Rich Highlands Ultima - more fresh water (rivers + lakes).
---           On Standard map size, uses Small map dimensions (74x46) while
---           retaining the Standard continent count.
+--	PURPOSE: Rich Riverlands - highlands with abundant rivers, lakes, and resources.
+--           Each map size uses one tier smaller grid dimensions while
+--           retaining the selected size's continent count.
 ------------------------------------------------------------------------------
 --	Copyright (c) 2014 Firaxis Games, Inc. All rights reserved.
 ------------------------------------------------------------------------------
@@ -46,7 +46,7 @@ function BBS_Assign(args)
 end
 
 function GenerateMap()
-	print("Generating Rich Highlands Ultima Map");
+	print("Generating Rich Riverlands Map");
 	local pPlot;
 
 	-- Set globals

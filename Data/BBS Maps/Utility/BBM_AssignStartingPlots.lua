@@ -347,7 +347,7 @@ function BBM_AssignStartingPlots.Create(args)
             bbm_game_config.BBM_MAP_SCRIPT == MapScripts.MAP_PANGAEA_ULTIMA or
             bbm_game_config.BBM_MAP_SCRIPT == MapScripts.MAP_HIGHLANDS or
             bbm_game_config.BBM_MAP_SCRIPT == MapScripts.MAP_RICH_HIGHLANDS or
-            bbm_game_config.BBM_MAP_SCRIPT == MapScripts.MAP_RICH_HIGHLANDS_ULTIMA or
+            bbm_game_config.BBM_MAP_SCRIPT == MapScripts.MAP_RICH_RIVERLANDS or
             bbm_game_config.BBM_MAP_SCRIPT == MapScripts.MAP_LAKES
         )
         
