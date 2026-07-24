@@ -729,6 +729,12 @@
 		<Replace Tag="LOC_BBM_BREAK_DESERT_DESC" Language="en_US">
 			<Text>DO NOT USE IF MALI IN THE GAME. Breaks up large contiguous desert regions into small scattered patches. Desert tiles with 3+ adjacent desert neighbors are converted to plains, preventing any one player from being stuck next to an unsettleable desert while keeping small desert clusters for wonders.</Text>
 		</Replace>
+		<Replace Tag="LOC_BBM_LUX_EXP1_NAME" Language="en_US">
+			<Text>[EXPERIMENTAL] Luxury Floor Guarantee</Text>
+		</Replace>
+		<Replace Tag="LOC_BBM_LUX_EXP1_DESC" Language="en_US">
+			<Text>EXPERIMENTAL. Guarantees every player has at least 7 luxury tiles within 6 hexes of their capital. Players below this floor receive additional continent-appropriate luxury resources nearby. High-roll starts are unaffected. Works on all maps.</Text>
+		</Replace>
 		<Replace Tag="LOC_BBM_WRAP_DEFAULT_NAME" language="en_US">
 			<Text>Default</Text>
 		</Replace>

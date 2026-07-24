@@ -200,6 +200,11 @@ function GenerateMap()
 	-- write map stats to the log
     local mapStats = PrintMapStatistics();
 
+	-- when luxury floor is active, also log density so we can verify the boost worked
+	if MapConfiguration.GetValue("BBMLuxExp1") == true then
+		PrintLuxuryDensityStats();
+	end
+
 end
 
 -------------------------------------------------------------------------------
@@ -1180,6 +1185,96 @@ function ReduceSnowCoverage()
 end
 
 
+
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+-- EXPERIMENTAL: Log luxury resource density around each player start
+-------------------------------------------------------------------------------
+function PrintLuxuryDensityStats()
+    local iW, iH = Map.GetGridSize();
+
+    -- Build a lookup of luxury resource indices
+    local luxuryTypes = {};
+    for row in GameInfo.Resources() do
+        if row.ResourceClassType == "RESOURCECLASS_LUXURY" then
+            luxuryTypes[row.Index] = row.ResourceType;
+        end
+    end
+
+    -- Find major civ starting plots only (excludes city states)
+    local startPlots = {};
+    local majorIDs = PlayerManager.GetAliveMajorIDs();
+    for _, playerID in ipairs(majorIDs) do
+        local startPlot = Players[playerID]:GetStartingPlot();
+        if startPlot ~= nil then
+            table.insert(startPlots, startPlot);
+        end
+    end
+
+    if #startPlots == 0 then
+        print("LUX DENSITY: No starting plots found.");
+        return;
+    end
+
+    print("==================== LUXURY DENSITY STATS ====================");
+    print("Checking " .. #startPlots .. " starts at radius 3 and radius 6");
+
+    local minR3 = 999; local maxR3 = 0; local totalR3 = 0;
+    local minR6 = 999; local maxR6 = 0; local totalR6 = 0;
+
+    for i, startPlot in ipairs(startPlots) do
+        local sx = startPlot:GetX();
+        local sy = startPlot:GetY();
+        local countR3 = 0; local typesR3 = {};
+        local countR6 = 0; local typesR6 = {};
+
+        for dx = -6, 6 do
+            for dy = -6, 6 do
+                local nx = (sx + dx + iW) % iW;
+                local ny = sy + dy;
+                if ny >= 0 and ny < iH then
+                    local dist = Map.GetPlotDistance(sx, sy, nx, ny);
+                    if dist <= 6 then
+                        local plot = Map.GetPlot(nx, ny);
+                        if plot ~= nil then
+                            local resIdx = plot:GetResourceType();
+                            if resIdx >= 0 and luxuryTypes[resIdx] then
+                                countR6 = countR6 + 1;
+                                typesR6[resIdx] = true;
+                                if dist <= 3 then
+                                    countR3 = countR3 + 1;
+                                    typesR3[resIdx] = true;
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+        end
+
+        local uR3 = 0; for _ in pairs(typesR3) do uR3 = uR3 + 1; end
+        local uR6 = 0; for _ in pairs(typesR6) do uR6 = uR6 + 1; end
+
+        print("  Start " .. i .. " (" .. sx .. "," .. sy .. "):"
+            .. "  r3=" .. countR3 .. " tiles/" .. uR3 .. " types"
+            .. "  |  r6=" .. countR6 .. " tiles/" .. uR6 .. " types");
+
+        if countR3 < minR3 then minR3 = countR3; end
+        if countR3 > maxR3 then maxR3 = countR3; end
+        totalR3 = totalR3 + countR3;
+        if countR6 < minR6 then minR6 = countR6; end
+        if countR6 > maxR6 then maxR6 = countR6; end
+        totalR6 = totalR6 + countR6;
+    end
+
+    local n = #startPlots;
+    local avgR3 = math.floor(totalR3 / n * 10 + 0.5) / 10;
+    local avgR6 = math.floor(totalR6 / n * 10 + 0.5) / 10;
+    print("  -- Summary --");
+    print("  Radius 3: min=" .. minR3 .. "  max=" .. maxR3 .. "  avg=" .. avgR3);
+    print("  Radius 6: min=" .. minR6 .. "  max=" .. maxR6 .. "  avg=" .. avgR6);
+    print("==============================================================");
+end
 
 -------------------------------------------------------------------------------
 -- Function to print detailed map statistics

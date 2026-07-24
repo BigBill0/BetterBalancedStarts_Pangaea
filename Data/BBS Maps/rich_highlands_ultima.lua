@@ -709,7 +709,7 @@ function AddRivers()
 
 	for iPass, passCondition in ipairs(passConditions) do
 
-		local riverSourceRange = 2.8;
+		local riverSourceRange = 3.0;  -- was 2.8; higher = fewer river starts near existing water
 		local seaWaterRange    = seaWaterRangeDefault / 4;
 
 		local iW, iH = Map.GetGridSize();
@@ -744,14 +744,25 @@ function GetMapInitData(MapSize)
 		end
 	end
 
-	-- Override Large map size to use Standard map dimensions (84x54).
-	-- CPL 10-man FFAs use Large; this keeps the footprint at Standard size while
-	-- the continent count (driven by Map.GetMapSize() returning Large) stays at
-	-- the Large value.
-	local MAPSIZE_LARGE = GameInfo.Maps["MAPSIZE_LARGE"];
-	if MAPSIZE_LARGE ~= nil and MapSize == MAPSIZE_LARGE.Hash then
-		Width = 84;
-		Height = 54;
+	-- Use one size smaller for grid dimensions, keeping continent count from the selected size.
+	-- This keeps the map denser/more focused while retaining the correct number of continents.
+	--   Small    → Tiny    dimensions (60×38)
+	--   Standard → Small   dimensions (74×46)
+	--   Large    → Standard dimensions (84×54)  ← CPL 10-man FFA standard
+	--   Huge     → Large   dimensions (96×60)
+	local sizeDownMap = {
+		MAPSIZE_SMALL    = {W=60,  H=38},
+		MAPSIZE_STANDARD = {W=74,  H=46},
+		MAPSIZE_LARGE    = {W=84,  H=54},
+		MAPSIZE_HUGE     = {W=96,  H=60},
+	};
+	for sizeName, dims in pairs(sizeDownMap) do
+		local sizeRow = GameInfo.Maps[sizeName];
+		if sizeRow ~= nil and MapSize == sizeRow.Hash then
+			Width  = dims.W;
+			Height = dims.H;
+			break;
+		end
 	end
 
 	local WrapX = isWrap == 0 or isWrap == 1;

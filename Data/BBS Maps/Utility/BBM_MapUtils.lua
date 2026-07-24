@@ -4348,3 +4348,142 @@ function BreakDesertPatches()
 	end
 	print("- Scattered isolated desert tiles added: ", scatterCount);
 end
+
+-------------------------------------------------------------------------------
+-- LUXURY FLOOR: post-placement guarantee — adds continent-appropriate luxury
+-- tiles near any start that has fewer than LUX_FLOOR within radius 6.
+-- Triggered by the "BBMLuxExp1" toggle; works on all maps via BBS_Assign hook.
+-------------------------------------------------------------------------------
+local LUX_FLOOR = 7;
+
+local function BBM_BuildLuxuryLookup()
+    local byIndex = {};
+    local isLux   = {};
+    for row in GameInfo.Resources() do
+        if row.ResourceClassType == "RESOURCECLASS_LUXURY" then
+            byIndex[row.Index] = { hash = row.Hash, name = row.ResourceType };
+            isLux[row.Index]   = true;
+        end
+    end
+    return byIndex, isLux;
+end
+
+local function BBM_GetLuxNearStart(startPlot, radius, isLux, iW, iH)
+    local sx          = startPlot:GetX();
+    local sy          = startPlot:GetY();
+    local count       = 0;
+    local existingTypes = {};
+    for dx = -radius, radius do
+        for dy = -radius, radius do
+            local nx = (sx + dx + iW) % iW;
+            local ny = sy + dy;
+            if ny >= 0 and ny < iH then
+                if Map.GetPlotDistance(sx, sy, nx, ny) <= radius then
+                    local plot = Map.GetPlot(nx, ny);
+                    if plot then
+                        local ri = plot:GetResourceType();
+                        if ri >= 0 and isLux[ri] then
+                            count = count + 1;
+                            existingTypes[ri] = true;
+                        end
+                    end
+                end
+            end
+        end
+    end
+    return count, existingTypes;
+end
+
+local function BBM_GetContLuxTypes(startPlot, isLux)
+    local contID    = startPlot:GetContinentType();
+    local contPlots = Map.GetContinentPlots(contID);
+    local types     = {};
+    for _, idx in ipairs(contPlots) do
+        local p = Map.GetPlotByIndex(idx);
+        if p then
+            local ri = p:GetResourceType();
+            if ri >= 0 and isLux[ri] then types[ri] = true; end
+        end
+    end
+    return types;
+end
+
+local function BBM_BuildLuxCandidates(startPlot, rMin, rMax, contTypes, luxByIdx, iW, iH)
+    local sx      = startPlot:GetX();
+    local sy      = startPlot:GetY();
+    local cands   = {};
+    local typeArr = {};
+    for ri, _ in pairs(contTypes) do table.insert(typeArr, ri); end
+
+    for dx = -rMax, rMax do
+        for dy = -rMax, rMax do
+            local nx = (sx + dx + iW) % iW;
+            local ny = sy + dy;
+            if ny >= 0 and ny < iH then
+                local dist = Map.GetPlotDistance(sx, sy, nx, ny);
+                if dist >= rMin and dist <= rMax then
+                    local plot = Map.GetPlot(nx, ny);
+                    if plot and not plot:IsWater() and plot:GetResourceType() < 0 then
+                        typeArr = GetShuffledCopyOfTable(typeArr);
+                        for _, ri in ipairs(typeArr) do
+                            local info = luxByIdx[ri];
+                            if info and ResourceBuilder.CanHaveResource(plot, info.hash) then
+                                table.insert(cands, { plot = plot, resIdx = ri });
+                                break;
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+    return GetShuffledCopyOfTable(cands);
+end
+
+function BoostLuxuryFloor()
+    local iW, iH          = Map.GetGridSize();
+    local luxByIdx, isLux = BBM_BuildLuxuryLookup();
+    local majorIDs        = PlayerManager.GetAliveMajorIDs();
+    local totalAdded      = 0;
+
+    print("==================== LUX FLOOR: BOOST ====================");
+    for _, pid in ipairs(majorIDs) do
+        local sp = Players[pid]:GetStartingPlot();
+        if sp then
+            local count, existingTypes = BBM_GetLuxNearStart(sp, 6, isLux, iW, iH);
+            if count < LUX_FLOOR then
+                local needed    = LUX_FLOOR - count;
+                local contTypes = BBM_GetContLuxTypes(sp, isLux);
+                -- Prefer types the player doesn't already have; fall back to all cont types
+                local newTypes = {};
+                for ri, _ in pairs(contTypes) do
+                    if not existingTypes[ri] then newTypes[ri] = true; end
+                end
+                local preferredTypes = (next(newTypes) ~= nil) and newTypes or contTypes;
+                local cands     = BBM_BuildLuxCandidates(sp, 2, 6, preferredTypes, luxByIdx, iW, iH);
+                -- If not enough candidates from new types, top up from all cont types
+                if #cands < needed then
+                    local fallbackCands = BBM_BuildLuxCandidates(sp, 2, 6, contTypes, luxByIdx, iW, iH);
+                    for _, c in ipairs(fallbackCands) do table.insert(cands, c); end
+                end
+                local placed    = 0;
+                for _, cand in ipairs(cands) do
+                    if placed >= needed then break; end
+                    local info = luxByIdx[cand.resIdx];
+                    if info then
+                        ResourceBuilder.SetResourceType(cand.plot, info.hash, 1);
+                        placed     = placed + 1;
+                        totalAdded = totalAdded + 1;
+                    end
+                end
+                print("  Player " .. pid .. " (" .. sp:GetX() .. "," .. sp:GetY() .. "):"
+                    .. " r6=" .. count .. " -> +" .. placed .. "/" .. needed .. " placed");
+            else
+                print("  Player " .. pid .. " (" .. sp:GetX() .. "," .. sp:GetY() .. "):"
+                    .. " r6=" .. count .. " OK");
+            end
+        end
+    end
+    print("  Total luxury tiles added: " .. totalAdded);
+    print("===========================================================");
+end

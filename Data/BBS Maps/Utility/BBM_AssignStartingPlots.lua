@@ -382,6 +382,11 @@ function BBM_AssignStartingPlots.Create(args)
         CallFiraxisPlacement(args);
     end   
     
+    -- EXPERIMENTAL: luxury floor guarantee (runs after start assignment, before returning)
+    if MapConfiguration.GetValue("BBMLuxExp1") == true then
+        BoostLuxuryFloor();
+    end
+
     print("-----------------------")
     print("Ending BBM Placement",  os.date("%c"))
     print("-----------------------")
