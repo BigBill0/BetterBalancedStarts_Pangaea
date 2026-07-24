@@ -1368,7 +1368,7 @@ function NormalizeSettleableTiles()
     else
         seaLevelOffset = 0; -- Normal or random
     end
-    local targetSettleableTiles = math.floor(g_iW * g_iH * 0.44) + seaLevelOffset;
+    local targetSettleableTiles = math.floor(g_iW * g_iH * 0.408) + seaLevelOffset; -- ~2350 floor → ~2450-2520 final after post-processing
     local acceptableVariance = math.floor(g_iW * g_iH * 0.013); -- ~75 tiles on large map
     local extremeCaseThreshold = g_iW * g_iH * 0.035
     print("Normalizing settleable tiles (plains and grassland) to around "..targetSettleableTiles.." - EXCLUDING DESERT");
