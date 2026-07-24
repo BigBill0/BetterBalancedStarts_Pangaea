@@ -4259,3 +4259,92 @@ function BreakMountainClumps()
 		end
 	end
 end
+
+---------------------------------------
+-- Breaks up large contiguous desert regions into small scattered patches.
+-- 3 passes: any desert tile with 3+ adjacent desert neighbors is a blob interior;
+-- convert to plains (or plains hills), preserving hill status.
+-- Natural wonders that happen to be desert terrain are skipped.
+function BreakDesertPatches()
+	local iW, iH = Map.GetGridSize();
+	local desertConverted = 0;
+
+	for pass = 1, 3 do
+		local toConvert = {};
+		for i = 0, (iW * iH) - 1, 1 do
+			local plot = Map.GetPlotByIndex(i);
+			if plot ~= nil and not plot:IsWater() and not plot:IsNaturalWonder() then
+				local terrainType = plot:GetTerrainType();
+				if terrainType == 6 or terrainType == 7 then -- DESERT or DESERT_HILLS
+					local adjDesert = 0;
+					for direction = 0, DirectionTypes.NUM_DIRECTION_TYPES - 1, 1 do
+						local adj = Map.GetAdjacentPlot(plot:GetX(), plot:GetY(), direction);
+						if adj ~= nil then
+							local adjTerrain = adj:GetTerrainType();
+							if adjTerrain == 6 or adjTerrain == 7 then
+								adjDesert = adjDesert + 1;
+							end
+						end
+					end
+					if adjDesert >= 3 then
+						table.insert(toConvert, i);
+					end
+				end
+			end
+		end
+		for _, i in ipairs(toConvert) do
+			local plot = Map.GetPlotByIndex(i);
+			if plot ~= nil then
+				-- Preserve hills: desert hills -> plains hills, desert flat -> plains flat
+				if plot:GetTerrainType() == 7 then
+					TerrainBuilder.SetTerrainType(plot, 4); -- PLAINS_HILLS
+				else
+					TerrainBuilder.SetTerrainType(plot, 3); -- PLAINS
+				end
+				desertConverted = desertConverted + 1;
+			end
+		end
+	end
+	print("- Desert patches broken up, tiles converted: ", desertConverted);
+
+	-- Scatter ~10 isolated desert tiles randomly across plains to restore variety.
+	-- Only converts plains/plains-hills with no adjacent desert (stays isolated).
+	local plainsTiles = {};
+	for i = 0, (iW * iH) - 1, 1 do
+		local plot = Map.GetPlotByIndex(i);
+		if plot ~= nil and not plot:IsWater() and not plot:IsNaturalWonder() then
+			local t = plot:GetTerrainType();
+			if t == 3 or t == 4 then -- PLAINS or PLAINS_HILLS
+				local hasAdjDesert = false;
+				for direction = 0, DirectionTypes.NUM_DIRECTION_TYPES - 1, 1 do
+					local adj = Map.GetAdjacentPlot(plot:GetX(), plot:GetY(), direction);
+					if adj ~= nil then
+						local at = adj:GetTerrainType();
+						if at == 6 or at == 7 then hasAdjDesert = true; break; end
+					end
+				end
+				if not hasAdjDesert then
+					table.insert(plainsTiles, i);
+				end
+			end
+		end
+	end
+	-- Shuffle and pick ~10 (8 + 0..4)
+	for i = #plainsTiles, 2, -1 do
+		local j = TerrainBuilder.GetRandomNumber(i, "Scatter desert shuffle") + 1;
+		plainsTiles[i], plainsTiles[j] = plainsTiles[j], plainsTiles[i];
+	end
+	local scatterCount = 20 + TerrainBuilder.GetRandomNumber(11, "Scatter desert count");
+	scatterCount = math.min(scatterCount, #plainsTiles);
+	for i = 1, scatterCount do
+		local plot = Map.GetPlotByIndex(plainsTiles[i]);
+		if plot ~= nil then
+			if plot:GetTerrainType() == 4 then
+				TerrainBuilder.SetTerrainType(plot, 7); -- DESERT_HILLS
+			else
+				TerrainBuilder.SetTerrainType(plot, 6); -- DESERT
+			end
+		end
+	end
+	print("- Scattered isolated desert tiles added: ", scatterCount);
+end
