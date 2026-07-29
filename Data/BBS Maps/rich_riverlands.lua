@@ -109,6 +109,7 @@ function GenerateMap()
 	local numLargeLakes = math.ceil(GameInfo.Maps[Map.GetMapSize()].Continents / 2);
 	AddLakes(numLargeLakes);
 	AddFlatLakes(5);
+	AreaBuilder.Recalculate();
 
 	AddFeatures();
 	TerrainBuilder.AnalyzeChokepoints();
