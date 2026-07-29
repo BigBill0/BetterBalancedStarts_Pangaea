@@ -4258,6 +4258,16 @@ function BreakMountainClumps()
 				end
 			end
 		end
+
+	-- Mountain-to-hills conversion runs after AddFeatures, so new grass-hills tiles can
+	-- end up with jungle (which is only valid on plains terrain in Civ6).
+	for i = 0, (iW * iH) - 1, 1 do
+		local plot = Map.GetPlotByIndex(i);
+		if plot ~= nil and plot:GetTerrainType() == g_TERRAIN_TYPE_GRASS_HILLS
+				and plot:GetFeatureType() == g_FEATURE_JUNGLE then
+			TerrainBuilder.SetTerrainType(plot, g_TERRAIN_TYPE_PLAINS_HILLS);
+		end
+	end
 	end
 end
 
