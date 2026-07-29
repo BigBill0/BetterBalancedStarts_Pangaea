@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <GameData>
 	<LocalizedText>		
 		<!-- Authors : 3JIO6HblU_Kycb, _vadya_queen -->
@@ -11,400 +11,400 @@
         <Text>Rich Highlands</Text>
     </Replace>
     <Replace Tag="LOC_MAP_RICH_HIGHLANDS_DESCRIPTION" Language="ru_RU">
-        <Text>ÐšÐ°Ñ€Ñ‚Ð° Ñ Ð±Ð¾Ð»ÑŒÑˆÐ¸Ð¼ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾Ð¼ Ñ…Ð¾Ð»Ð¼Ð¾Ð², Ð³Ð¾Ñ€, Ð¸ Ñ€ÐµÑÑƒÑ€ÑÐ¾Ð².</Text>
+        <Text>Карта с большим количеством холмов, гор, и ресурсов.</Text>
     </Replace>
 	<Replace Tag="LOC_MAP_PANGAEA_ULTIMA_DESCRIPTION" Language="ru_RU">
-        <Text>Ð¡ÑƒÐ¿ÐµÑ€ÐºÐ¾Ð½Ñ‚Ð¸Ð½ÐµÐ½Ñ‚, Ñ ÐµÑ‰Ðµ Ð¼ÐµÐ½ÑŒÑˆÐ¸Ð¼ Ð¾ÐºÐµÐ°Ð½Ð¾Ð¼, Ñ‡ÐµÐ¼ Ð½Ð° ÐŸÐ°Ð½Ð³ÐµÐµ</Text>
+        <Text>Суперконтинент, с еще меньшим океаном, чем на Пангее</Text>
     </Replace>
 	<!-- Map Sizes -->
 	<!-- == Map features == -->
 	<Replace Tag="LOC_MAPSIZE_ENORMOUS_NAME" Language="ru_RU">
-		<Text>Ð“Ð¸Ð³Ð°Ð½Ñ‚ÑÐºÐ°Ñ</Text>
+		<Text>Гигантская</Text>
 	</Replace>
 	<Replace Tag="LOC_MAPSIZE_ENORMOUS_DESCRIPTION" Language="ru_RU">
-		<Text>Ð“Ð¸Ð³Ð°Ð½Ñ‚ÑÐºÐ°Ñ ÐºÐ°Ñ€Ñ‚Ð° Ð½Ð° 16 Ñ‡ÐµÐ»Ð¾Ð²ÐµÐº</Text>
+		<Text>Гигантская карта на 16 человек</Text>
 	</Replace>
 	<!-- Setup -->
 	<Replace Tag="LOC_GAME_SPAWN_RECALCULATION" language="ru_RU">
-		<Text>ÐžÐ±Ñ€Ð°Ð±Ð¾Ñ‚ÐºÐ° ÑÑ‚Ð°Ñ€Ñ‚Ð°</Text>
+		<Text>Обработка старта</Text>
 	</Replace>
 	<Replace Tag="LOC_GAME_SPAWN_RECALCULATION_DESC" language="ru_RU">
-		<Text>ÐŸÐ¾Ð¿Ñ‹Ñ‚ÐºÐ° Ñ€Ð°ÑÐ¿Ð¾Ð»Ð¾Ð¶Ð¸Ñ‚ÑŒ Ñ†Ð¸Ð²Ð¸Ð»Ð¸Ð·Ð°Ñ†Ð¸ÑŽ Ð² Ð»ÑƒÑ‡ÑˆÐµÐ¹ ÑÑ‚Ð°Ñ€Ñ‚Ð¾Ð²Ð¾Ð¹ Ð¿Ð¾Ð·Ð¸Ñ†Ð¸Ð¸</Text>
+		<Text>Попытка расположить цивилизацию в лучшей стартовой позиции</Text>
 	</Replace>
 	<Replace Tag="LOC_GAME_BBS_RIDGE_NAME" language="ru_RU">
-		<Text>ÐÐ°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ° Ð³Ð¾Ñ€Ð½Ñ‹Ñ… Ñ…Ñ€ÐµÐ±Ñ‚Ð¾Ð²</Text>
+		<Text>Настройка горных хребтов</Text>
 	</Replace>
 	<Replace Tag="LOC_GAME_BBS_RIDGE_DESC" language="ru_RU">
-		<Text>ÐšÐ¾Ð½Ñ‚Ñ€Ð¾Ð»Ð¸Ñ€ÑƒÐµÑ‚ Ñ€Ð°Ð·Ð¼ÐµÑ€Ñ‹ Ð¿Ñ€Ð¾Ñ…Ð¾Ð´Ð¾Ð² Ð² Ð³Ð¾Ñ€Ð°Ñ…</Text>
+		<Text>Контролирует размеры проходов в горах</Text>
 	</Replace>
 	<Replace Tag="BBS_RIDGE_NORMAL_NAME" language="ru_RU">
-		<Text>Ð¡Ñ‚Ð°Ð½Ð´Ð°Ñ€Ñ‚Ð½Ñ‹Ðµ</Text>
+		<Text>Стандартные</Text>
 	</Replace>
 	<Replace Tag="BBS_RIDGE_NORMAL_DESC" language="ru_RU">
-		<Text>ÐžÑ€Ð¸Ð³Ð¸Ð½Ð°Ð»ÑŒÐ½Ð°Ñ Ð½Ð°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ° Ð¸Ð³Ñ€Ñ‹</Text>
+		<Text>Оригинальная настройка игры</Text>
 	</Replace>
 	<Replace Tag="BBS_RIDGE_LESS_NAME" language="ru_RU">
-		<Text>Ð£Ð·ÐºÐ¸Ðµ</Text>
+		<Text>Узкие</Text>
 	</Replace>
 	<Replace Tag="BBS_RIDGE_LESS_DESC" language="ru_RU">
-		<Text>Ð”Ð¾Ð±Ð°Ð²Ð»ÑÐµÑ‚ ÑƒÐ·ÐºÐ¸Ðµ Ð¿Ñ€Ð¾Ñ…Ð¾Ð´Ñ‹ Ð² Ð³Ð¾Ñ€Ð½Ñ‹Ðµ Ñ†ÐµÐ¿Ð¸</Text>
+		<Text>Добавляет узкие проходы в горные цепи</Text>
 	</Replace>
 	<Replace Tag="BBS_RIDGE_VLESS_NAME" language="ru_RU">
-		<Text>Ð¨Ð¸Ñ€Ð¾ÐºÐ¸Ðµ</Text>
+		<Text>Широкие</Text>
 	</Replace>
 	<Replace Tag="BBS_RIDGE_VLESS_DESC" language="ru_RU">
-		<Text>Ð”Ð¾Ð±Ð°Ð²Ð»ÑÐµÑ‚ Ð±Ð¾Ð»ÐµÐµ ÑˆÐ¸Ñ€Ð¾ÐºÐ¸Ðµ Ð¿Ñ€Ð¾Ñ…Ð¾Ð´Ñ‹, Ñ‡Ñ‚Ð¾ Ð¿Ð¾Ð·Ð²Ð¾Ð»ÑÐµÑ‚ Ð°Ñ‚Ð°ÐºÑƒÑŽÑ‰Ð¸Ð¼ ÑŽÐ½Ð¸Ñ‚Ð°Ð¼ Ð²Ñ‹Ð±Ð¸Ñ€Ð°Ñ‚ÑŒ Ð¿ÑƒÑ‚Ð¸ Ð½Ð°ÑÑ‚ÑƒÐ¿Ð»ÐµÐ½Ð¸Ñ.</Text>
+		<Text>Добавляет более широкие проходы, что позволяет атакующим юнитам выбирать пути наступления.</Text>
 	</Replace>
 	<Replace Tag="BBS_RIDGE_NONE_NAME" language="ru_RU">
-		<Text>ÐŸÐ»Ð¾ÑÐºÐ°Ñ Ð—ÐµÐ¼Ð»Ñ</Text>
+		<Text>Плоская Земля</Text>
 	</Replace>
 	<Replace Tag="BBS_RIDGE_NONE_DESC" language="ru_RU">
-		<Text>Ð“Ð¾Ñ€Ñ‹ Ð¿Ñ€Ð¸Ð½ÑƒÐ´Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð¾ Ñ€Ð°Ð·Ð¼Ð°Ð·Ñ‹Ð²Ð°ÑŽÑ‚ÑÑ Ð¿Ð¾ ÐºÐ°Ñ€Ñ‚Ðµ, Ñ‡Ñ‚Ð¾ ÑÐ¾Ð·Ð´Ð°ÐµÑ‚ Ð¿Ð»Ð¾ÑÐºÑƒÑŽ ÐºÐ°Ñ€Ñ‚Ñƒ Ñ Ð¼Ð½Ð¾Ð¶ÐµÑÑ‚Ð²Ð¾Ð¼ Ñ…Ð¾Ð»Ð¼Ð¾Ð².</Text>
+		<Text>Горы принудительно размазываются по карте, что создает плоскую карту с множеством холмов.</Text>
 	</Replace>
 	<Replace Tag="BBS_RIDGE_MORE_NAME" language="ru_RU">
-		<Text>ÐÐµÐ¿Ñ€Ð¾Ñ…Ð¾Ð´Ð¸Ð¼Ñ‹Ðµ</Text>
+		<Text>Непроходимые</Text>
 	</Replace>
 	<Replace Tag="BBS_RIDGE_MORE_DESC" language="ru_RU">
-		<Text>Ð”ÐµÐ»Ð°ÐµÑ‚ Ñ…Ñ€ÐµÐ±Ñ‚Ñ‹ ÑˆÐ¸Ñ€Ð¾ÐºÐ¸Ð¼Ð¸, Ñ Ð¼ÐµÐ½ÑŒÑˆÐ¸Ð¼ Ñ‡Ð¸ÑÐ»Ð¾Ð¼ Ð¿Ñ€Ð¾Ñ…Ð¾Ð´Ð¾Ð²</Text>
+		<Text>Делает хребты широкими, с меньшим числом проходов</Text>
 	</Replace>
 	<Replace Tag="BBS_RIDGE_RF_NAME" language="ru_RU">
-		<Text>ÐšÐ»Ð°ÑÑÐ¸Ñ‡ÐµÑÐºÐ¸Ðµ</Text>
+		<Text>Классические</Text>
 	</Replace>
 	<Replace Tag="BBS_RIDGE_RF_DESC" language="ru_RU">
-		<Text>Ð Ð°ÑÐ¿Ð¾Ð»Ð¾Ð¶ÐµÐ½Ð¸Ðµ Ð³Ð¾Ñ€ Ð±ÐµÐ· ÑƒÑ‡ÐµÑ‚Ð° ÐºÐ¾Ð½Ñ‚Ð¸Ð½ÐµÐ½Ñ‚Ð¾Ð² (Ð´Ð¾ Gathering Storm).</Text>
+		<Text>Расположение гор без учета континентов (до Gathering Storm).</Text>
 	</Replace>
 	<Replace Tag="LOC_GAME_BBS_SRESOURCES_NAME" Language="ru_RU">
-		  <Text>Ð¡Ñ‚Ñ€Ð°Ñ‚ÐµÐ³Ð¸Ñ‡ÐµÑÐºÐ¸Ðµ Ñ€ÐµÑÑƒÑ€ÑÑ‹</Text>
+		  <Text>Стратегические ресурсы</Text>
 	</Replace>
 	<Replace Tag="LOC_GAME_BBS_SRESOURCES_DESC" Language="ru_RU">
-		  <Text>Ð ÐµÐ³ÑƒÐ»Ð¸Ñ€ÑƒÐµÑ‚ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÑ‚Ñ€Ð°Ñ‚ÐµÐ³Ð¸Ñ‡ÐµÑÐºÐ¸Ñ… Ñ€ÐµÑÑƒÑ€ÑÐ¾Ð² Ð¿Ñ€Ð¸ ÑÐ±Ð°Ð»Ð°Ð½ÑÐ¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ð¾Ð¼ ÑÑ‚Ð°Ñ€Ñ‚Ðµ.</Text>
+		  <Text>Регулирует количество стратегических ресурсов при сбалансированном старте.</Text>
 	</Replace>
 	<Replace Tag="BBS_SRESOURCES_NORMAL_NAME" Language="ru_RU">
-		  <Text>Ð¡Ñ‚Ð°Ð½Ð´Ð°Ñ€Ñ‚Ð½Ñ‹Ðµ</Text>
+		  <Text>Стандартные</Text>
 	</Replace>
 	<Replace Tag="BBS_SRESOURCES_NORMAL_DESC" Language="ru_RU">
-		  <Text>Ð¡Ñ‚Ð°Ð½Ð´Ð°Ñ€Ñ‚Ð½Ð°Ñ Ð½Ð°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ° Ð³ÐµÐ½ÐµÑ€Ð°Ñ‚Ð¾Ñ€Ð° Ñ€ÐµÑÑƒÑ€ÑÐ¾Ð² Firaxis.</Text>
+		  <Text>Стандартная настройка генератора ресурсов Firaxis.</Text>
 	</Replace>
 	<Replace Tag="BBS_SRESOURCES_MORE_NAME" Language="ru_RU">
-		  <Text>Ð˜Ð·Ð¾Ð±Ð¸Ð»ÑŒÐ½Ñ‹Ðµ</Text>
+		  <Text>Изобильные</Text>
 	</Replace>
 	<Replace Tag="BBS_SRESOURCES_MORE_DESC" Language="ru_RU">
-		  <Text>ÐÐ° 20% Ð±Ð¾Ð»ÑŒÑˆÐµ Ð¾Ñ‚ ÑÑ‚Ð°Ð½Ð´Ð°Ñ€Ñ‚Ð½Ð¾Ð³Ð¾ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ</Text>
+		  <Text>На 20% больше от стандартного значения</Text>
 	</Replace>
 	<Replace Tag="BBS_SRESOURCES_MUCHMORE_NAME" Language="ru_RU">
-		  <Text>Ð­Ð¿Ð¸Ñ‡ÐµÑÐºÐ¸Ðµ</Text>
+		  <Text>Эпические</Text>
 	</Replace>
 	<Replace Tag="BBS_SRESOURCES_MUCHMORE_DESC" Language="ru_RU">
-		  <Text>ÐÐ° 50% Ð±Ð¾Ð»ÑŒÑˆÐµ Ð¾Ñ‚ ÑÑ‚Ð°Ð½Ð´Ð°Ñ€Ñ‚Ð½Ð¾Ð³Ð¾ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ</Text>
+		  <Text>На 50% больше от стандартного значения</Text>
 	</Replace>
 	<Replace Tag="BBS_SRESOURCES_GARANTEED_NAME" Language="ru_RU">
-		  <Text>Ð“Ð°Ñ€Ð°Ð½Ñ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ñ‹Ðµ</Text>
+		  <Text>Гарантированные</Text>
 	</Replace>
 	<Replace Tag="BBS_SRESOURCES_GARANTEED_DESC" Language="ru_RU">
-		  <Text>Ð”Ð°ÐµÑ‚ 95% ÑˆÐ°Ð½Ñ Ð¿Ð¾Ð»ÑƒÑ‡Ð¸Ñ‚ÑŒ Ð²ÑÐµ Ð²Ð¸Ð´Ñ‹ Ñ€ÐµÑÑƒÑ€ÑÐ¾Ð² Ð² Ð¿Ñ€ÐµÐ´ÐµÐ»Ð°Ñ… 5 ÐºÐ»ÐµÑ‚Ð¾Ðº Ð¾Ñ‚ ÑÑ‚Ð°Ñ€Ñ‚Ð¾Ð²Ð¾Ð¹ Ð¿Ð¾Ð·Ð¸Ñ†Ð¸Ð¸. </Text>
+		  <Text>Дает 95% шанс получить все виды ресурсов в пределах 5 клеток от стартовой позиции. </Text>
 	</Replace>
 	<Replace Tag="BBS_NATURAL_NORMAL_NAME" Language="ru_RU">
-		  <Text>Ð¡Ñ‚Ð°Ð½Ð´Ð°Ñ€Ñ‚Ð½Ñ‹Ðµ</Text>
+		  <Text>Стандартные</Text>
 	</Replace>
 	<Replace Tag="BBS_NATURAL_LESS_NAME" Language="ru_RU">
-		  <Text>Ð¡ÐºÑƒÐ´Ð½Ñ‹Ðµ</Text>
+		  <Text>Скудные</Text>
 	</Replace>
 	<Replace Tag="BBS_NATURAL_MORE_NAME" Language="ru_RU">
-		  <Text>Ð˜Ð·Ð¾Ð±Ð¸Ð»ÑŒÐ½Ñ‹Ðµ</Text>
+		  <Text>Изобильные</Text>
 	</Replace>	
 	<Replace Tag="BBS_NATURAL_NORMAL_DESC" Language="ru_RU">
-		  <Text>Ð”ÑƒÑÐ»ÑŒÐ½Ð°Ñ: 2[NEWLINE]ÐšÑ€Ð¾ÑˆÐµÑ‡Ð½Ð°Ñ: 3[NEWLINE]ÐœÐ°Ð»ÐµÐ½ÑŒÐºÐ°Ñ: 4[NEWLINE]Ð¡Ñ‚Ð°Ð½Ð´Ð°Ñ€Ñ‚Ð½Ð°Ñ: 5[NEWLINE]Ð‘Ð¾Ð»ÑŒÑˆÐ°Ñ: 6[NEWLINE]ÐžÐ³Ñ€Ð¾Ð¼Ð½Ð°Ñ: 7[NEWLINE]Ð“Ð¸Ð³Ð°Ð½Ñ‚ÑÐºÐ°Ñ: 8</Text>
+		  <Text>Дуэльная: 2[NEWLINE]Крошечная: 3[NEWLINE]Маленькая: 4[NEWLINE]Стандартная: 5[NEWLINE]Большая: 6[NEWLINE]Огромная: 7[NEWLINE]Гигантская: 8</Text>
 	</Replace>
 	<Replace Tag="BBS_NATURAL_LESS_DESC" Language="ru_RU">
-		  <Text>Ð”ÑƒÑÐ»ÑŒÐ½Ð°Ñ: 1[NEWLINE]ÐšÑ€Ð¾ÑˆÐµÑ‡Ð½Ð°Ñ: 1[NEWLINE]ÐœÐ°Ð»ÐµÐ½ÑŒÐºÐ°Ñ: 3[NEWLINE]Ð¡Ñ‚Ð°Ð½Ð´Ð°Ñ€Ñ‚Ð½Ð°Ñ: 3[NEWLINE]Ð‘Ð¾Ð»ÑŒÑˆÐ°Ñ: 4[NEWLINE]ÐžÐ³Ñ€Ð¾Ð¼Ð½Ð°Ñ: 4[NEWLINE]Ð“Ð¸Ð³Ð°Ð½Ñ‚ÑÐºÐ°Ñ: 5</Text>
+		  <Text>Дуэльная: 1[NEWLINE]Крошечная: 1[NEWLINE]Маленькая: 3[NEWLINE]Стандартная: 3[NEWLINE]Большая: 4[NEWLINE]Огромная: 4[NEWLINE]Гигантская: 5</Text>
 	</Replace>
 	<Replace Tag="BBS_NATURAL_MORE_DESC" Language="ru_RU">
-		  <Text>Ð”ÑƒÑÐ»ÑŒÐ½Ð°Ñ: 3[NEWLINE]ÐšÑ€Ð¾ÑˆÐµÑ‡Ð½Ð°Ñ: 4[NEWLINE]ÐœÐ°Ð»ÐµÐ½ÑŒÐºÐ°Ñ: 6[NEWLINE]Ð¡Ñ‚Ð°Ð½Ð´Ð°Ñ€Ñ‚Ð½Ð°Ñ: 8[NEWLINE]Ð‘Ð¾Ð»ÑŒÑˆÐ°Ñ: 10[NEWLINE]ÐžÐ³Ñ€Ð¾Ð¼Ð½Ð°Ñ: 12[NEWLINE]Ð“Ð¸Ð³Ð°Ð½Ñ‚ÑÐºÐ°Ñ: 14</Text>
+		  <Text>Дуэльная: 3[NEWLINE]Крошечная: 4[NEWLINE]Маленькая: 6[NEWLINE]Стандартная: 8[NEWLINE]Большая: 10[NEWLINE]Огромная: 12[NEWLINE]Гигантская: 14</Text>
 	</Replace>	
 	<Replace Tag="LOC_GAME_BBS_NATURAL_NAME" Language="ru_RU">
-		  <Text>ÐÐ°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ° Ñ‡ÑƒÐ´ÐµÑ Ð¿Ñ€Ð¸Ñ€Ð¾Ð´Ñ‹</Text>
+		  <Text>Настройка чудес природы</Text>
 	</Replace>
 	<Replace Tag="LOC_GAME_BBS_NATURAL_DESC" Language="ru_RU">
-		  <Text>Ð ÐµÐ³ÑƒÐ»Ð¸Ñ€ÑƒÐµÑ‚ Ð¼Ð°ÐºÑÐ¸Ð¼Ð°Ð»ÑŒÐ½Ð¾Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ñ‡ÑƒÐ´ÐµÑ Ð¿Ñ€Ð¸Ñ€Ð¾Ð´Ñ‹ Ð½Ð° ÐºÐ°Ñ€Ñ‚Ðµ.</Text>
+		  <Text>Регулирует максимальное количество чудес природы на карте.</Text>
 	</Replace>		
 	
 	
 	<Replace Tag="LOC_BBM_Team_Spawn_NAME" language="ru_RU">
-		<Text>ÐšÐ¾Ð¼Ð°Ð½Ð´Ð½Ñ‹Ð¹ ÑÑ‚Ð°Ñ€Ñ‚</Text>
+		<Text>Командный старт</Text>
 	</Replace>
 	<Replace Tag="LOC_BBM_Team_Spawn_DESC" language="ru_RU">
-		<Text>ÐšÐ¾Ð½Ñ‚Ñ€Ð¾Ð»Ð¸Ñ€ÑƒÐµÑ‚ Ñ€Ð°ÑÐ¿Ð¾Ð»Ð¾Ð¶ÐµÐ½Ð¸Ðµ Ñ†Ð¸Ð²Ð¸Ð»Ð¸Ð·Ð°Ñ†Ð¸Ð¹ Ð² ÐºÐ¾Ð¼Ð°Ð½Ð´Ð½Ñ‹Ñ… Ð¸Ð³Ñ€Ð°Ñ…. </Text>
+		<Text>Контролирует расположение цивилизаций в командных играх. </Text>
 	</Replace>
 	<Replace Tag="BBM_Team_Spawn_NORMAL_NAME" language="ru_RU">
-		<Text>Ð¡Ñ‚Ð°Ð½Ð´Ð°Ñ€Ñ‚Ð½Ñ‹Ð¹</Text>
+		<Text>Стандартный</Text>
 	</Replace>
 	<Replace Tag="BBM_Team_Spawn_NORMAL_DESC" language="ru_RU">
-		<Text>ÐžÑ€Ð¸Ð³Ð¸Ð½Ð°Ð»ÑŒÐ½Ð°Ñ Ð½Ð°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ° Firaxis: ÑÐ»ÑƒÑ‡Ð°Ð¹Ð½Ð¾Ðµ Ñ€Ð°ÑÐ¿Ð¾Ð»Ð¾Ð¶ÐµÐ½Ð¸Ðµ.</Text>
+		<Text>Оригинальная настройка Firaxis: случайное расположение.</Text>
 	</Replace>
 	<Replace Tag="BBM_Team_Spawn_EW_NAME" language="ru_RU">
-		<Text>Ð—Ð°Ð¿Ð°Ð´-Ð’Ð¾ÑÑ‚Ð¾Ðº</Text>
+		<Text>Запад-Восток</Text>
 	</Replace>
 	<Replace Tag="BBM_Team_Spawn_EW_DESC" language="ru_RU">
-		<Text>Ð¸Ð³Ñ€Ð¾ÐºÐ¸ Ð¾Ð´Ð½Ð¾Ð¹ ÐºÐ¾Ð¼Ð°Ð½Ð´Ñ‹ Ð±ÑƒÐ´ÑƒÑ‚ Ñ Ð±Ð¾Ð»ÑŒÑˆÐµÐ¹ Ð²ÐµÑ€Ð¾ÑÑ‚Ð½Ð¾ÑÑ‚ÑŒÑŽ Ñ€Ð°ÑÐ¿Ð¾Ð»Ð¾Ð¶ÐµÐ½Ñ‹ Ð½Ð° Ð—Ð°Ð¿Ð°Ð´Ðµ Ð¸Ð»Ð¸ Ð’Ð¾ÑÑ‚Ð¾ÐºÐµ.</Text>
+		<Text>игроки одной команды будут с большей вероятностью расположены на Западе или Востоке.</Text>
 	</Replace>
 	<Replace Tag="BBM_Team_Spawn_NS_NAME" language="ru_RU">
-		<Text>Ð¡ÐµÐ²ÐµÑ€-Ð®Ð³</Text>
+		<Text>Север-Юг</Text>
 	</Replace>
 	<Replace Tag="BBM_Team_Spawn_NS_DESC" language="ru_RU">
-		<Text>Ð¸Ð³Ñ€Ð¾ÐºÐ¸ Ð¾Ð´Ð½Ð¾Ð¹ ÐºÐ¾Ð¼Ð°Ð½Ð´Ñ‹ Ð±ÑƒÐ´ÑƒÑ‚ Ñ Ð±Ð¾Ð»ÑŒÑˆÐµÐ¹ Ð²ÐµÑ€Ð¾ÑÑ‚Ð½Ð¾ÑÑ‚ÑŒÑŽ Ñ€Ð°ÑÐ¿Ð¾Ð»Ð¾Ð¶ÐµÐ½Ñ‹ Ð½Ð° Ð¡ÐµÐ²ÐµÑ€Ðµ Ð¸Ð»Ð¸ Ð®Ð³Ðµ.</Text>
+		<Text>игроки одной команды будут с большей вероятностью расположены на Севере или Юге.</Text>
 	</Replace>
 	
 	<!-- == Min distance == -->
 	<Replace Tag="LOC_GAME_BBM_MIN_DISTANCE_NAME" Language="ru_RU">
-			<Text>ÐœÐ¸Ð½Ð¸Ð¼Ð°Ð»ÑŒÐ½Ð¾Ðµ Ñ€Ð°ÑÑÑ‚Ð¾ÑÐ½Ð¸Ðµ Ð¼ÐµÐ¶Ð´Ñƒ Ð¸Ð³Ñ€Ð¾ÐºÐ°Ð¼Ð¸</Text>
+			<Text>Минимальное расстояние между игроками</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_DISTANCE_AUTO_NAME" Language="ru_RU">
-			<Text>Ð¡Ñ‚Ð°Ð½Ð´Ð°Ñ€Ñ‚Ð½Ð¾Ðµ</Text>
+			<Text>Стандартное</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_DISTANCE_AUTO_DESC" Language="ru_RU">
-			<Text>Ð¡Ñ‚Ð°Ð½Ð´Ð°Ñ€Ñ‚Ð½Ð¾Ðµ Ñ€Ð°ÑÑÑ‚Ð¾ÑÐ½Ð¸Ðµ, Ð·Ð°Ð²Ð¸ÑÐ¸Ñ‚ Ð¾Ñ‚ ÐºÐ°Ñ€Ñ‚Ñ‹</Text>
+			<Text>Стандартное расстояние, зависит от карты</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_DISTANCE_SIX_NAME" Language="ru_RU">
 			<Text>6</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_DISTANCE_SIX_DESC" Language="ru_RU">
-			<Text>6 ÐºÐ»ÐµÑ‚Ð¾Ðº</Text>
+			<Text>6 клеток</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_DISTANCE_SEVEN_NAME" Language="ru_RU">
 			<Text>7</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_DISTANCE_SEVEN_DESC" Language="ru_RU">
-			<Text>7 ÐºÐ»ÐµÑ‚Ð¾Ðº</Text>
+			<Text>7 клеток</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_DISTANCE_EIGHT_NAME" Language="ru_RU">
 			<Text>8</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_DISTANCE_EIGHT_DESC" Language="ru_RU">
-			<Text>8 ÐºÐ»ÐµÑ‚Ð¾Ðº</Text>
+			<Text>8 клеток</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_DISTANCE_NINE_NAME" Language="ru_RU">
 			<Text>9</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_DISTANCE_NINE_DESC" Language="ru_RU">
-			<Text>9 ÐºÐ»ÐµÑ‚Ð¾Ðº</Text>
+			<Text>9 клеток</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_DISTANCE_TEN_NAME" Language="ru_RU">
 			<Text>10</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_DISTANCE_TEN_DESC" Language="ru_RU">
-			<Text>10 ÐºÐ»ÐµÑ‚Ð¾Ðº</Text>
+			<Text>10 клеток</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_DISTANCE_ELEVEN_NAME" Language="ru_RU">
 			<Text>11</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_DISTANCE_ELEVEN_DESC" Language="ru_RU">
-			<Text>11 ÐºÐ»ÐµÑ‚Ð¾Ðº</Text>
+			<Text>11 клеток</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_DISTANCE_TWELVE_NAME" Language="ru_RU">
 			<Text>12</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_DISTANCE_TWELVE_DESC" Language="ru_RU">
-			<Text>12 ÐºÐ»ÐµÑ‚Ð¾Ðº</Text>
+			<Text>12 клеток</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_DISTANCE_THIRTEEN_NAME" Language="ru_RU">
 			<Text>13</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_DISTANCE_THIRTEEN_DESC" Language="ru_RU">
-			<Text>13 ÐºÐ»ÐµÑ‚Ð¾Ðº</Text>
+			<Text>13 клеток</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_DISTANCE_FOURTEEN_NAME" Language="ru_RU">
 			<Text>14</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_DISTANCE_FOURTEEN_DESC" Language="ru_RU">
-			<Text>14 ÐºÐ»ÐµÑ‚Ð¾Ðº</Text>
+			<Text>14 клеток</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_DISTANCE_FIFTEEN_NAME" Language="ru_RU">
 			<Text>15</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_DISTANCE_FIFTEEN_DESC" Language="ru_RU">
-			<Text>15 ÐºÐ»ÐµÑ‚Ð¾Ðº</Text>
+			<Text>15 клеток</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_DISTANCE_SIXTEEN_NAME" Language="ru_RU">
 			<Text>16</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_DISTANCE_SIXTEEN_DESC" Language="ru_RU">
-			<Text>16 ÐºÐ»ÐµÑ‚Ð¾Ðº</Text>
+			<Text>16 клеток</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_DISTANCE_SEVENTEEN_NAME" Language="ru_RU">
 			<Text>17</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_DISTANCE_SEVENTEEN_DESC" Language="ru_RU">
-			<Text>17 ÐºÐ»ÐµÑ‚Ð¾Ðº</Text>
+			<Text>17 клеток</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_DISTANCE_EIGHTEEN_NAME" Language="ru_RU">
 			<Text>18</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_DISTANCE_EIGHTEEN_DESC" Language="ru_RU">
-			<Text>18 ÐºÐ»ÐµÑ‚Ð¾Ðº</Text>
+			<Text>18 клеток</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_DISTANCE_NINETEEN_NAME" Language="ru_RU">
 			<Text>19</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_DISTANCE_NINETEEN_DESC" Language="ru_RU">
-			<Text>19 ÐºÐ»ÐµÑ‚Ð¾Ðº</Text>
+			<Text>19 клеток</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_DISTANCE_TWENTY_NAME" Language="ru_RU">
 			<Text>20</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_DISTANCE_TWENTY_DESC" Language="ru_RU">
-			<Text>20 ÐºÐ»ÐµÑ‚Ð¾Ðº</Text>
+			<Text>20 клеток</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_DISTANCE_TWENTYONE_NAME" Language="ru_RU">
 			<Text>21</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_DISTANCE_TWENTYONE_DESC" Language="ru_RU">
-			<Text>21 ÐºÐ»ÐµÑ‚ÐºÐ°</Text>
+			<Text>21 клетка</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_DISTANCE_TWENTYTWO_NAME" Language="ru_RU">
 			<Text>22</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_DISTANCE_TWENTYTWO_DESC" Language="ru_RU">
-			<Text>22 ÐºÐ»ÐµÑ‚ÐºÐ¸</Text>
+			<Text>22 клетки</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_DISTANCE_TWENTYTHREE_NAME" Language="ru_RU">
 			<Text>23</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_DISTANCE_TWENTYTHREE_DESC" Language="ru_RU">
-			<Text>23 ÐºÐ»ÐµÑ‚ÐºÐ¸</Text>
+			<Text>23 клетки</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_DISTANCE_TWENTYFOUR_NAME" Language="ru_RU">
 			<Text>24</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_DISTANCE_TWENTYFOUR_DESC" Language="ru_RU">
-			<Text>24 ÐºÐ»ÐµÑ‚ÐºÐ¸</Text>
+			<Text>24 клетки</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_DISTANCE_TWENTYFIVE_NAME" Language="ru_RU">
 			<Text>25</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_DISTANCE_TWENTYFIVE_DESC" Language="ru_RU">
-			<Text>25 ÐºÐ»ÐµÑ‚Ð¾Ðº</Text>
+			<Text>25 клеток</Text>
 		</Replace>
 	
 	<!-- == Players options == -->
 	<!-- = Attempts = -->
 	<Replace Tag="LOC_GAME_BBM_MIN_ATTEMPTS_NAME" Language="ru_RU">
-			<Text>ÐœÐ¸Ð½Ð¸Ð¼ÑƒÐ¼ Ð¿Ð¾Ð¿Ñ‹Ñ‚Ð¾Ðº BBM</Text>
+			<Text>Минимум попыток BBM</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_ATTEMPTS_ONE_NAME" Language="ru_RU">
 			<Text>1</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_ATTEMPTS_ONE_DESC" Language="ru_RU">
-			<Text>1 Ð¿Ð¾Ð¿Ñ‹Ñ‚ÐºÐ°</Text>
+			<Text>1 попытка</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_ATTEMPTS_TWO_NAME" Language="ru_RU">
 			<Text>2</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_ATTEMPTS_TWO_DESC" Language="ru_RU">
-			<Text>2 Ð¿Ð¾Ð¿Ñ‹Ñ‚ÐºÐ¸</Text>
+			<Text>2 попытки</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_ATTEMPTS_THREE_NAME" Language="ru_RU">
 			<Text>3</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_ATTEMPTS_THREE_DESC" Language="ru_RU">
-			<Text>3 Ð¿Ð¾Ð¿Ñ‹Ñ‚ÐºÐ¸</Text>
+			<Text>3 попытки</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_ATTEMPTS_FOUR_NAME" Language="ru_RU">
 			<Text>4</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_ATTEMPTS_FOUR_DESC" Language="ru_RU">
-			<Text>4 Ð¿Ð¾Ð¿Ñ‹Ñ‚ÐºÐ¸</Text>
+			<Text>4 попытки</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_ATTEMPTS_FIVE_NAME" Language="ru_RU">
 			<Text>5</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_ATTEMPTS_FIVE_DESC" Language="ru_RU">
-			<Text>5 Ð¿Ð¾Ð¿Ñ‹Ñ‚Ð¾Ðº</Text>
+			<Text>5 попыток</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_ATTEMPTS_SIX_NAME" Language="ru_RU">
 			<Text>6</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_ATTEMPTS_SIX_DESC" Language="ru_RU">
-			<Text>6 Ð¿Ð¾Ð¿Ñ‹Ñ‚Ð¾Ðº</Text>
+			<Text>6 попыток</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_ATTEMPTS_SEVEN_NAME" Language="ru_RU">
 			<Text>7</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_ATTEMPTS_SEVEN_DESC" Language="ru_RU">
-			<Text>7 Ð¿Ð¾Ð¿Ñ‹Ñ‚Ð¾Ðº</Text>
+			<Text>7 попыток</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_ATTEMPTS_EIGHT_NAME" Language="ru_RU">
 			<Text>8</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_ATTEMPTS_EIGHT_DESC" Language="ru_RU">
-			<Text>8 Ð¿Ð¾Ð¿Ñ‹Ñ‚Ð¾Ðº</Text>
+			<Text>8 попыток</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_ATTEMPTS_NINE_NAME" Language="ru_RU">
 			<Text>9</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_ATTEMPTS_NINE_DESC" Language="ru_RU">
-			<Text>9 Ð¿Ð¾Ð¿Ñ‹Ñ‚Ð¾Ðº</Text>
+			<Text>9 попыток</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_ATTEMPTS_TEN_NAME" Language="ru_RU">
 			<Text>10</Text>
 		</Replace>
 		<Replace Tag="BBM_MIN_ATTEMPTS_TEN_DESC" Language="ru_RU">
-			<Text>10 Ð¿Ð¾Ð¿Ñ‹Ñ‚Ð¾Ðº</Text>
+			<Text>10 попыток</Text>
 		</Replace>	
 		<!-- Floodplains size -->
 		<Replace Tag="LOC_BBM_MAXFLOODPLAINS_SIZE" Language="ru_RU">
-			<Text>ÐœÐ°ÐºÑÐ¸Ð¼Ð°Ð»ÑŒÐ½Ñ‹Ð¹ Ñ€Ð°Ð·Ð¼ÐµÑ€ Ñ€ÐµÑ‡Ð½Ð¾Ð¹ Ð¿Ð¾Ð¹Ð¼Ñ‹.</Text>
+			<Text>Максимальный размер речной поймы.</Text>
 		</Replace>
 		<Replace Tag="LOC_BBM_MAXFLOODPLAINS_SIZE_4_DESCRIPTION" Language="ru_RU">
-			<Text>4 ÐºÐ»ÐµÑ‚ÐºÐ¸ Ð¿Ð¾Ð¹Ð¼Ñ‹ Ð½Ð° Ñ€ÐµÐºÐµ. Ð£Ñ‡Ð¸Ñ‚Ñ‹Ð²Ð°Ð¹Ñ‚Ðµ, Ñ‡Ñ‚Ð¾ Ñ‡Ð¸ÑÐ»Ð¾ Ð¼Ð¾Ð¶ÐµÑ‚ ÑƒÐ²ÐµÐ»Ð¸Ñ‡Ð¸Ð²Ð°Ñ‚ÑŒÑÑ Ð½Ð° ÑÐ»Ð¸ÑÐ½Ð¸ÑÑ… Ñ€ÐµÐº.</Text>
+			<Text>4 клетки поймы на реке. Учитывайте, что число может увеличиваться на слияниях рек.</Text>
 		</Replace>
 		<Replace Tag="LOC_BBM_MAXFLOODPLAINS_SIZE_5_DESCRIPTION" Language="ru_RU">
-			<Text>5 ÐºÐ»ÐµÑ‚Ð¾Ðº Ð¿Ð¾Ð¹Ð¼Ñ‹ Ð½Ð° Ñ€ÐµÐºÐµ. Ð£Ñ‡Ð¸Ñ‚Ñ‹Ð²Ð°Ð¹Ñ‚Ðµ, Ñ‡Ñ‚Ð¾ Ñ‡Ð¸ÑÐ»Ð¾ Ð¼Ð¾Ð¶ÐµÑ‚ ÑƒÐ²ÐµÐ»Ð¸Ñ‡Ð¸Ð²Ð°Ñ‚ÑŒÑÑ Ð½Ð° ÑÐ»Ð¸ÑÐ½Ð¸ÑÑ… Ñ€ÐµÐº.</Text>
+			<Text>5 клеток поймы на реке. Учитывайте, что число может увеличиваться на слияниях рек.</Text>
 		</Replace>
 		<Replace Tag="LOC_BBM_MAXFLOODPLAINS_SIZE_6_DESCRIPTION" Language="ru_RU">
-			<Text>6 ÐºÐ»ÐµÑ‚Ð¾Ðº Ð¿Ð¾Ð¹Ð¼Ñ‹ Ð½Ð° Ñ€ÐµÐºÐµ. Ð£Ñ‡Ð¸Ñ‚Ñ‹Ð²Ð°Ð¹Ñ‚Ðµ, Ñ‡Ñ‚Ð¾ Ñ‡Ð¸ÑÐ»Ð¾ Ð¼Ð¾Ð¶ÐµÑ‚ ÑƒÐ²ÐµÐ»Ð¸Ñ‡Ð¸Ð²Ð°Ñ‚ÑŒÑÑ Ð½Ð° ÑÐ»Ð¸ÑÐ½Ð¸ÑÑ… Ñ€ÐµÐº.</Text>
+			<Text>6 клеток поймы на реке. Учитывайте, что число может увеличиваться на слияниях рек.</Text>
 		</Replace>
 		<Replace Tag="LOC_BBM_MAXFLOODPLAINS_SIZE_7_DESCRIPTION" Language="ru_RU">
-			<Text>7 ÐºÐ»ÐµÑ‚Ð¾Ðº Ð¿Ð¾Ð¹Ð¼Ñ‹ Ð½Ð° Ñ€ÐµÐºÐµ. Ð£Ñ‡Ð¸Ñ‚Ñ‹Ð²Ð°Ð¹Ñ‚Ðµ, Ñ‡Ñ‚Ð¾ Ñ‡Ð¸ÑÐ»Ð¾ Ð¼Ð¾Ð¶ÐµÑ‚ ÑƒÐ²ÐµÐ»Ð¸Ñ‡Ð¸Ð²Ð°Ñ‚ÑŒÑÑ Ð½Ð° ÑÐ»Ð¸ÑÐ½Ð¸ÑÑ… Ñ€ÐµÐº.</Text>
+			<Text>7 клеток поймы на реке. Учитывайте, что число может увеличиваться на слияниях рек.</Text>
 		</Replace>
 		<Replace Tag="LOC_BBM_MAXFLOODPLAINS_SIZE_8_DESCRIPTION" Language="ru_RU">
-			<Text>8 ÐºÐ»ÐµÑ‚Ð¾Ðº Ð¿Ð¾Ð¹Ð¼Ñ‹ Ð½Ð° Ñ€ÐµÐºÐµ. Ð£Ñ‡Ð¸Ñ‚Ñ‹Ð²Ð°Ð¹Ñ‚Ðµ, Ñ‡Ñ‚Ð¾ Ñ‡Ð¸ÑÐ»Ð¾ Ð¼Ð¾Ð¶ÐµÑ‚ ÑƒÐ²ÐµÐ»Ð¸Ñ‡Ð¸Ð²Ð°Ñ‚ÑŒÑÑ Ð½Ð° ÑÐ»Ð¸ÑÐ½Ð¸ÑÑ… Ñ€ÐµÐº.</Text>
+			<Text>8 клеток поймы на реке. Учитывайте, что число может увеличиваться на слияниях рек.</Text>
 		</Replace>
 		<Replace Tag="LOC_BBM_MAXFLOODPLAINS_SIZE_9_DESCRIPTION" Language="ru_RU">
-			<Text>9 ÐºÐ»ÐµÑ‚Ð¾Ðº Ð¿Ð¾Ð¹Ð¼Ñ‹ Ð½Ð° Ñ€ÐµÐºÐµ. Ð£Ñ‡Ð¸Ñ‚Ñ‹Ð²Ð°Ð¹Ñ‚Ðµ, Ñ‡Ñ‚Ð¾ Ñ‡Ð¸ÑÐ»Ð¾ Ð¼Ð¾Ð¶ÐµÑ‚ ÑƒÐ²ÐµÐ»Ð¸Ñ‡Ð¸Ð²Ð°Ñ‚ÑŒÑÑ Ð½Ð° ÑÐ»Ð¸ÑÐ½Ð¸ÑÑ… Ñ€ÐµÐº.</Text>
+			<Text>9 клеток поймы на реке. Учитывайте, что число может увеличиваться на слияниях рек.</Text>
 		</Replace>
 		<Replace Tag="LOC_BBM_MAXFLOODPLAINS_SIZE_10_DESCRIPTION" Language="ru_RU">
-			<Text>10 ÐºÐ»ÐµÑ‚Ð¾Ðº Ð¿Ð¾Ð¹Ð¼Ñ‹ Ð½Ð° Ñ€ÐµÐºÐµ. Ð£Ñ‡Ð¸Ñ‚Ñ‹Ð²Ð°Ð¹Ñ‚Ðµ, Ñ‡Ñ‚Ð¾ Ñ‡Ð¸ÑÐ»Ð¾ Ð¼Ð¾Ð¶ÐµÑ‚ ÑƒÐ²ÐµÐ»Ð¸Ñ‡Ð¸Ð²Ð°Ñ‚ÑŒÑÑ Ð½Ð° ÑÐ»Ð¸ÑÐ½Ð¸ÑÑ… Ñ€ÐµÐº.</Text>
+			<Text>10 клеток поймы на реке. Учитывайте, что число может увеличиваться на слияниях рек.</Text>
 		</Replace>
 		<Replace Tag="LOC_BBM_MAXFLOODPLAINS_SIZE_11_DESCRIPTION" Language="ru_RU">
-			<Text>11 ÐºÐ»ÐµÑ‚Ð¾Ðº Ð¿Ð¾Ð¹Ð¼Ñ‹ Ð½Ð° Ñ€ÐµÐºÐµ. Ð£Ñ‡Ð¸Ñ‚Ñ‹Ð²Ð°Ð¹Ñ‚Ðµ, Ñ‡Ñ‚Ð¾ Ñ‡Ð¸ÑÐ»Ð¾ Ð¼Ð¾Ð¶ÐµÑ‚ ÑƒÐ²ÐµÐ»Ð¸Ñ‡Ð¸Ð²Ð°Ñ‚ÑŒÑÑ Ð½Ð° ÑÐ»Ð¸ÑÐ½Ð¸ÑÑ… Ñ€ÐµÐº.</Text>
+			<Text>11 клеток поймы на реке. Учитывайте, что число может увеличиваться на слияниях рек.</Text>
 		</Replace>
 		<Replace Tag="LOC_BBM_MAXFLOODPLAINS_SIZE_12_DESCRIPTION" Language="ru_RU">
-			<Text>12 ÐºÐ»ÐµÑ‚Ð¾Ðº Ð¿Ð¾Ð¹Ð¼Ñ‹ Ð½Ð° Ñ€ÐµÐºÐµ. Ð£Ñ‡Ð¸Ñ‚Ñ‹Ð²Ð°Ð¹Ñ‚Ðµ, Ñ‡Ñ‚Ð¾ Ñ‡Ð¸ÑÐ»Ð¾ Ð¼Ð¾Ð¶ÐµÑ‚ ÑƒÐ²ÐµÐ»Ð¸Ñ‡Ð¸Ð²Ð°Ñ‚ÑŒÑÑ Ð½Ð° ÑÐ»Ð¸ÑÐ½Ð¸ÑÑ… Ñ€ÐµÐº.</Text>
+			<Text>12 клеток поймы на реке. Учитывайте, что число может увеличиваться на слияниях рек.</Text>
 		</Replace>
 	
 	<!-- Wonders -->
 			<!-- = Barringer Crater = -->
 	<Replace Tag="LOC_FEATURE_BARRINGER_CRATER_NAME" Language="ru_RU">
-		  <Text>ÐšÑ€Ð°Ñ‚ÐµÑ€ Ð‘ÑÑ€Ñ€Ð¸Ð½Ð´Ð¶ÐµÑ€Ð°</Text>
+		  <Text>Кратер Бэрринджера</Text>
 	</Replace>
 	<Replace Tag="LOC_FEATURE_BARRINGER_CRATER_DESCRIPTION" Language="ru_RU">
-		  <Text>Ð§ÑƒÐ´Ð¾ Ð¿Ñ€Ð¸Ñ€Ð¾Ð´Ñ‹ Ð½Ð° Ð¾Ð´Ð½Ñƒ ÐºÐ»ÐµÑ‚ÐºÑƒ. +3 [ICON_SCIENCE] Ð½Ð°ÑƒÐºÐ¸, +2 [ICON_FOOD] Ð¿Ð¸Ñ‰Ð¸ Ð¸ +3 [ICON_GOLD] Ð·Ð¾Ð»Ð¾Ñ‚Ð°. +10% [ICON_PRODUCTION] Ð¿Ñ€Ð¾Ð¸Ð·Ð²Ð¾Ð´ÑÑ‚Ð²Ð° Ðº Ð¿Ñ€Ð¾ÐµÐºÑ‚Ð°Ð¼ ÐºÐ¾ÑÐ¼Ð¸Ñ‡ÐµÑÐºÐ¾Ð¹ Ð³Ð¾Ð½ÐºÐ¸, ÐµÑÐ»Ð¸ Ð²Ñ‹ Ð²Ð»Ð°Ð´ÐµÐµÑ‚Ðµ ÑÑ‚Ð¾Ð¹ ÐºÐ»ÐµÑ‚ÐºÐ¾Ð¹.</Text>
+		  <Text>Чудо природы на одну клетку. +3 [ICON_SCIENCE] науки, +2 [ICON_FOOD] пищи и +3 [ICON_GOLD] золота. +10% [ICON_PRODUCTION] производства к проектам космической гонки, если вы владеете этой клеткой.</Text>
 	</Replace>	
 	<Replace Tag="LOC_FEATURE_BARRINGER_CRATER_QUOTE" Language="ru_RU">
-		  <Text>"Ð¤Ð°ÐºÑ‚Ð¸Ñ‡ÐµÑÐºÐ¸, Ñ‚ÐµÐ¿ÐµÑ€ÑŒ Ð¼Ñ‹ Ð¼Ð¾Ð¶ÐµÐ¼ Ð´Ð¾ÐºÐ°Ð·Ð°Ñ‚ÑŒ, Ñ‡Ñ‚Ð¾ ÑÑ‚Ð¾Ñ‚ ÐºÑ€Ð°Ñ‚ÐµÑ€ Ð¾Ð±Ñ€Ð°Ð·Ð¾Ð²Ð°Ð»ÑÑ Ð² Ñ€ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚Ðµ ÑÑ‚Ð¾Ð»ÐºÐ½Ð¾Ð²ÐµÐ½Ð¸Ñ Ñ Ð·ÐµÐ¼Ð»ÐµÐ¹ Ð²Ð½ÐµÐ·ÐµÐ¼Ð½Ð¾Ð³Ð¾ Ñ‚ÐµÐ»Ð°, Ð²Ð¾Ð·Ð¼Ð¾Ð¶Ð½Ð¾, Ð½ÐµÐ±Ð¾Ð»ÑŒÑˆÐ¾Ð³Ð¾ Ð°ÑÑ‚ÐµÑ€Ð¾Ð¸Ð´Ð°, ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ð¹, Ð¿Ñ€ÐµÐ´Ð¿Ð¾Ð»Ð¾Ð¶Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð¾, Ð±Ñ‹Ð» Ð¼ÐµÑ‚Ð°Ð»Ð»Ð¸Ñ‡ÐµÑÐºÐ¸Ð¼ Ð¿Ð¾ Ð¿Ñ€Ð¸Ñ€Ð¾Ð´Ðµ."[NEWLINE]- Ð”Ð°Ð½Ð¸ÑÐ»ÑŒ Ð‘ÑÑ€Ñ€Ð¸Ð½Ð´Ð¶ÐµÑ€</Text>
+		  <Text>"Фактически, теперь мы можем доказать, что этот кратер образовался в результате столкновения с землей внеземного тела, возможно, небольшого астероида, который, предположительно, был металлическим по природе."[NEWLINE]- Даниэль Бэрринджер</Text>
 	</Replace>	
 	<Replace Tag="LOC_PEDIA_FEATURES_PAGE_FEATURE_BARRINGER_CRATER_CHAPTER_HISTORY_PARA_1" Language="ru_RU">
-		  <Text>ÐšÑ€Ð°Ñ‚ÐµÑ€ Ð‘ÑÑ€Ñ€Ð¸Ð½Ð´Ð¶ÐµÑ€Ð° - Ð¾Ð³Ñ€Ð¾Ð¼Ð½Ñ‹Ð¹ Ð¼ÐµÑ‚ÐµÐ¾Ñ€Ð¸Ñ‚Ð½Ñ‹Ð¹ ÐºÑ€Ð°Ñ‚ÐµÑ€, Ñ€Ð°ÑÐ¿Ð¾Ð»Ð¾Ð¶ÐµÐ½Ð½Ñ‹Ð¹ Ð² ÐÑ€Ð¸Ð·Ð¾Ð½Ðµ, Ð² Ð¡Ð¾ÐµÐ´Ð¸Ð½ÐµÐ½Ð½Ñ‹Ñ… Ð¨Ñ‚Ð°Ñ‚Ð°Ñ… ÐÐ¼ÐµÑ€Ð¸ÐºÐ¸. ÐšÑ€Ð°Ñ‚ÐµÑ€ Ð¸Ð¼ÐµÐµÑ‚ Ð´Ð¸Ð°Ð¼ÐµÑ‚Ñ€ 1200 Ð¼ÐµÑ‚Ñ€Ð¾Ð² (4000 Ñ„ÑƒÑ‚Ð¾Ð²). Ð£Ñ‡ÐµÐ½Ñ‹Ðµ Ð¿Ð¾Ð»Ð°Ð³Ð°ÑŽÑ‚, Ñ‡Ñ‚Ð¾ Ð¾Ð½ Ð±Ñ‹Ð» ÑÐ¾Ð·Ð´Ð°Ð½ Ð¾ÐºÐ¾Ð»Ð¾ 50 000 Ð»ÐµÑ‚ Ð½Ð°Ð·Ð°Ð´, ÐºÐ¾Ð³Ð´Ð° Ð½Ð° ÑÑ‚Ð¾ Ð¼ÐµÑÑ‚Ð¾ Ð¾Ð±Ñ€ÑƒÑˆÐ¸Ð»ÑÑ Ð±Ð¾Ð»ÑŒÑˆÐ¾Ð¹ Ð½Ð¸ÐºÐµÐ»ÑŒ-Ð¶ÐµÐ»ÐµÐ·Ð½Ñ‹Ð¹ Ð¼ÐµÑ‚ÐµÐ¾Ñ€Ð¸Ñ‚, Ð²ÐµÑÐ¸Ð²ÑˆÐ¸Ð¹ Ð²Ð¾ Ð²Ñ€ÐµÐ¼Ñ ÑƒÐ´Ð°Ñ€Ð° 160 000 Ñ‚Ð¾Ð½Ð½ Ð¸ Ð´Ð²Ð¸Ð³Ð°ÑŽÑ‰Ð¸Ð¹ÑÑ ÑÐ¾ ÑÐºÐ¾Ñ€Ð¾ÑÑ‚ÑŒÑŽ Ð¿Ñ€Ð¸Ð¼ÐµÑ€Ð½Ð¾ 44 000 ÐºÐ¸Ð»Ð¾Ð¼ÐµÑ‚Ñ€Ð¾Ð² Ð² Ñ‡Ð°Ñ (27 000 Ð¼Ð¸Ð»ÑŒ Ð² Ñ‡Ð°Ñ).</Text>
+		  <Text>Кратер Бэрринджера - огромный метеоритный кратер, расположенный в Аризоне, в Соединенных Штатах Америки. Кратер имеет диаметр 1200 метров (4000 футов). Ученые полагают, что он был создан около 50 000 лет назад, когда на это место обрушился большой никель-железный метеорит, весивший во время удара 160 000 тонн и двигающийся со скоростью примерно 44 000 километров в час (27 000 миль в час).</Text>
 	</Replace>	
 			<!-- = Bioluminescent Bay = -->
 	<Replace Tag="LOC_FEATURE_BIOLUMINESCENT_BAY_NAME" Language="ru_RU">
-		  <Text>Ð‘Ð°Ð¸Ñ Ð‘Ð¸Ð¾Ð»ÑƒÐ¼Ð¸Ð½Ð¸ÑÑÐµÐ½Ñ‚Ðµ</Text>
+		  <Text>Баия Биолуминиссенте</Text>
 	</Replace>
 	<Replace Tag="LOC_FEATURE_BIOLUMINESCENT_BAY_DESCRIPTION" Language="ru_RU">
-		  <Text>Ð§ÑƒÐ´Ð¾ Ð¿Ñ€Ð¸Ñ€Ð¾Ð´Ñ‹ Ð½Ð° Ð¾Ð´Ð½Ñƒ ÐºÐ»ÐµÑ‚ÐºÑƒ. ÐŸÑ€ÐµÐ´ÑÑ‚Ð°Ð²Ð»ÑÐµÑ‚ Ð¸Ð· ÑÐµÐ±Ñ Ñ€Ð¸Ñ„ Ð¸ Ð´Ð°Ñ‘Ñ‚ +3 [ICON_SCIENCE] Ð½Ð°ÑƒÐºÐ¸, +1 [ICON_FOOD] Ð¿Ð¸Ñ‰Ð¸ Ð¸ +1 [ICON_GOLD] Ð·Ð¾Ð»Ð¾Ñ‚Ð°. +1 [ICON_GOLD] Ð·Ð¾Ð»Ð¾Ñ‚Ð¾ Ð¾Ñ‚ Ñ€Ñ‹Ð±Ð°Ñ†ÐºÐ¸Ñ… Ð»Ð¾Ð´Ð¾Ðº Ð²Ð¾ Ð²ÑÐµÑ… Ð³Ð¾Ñ€Ð¾Ð´Ð°Ñ…, ÐµÑÐ»Ð¸ Ð²Ñ‹ Ð²Ð»Ð°Ð´ÐµÐµÑ‚Ðµ ÑÑ‚Ð¾Ð¹ ÐºÐ»ÐµÑ‚ÐºÐ¾Ð¹.</Text>
+		  <Text>Чудо природы на одну клетку. Представляет из себя риф и даёт +3 [ICON_SCIENCE] науки, +1 [ICON_FOOD] пищи и +1 [ICON_GOLD] золота. +1 [ICON_GOLD] золото от рыбацких лодок во всех городах, если вы владеете этой клеткой.</Text>
 	</Replace>	
 	<Replace Tag="LOC_FEATURE_BIOLUMINESCENT_BAY_QUOTE" Language="ru_RU">
-		  <Text>"Ð˜Ð·Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ ÑÐ²ÐµÑ‚Ð° Ð¾Ñ‚ Ð¾Ð³Ð½Ñ, Ð¼Ð¾Ð»Ð½Ð¸Ð¹, Ð·Ð²ÐµÐ·Ð´ Ð¸Ð»Ð¸ Ð¶Ð¸Ð²Ñ‹Ñ… ÑÑƒÑ‰ÐµÑÑ‚Ð² Ð¿Ñ€Ð¸Ð²Ð»ÐµÐºÐ°ÐµÑ‚ Ð²Ð½Ð¸Ð¼Ð°Ð½Ð¸Ðµ Ð»ÑŽÐ±Ð¾Ð³Ð¾ Ñ‡ÐµÐ»Ð¾Ð²ÐµÐºÐ°. Ð’ ÑÐ»ÑƒÑ‡Ð°Ðµ Ð±Ð¸Ð¾Ð»ÑŽÐ¼Ð¸Ð½ÐµÑÑ†ÐµÐ½Ñ†Ð¸Ð¸ ÑÐ²ÐµÑ‚ Ð¸Ð¼ÐµÐµÑ‚ ÑÑ‚Ñ€Ð°Ð½Ð½Ð¾Ðµ ÑÐ²ÐµÑ‡ÐµÐ½Ð¸Ðµ, Ñ‡Ñ‚Ð¾-Ñ‚Ð¾ Ð²Ð¾Ð»ÑˆÐµÐ±Ð½Ð¾Ðµ Ð¸ Ð·Ð°Ð³Ð°Ð´Ð¾Ñ‡Ð½Ð¾Ðµ." [NEWLINE] - ÐšÐ°ÑÑÐ¸ÑƒÑ Ð¡Ñ‚ÐµÐ²Ð°Ð½Ð¸</Text>
+		  <Text>"Излучение света от огня, молний, звезд или живых существ привлекает внимание любого человека. В случае биолюминесценции свет имеет странное свечение, что-то волшебное и загадочное." [NEWLINE] - Кассиус Стевани</Text>
 	</Replace>	
 	<Replace Tag="LOC_PEDIA_FEATURES_PAGE_FEATURE_BIOLUMINESCENT_BAY_CHAPTER_HISTORY_PARA_1" Language="ru_RU">
 		  <Text>The Bioluminescent Bay (also known as Puerto Mosquito, or Mosquito Bay), is considered the best example of a bioluminescent bay in the United States and is listed as a national natural landmark, one of five in Puerto Rico. The luminescence in the bay is caused by a micro-organism, the dinoflagellate Pyrodinium bahamense, which glows whenever the water is disturbed, leaving a trail of neon blue..</Text>
@@ -414,26 +414,26 @@
 	</Replace>	
 			<!-- = Cerro de Potosi = -->
 	<Replace Tag="LOC_FEATURE_CERRO_DE_POTOSI_NAME" Language="ru_RU">
-		  <Text>Ð¡ÑŒÐµÑ€Ñ€Ð¾ Ð Ð¸ÐºÐ¾</Text>
+		  <Text>Сьерро Рико</Text>
 	</Replace>
 	<Replace Tag="LOC_FEATURE_CERRO_DE_POTOSI_DESCRIPTION" Language="ru_RU">
-		  <Text>ÐÐµÐ¿Ñ€Ð¾Ñ…Ð¾Ð´Ð¸Ð¼Ð¾Ðµ Ñ‡ÑƒÐ´Ð¾ Ð¿Ñ€Ð¸Ñ€Ð¾Ð´Ñ‹ Ð½Ð° Ð¾Ð´Ð½Ñƒ ÐºÐ»ÐµÑ‚ÐºÑƒ. Ð¯Ð²Ð»ÑÐµÑ‚ÑÑ Ð³Ð¾Ñ€Ð¾Ð¹. Ð¡Ð¾ÑÐµÐ´Ð½Ð¸Ðµ ÐºÐ»ÐµÑ‚ÐºÐ¸ Ð¿Ð¾Ð»ÑƒÑ‡Ð°ÑŽÑ‚ +1 [ICON_PRODUCTION] Ð¿Ñ€Ð¾Ð¸Ð·Ð²Ð¾Ð´ÑÑ‚Ð²Ð¾ Ð¸ +3 [ICON_GOLD] Ð·Ð¾Ð»Ð¾Ñ‚Ð°.</Text>
+		  <Text>Непроходимое чудо природы на одну клетку. Является горой. Соседние клетки получают +1 [ICON_PRODUCTION] производство и +3 [ICON_GOLD] золота.</Text>
 	</Replace>	
 	<Replace Tag="LOC_FEATURE_CERRO_DE_POTOSI_QUOTE" Language="ru_RU">
-		  <Text>"Ð¯, Ð±Ð¾Ð³Ð°Ñ‚Ñ‹Ð¹ ÐŸÐ¾Ñ‚Ð¾ÑÐ¸, ÑÐ¾ÐºÑ€Ð¾Ð²Ð¸Ñ‰Ðµ Ð¼Ð¸Ñ€Ð°, Ñ†Ð°Ñ€ÑŒ Ð²ÑÐµÑ… Ð³Ð¾Ñ€ Ð¸ Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚ Ð·Ð°Ð²Ð¸ÑÑ‚Ð¸ ÐºÐ¾Ñ€Ð¾Ð»ÐµÐ¹" [NEWLINE] - ÐŸÐµÑ€Ð²Ñ‹Ð¹ Ð³ÐµÑ€Ð± ÐŸÐ¾Ñ‚Ð¾ÑÐ¸</Text>
+		  <Text>"Я, богатый Потоси, сокровище мира, царь всех гор и предмет зависти королей" [NEWLINE] - Первый герб Потоси</Text>
 	</Replace>	
 	<Replace Tag="LOC_PEDIA_FEATURES_PAGE_FEATURE_CERRO_DE_POTOSI_CHAPTER_HISTORY_PARA_1" Language="ru_RU">
 		  <Text>Located in southern Bolivia, the mountain of Potosi produced nearly all of the silver mined by the Spanish during their imperial days. Once removed from the mountain, it was taken by llama and mule to the coast where it was then loaded onto treasure ships sailing back to Europe. Nearly 41,000 tons of pure silver were mined over the course of 200 years, 8,200 of which went directly to the Spanish crown. After 1800, the main silver mines were depleted, but the mining of Potosi still continues today - some for silver but now mostly for tin.</Text>
 	</Replace>	
 			<!-- = Dallol = -->
 		<Replace Tag="LOC_FEATURE_DALLOL_NAME" Language="ru_RU">
-		  <Text>Ð”Ð°Ð»Ð»Ð¾Ð»</Text>
+		  <Text>Даллол</Text>
 	</Replace>
 	<Replace Tag="LOC_FEATURE_DALLOL_DESCRIPTION" Language="ru_RU">
-		  <Text>Ð§ÑƒÐ´Ð¾ Ð¿Ñ€Ð¸Ñ€Ð¾Ð´Ñ‹ Ð½Ð° Ð¾Ð´Ð½Ñƒ ÐºÐ»ÐµÑ‚ÐºÑƒ. +2 [ICON_SCIENCE] Ð½Ð°ÑƒÐºÐ¸, +2 [ICON_PRODUCTION] Ð¿Ñ€Ð¾Ð¸Ð·Ð²Ð¾Ð´ÑÑ‚Ð²Ð°, +2 [ICON_FOOD] Ð¿Ð¸Ñ‰Ð¸ Ð¸ +1 [ICON_GOLD] Ð·Ð¾Ð»Ð¾Ñ‚Ð¾.</Text>
+		  <Text>Чудо природы на одну клетку. +2 [ICON_SCIENCE] науки, +2 [ICON_PRODUCTION] производства, +2 [ICON_FOOD] пищи и +1 [ICON_GOLD] золото.</Text>
 	</Replace>	
 	<Replace Tag="LOC_FEATURE_DALLOL_QUOTE" Language="ru_RU">
-		  <Text>"Ð¢Ð°Ð¼ Ð°Ð´, Ñ‚Ð°Ð¼ Ñ‚ÑŒÐ¼Ð°, Ñ‚Ð°Ð¼ ÑÐµÑ€Ð½Ð°Ñ ÑÐ¼Ð° - Ð³Ð¾Ñ€ÐµÐ½Ð¸Ðµ, Ð¾Ð±Ð¶Ð¸Ð³, Ð·Ð»Ð¾Ð²Ð¾Ð½Ð¸Ðµ, Ñ‡Ð°Ñ…Ð¾Ñ‚ÐºÐ°!" [NEWLINE] - Ð£Ð¸Ð»ÑŒÑÐ¼ Ð¨ÐµÐºÑÐ¿Ð¸Ñ€, ÐšÐ¾Ñ€Ð¾Ð»ÑŒ Ð›Ð¸Ñ€</Text>
+		  <Text>"Там ад, там тьма, там серная яма - горение, обжиг, зловоние, чахотка!" [NEWLINE] - Уильям Шекспир, Король Лир</Text>
 	</Replace>	
 	<Replace Tag="LOC_PEDIA_FEATURES_PAGE_FEATURE_DALLOL_CHAPTER_HISTORY_PARA_1" Language="ru_RU">
 		  <Text>Dallol is a cinder cone volcano in the Danakil Depression, northeast of the Erta Ale Range in Ethiopia. It has been formed by the intrusion of basaltic magma into Miocene salt deposits and subsequent hydrothermal activity. Phreatic eruptions took place in 1926, forming Dallol Volcano while numerous other eruption craters dot the salt flats nearby. These craters are the lowest known subaerial volcanic vents in the world, at 45 m (150 ft) or more below sea level.</Text>
@@ -443,23 +443,23 @@
 	</Replace>	
 	<!-- = Grand Mesa = -->
 	<Replace Tag="LOC_FEATURE_GRAND_MESA_NAME" Language="ru_RU">
-		  <Text>Ð“Ñ€Ð°Ð½Ð´-ÐœÐµÑÐ°</Text>
+		  <Text>Гранд-Меса</Text>
 	</Replace>
 	<Replace Tag="LOC_FEATURE_GRAND_MESA_DESCRIPTION" Language="ru_RU">
-		  <Text>ÐÐµÐ¿Ñ€Ð¾Ñ…Ð¾Ð´Ð¸Ð¼Ð¾Ðµ Ñ‡ÑƒÐ´Ð¾ Ð¿Ñ€Ð¸Ñ€Ð¾Ð´Ñ‹ Ð½Ð° Ð¾Ð´Ð½Ñƒ ÐºÐ»ÐµÑ‚ÐºÑƒ. Ð¡Ð¾ÑÐµÐ´Ð½Ð¸Ðµ ÐºÐ»ÐµÑ‚ÐºÐ¸ Ð¿Ð¾Ð»ÑƒÑ‡Ð°ÑŽÑ‚ +1 [ICON_FOOD] Ð¿Ð¸Ñ‰Ð¸ Ð¸ +1 [ICON_CULTURE] ÐºÑƒÐ»ÑŒÑ‚ÑƒÑ€Ñ‹.</Text>
+		  <Text>Непроходимое чудо природы на одну клетку. Соседние клетки получают +1 [ICON_FOOD] пищи и +1 [ICON_CULTURE] культуры.</Text>
 	</Replace>	
 	<Replace Tag="LOC_FEATURE_GRAND_MESA_QUOTE" Language="ru_RU">
-		  <Text>"Ð¡Ð¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ð¸Ðµ Ð¾Ð·Ð½Ð°Ñ‡Ð°ÐµÑ‚ Ñ€Ð°Ð·ÑƒÐ¼Ð½Ð¾Ðµ Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ð½Ð¸Ðµ Ð·ÐµÐ¼Ð»Ð¸ Ð¸ ÐµÐµ Ñ€ÐµÑÑƒÑ€ÑÐ¾Ð² Ð½Ð° Ð±Ð»Ð°Ð³Ð¾ Ð»ÑŽÐ´ÐµÐ¹." [NEWLINE] - Ð“Ð¸Ñ„Ñ„Ð¾Ñ€Ð´ ÐŸÐ¸Ð½Ñ‡Ð¾Ñ‚</Text>
+		  <Text>"Сохранение означает разумное использование земли и ее ресурсов на благо людей." [NEWLINE] - Гиффорд Пинчот</Text>
 	</Replace>	
 	<Replace Tag="LOC_PEDIA_FEATURES_PAGE_FEATURE_GRAND_MESA_CHAPTER_HISTORY_PARA_1" Language="ru_RU">
 		  <Text>The Grand Mesa is a large geologic formation in Colorado, the United States of America. Rising some 1,500 meters (5,000 feet) above the surrounding territory and with an area of 1300 square kilometers (500 square miles), it is the largest mesa in the world. The Grand Mesa has a layer of volcanic basalt on top, which resists erosion. It did not so much rise into the air, as it remained at its original height, as the surrounding terrain was eroded by the action of the Colorado and Gunnison rivers.  The Grand Mesa National Forest (originally called Battlement Mesa Forest Reserve) was created by Benjamin Harrison on December 24, 1892. It was the third forest reserve created in United States.</Text>
 	</Replace>	
 <!-- = Mount Kailash = -->
 		<Replace Tag="LOC_FEATURE_KAILASH_NAME" Language="ru_RU">
-		  <Text>Ð“Ð¾Ñ€Ð° ÐšÐ°Ð¹Ð»Ð°Ñ</Text>
+		  <Text>Гора Кайлас</Text>
 	</Replace>
 	<Replace Tag="LOC_FEATURE_KAILASH_DESCRIPTION" Language="ru_RU">
-		  <Text>ÐÐµÐ¿Ñ€Ð¾Ñ…Ð¾Ð´Ð¸Ð¼Ð¾Ðµ Ñ‡ÑƒÐ´Ð¾ Ð¿Ñ€Ð¸Ñ€Ð¾Ð´Ñ‹ Ð½Ð° Ð¾Ð´Ð½Ñƒ ÐºÐ»ÐµÑ‚ÐºÑƒ. Ð¯Ð²Ð»ÑÐµÑ‚ÑÑ Ð³Ð¾Ñ€Ð¾Ð¹. Ð¡Ð¾ÑÐµÐ´Ð½Ð¸Ðµ ÐºÐ»ÐµÑ‚ÐºÐ¸ Ð¿Ð¾Ð»ÑƒÑ‡Ð°ÑŽÑ‚ +1 [ICON_Faith] Ð²ÐµÑ€Ñ‹ Ð¸ +1 [ICON_CULTURE] ÐºÑƒÐ»ÑŒÑ‚ÑƒÑ€Ñ‹. +1 [ICON_CULTURE] ÐºÑƒÐ»ÑŒÑ‚ÑƒÑ€Ñ‹ Ð¾Ñ‚ Ð¸Ð½Ð¾ÑÑ‚Ñ€Ð°Ð½Ð½Ñ‹Ñ… Ð³Ð¾Ñ€Ð¾Ð´Ð¾Ð², Ð¸ÑÐ¿Ð¾Ð²ÐµÐ´ÑƒÑŽÑ‰Ð¸Ñ… Ð²Ð°ÑˆÑƒ [ICON_RELIGION] Ñ€ÐµÐ»Ð¸Ð³Ð¸ÑŽ, ÐµÑÐ»Ð¸ Ð²Ð»Ð°Ð´ÐµÐµÑ‚Ðµ ÑÑ‚Ð¾Ð¹ ÐºÐ»ÐµÑ‚ÐºÐ¾Ð¹.</Text>
+		  <Text>Непроходимое чудо природы на одну клетку. Является горой. Соседние клетки получают +1 [ICON_Faith] веры и +1 [ICON_CULTURE] культуры. +1 [ICON_CULTURE] культуры от иностранных городов, исповедующих вашу [ICON_RELIGION] религию, если владеете этой клеткой.</Text>
 	</Replace>	
 	<Replace Tag="LOC_FEATURE_KAILASH_QUOTE" Language="ru_RU">
 		  <Text>"After thus having instructed the godly ones Lord Brahma went away with in his wake the forefathers and the leaders of the people whom he took from his own place to the abode of Lord Shiva, Kailash, the best of all mountains that is so dear to the master."[NEWLINE]- The Bhagavata Purana</Text>
@@ -469,67 +469,67 @@
 	</Replace>	
 <!-- = Lake Victoria = -->
 	<Replace Tag="LOC_FEATURE_LAKE_VICTORIA_NAME" Language="ru_RU">
-		  <Text>ÐžÐ·ÐµÑ€Ð¾ Ð’Ð¸ÐºÑ‚Ð¾Ñ€Ð¸Ñ</Text>
+		  <Text>Озеро Виктория</Text>
 	</Replace>
 	<Replace Tag="LOC_FEATURE_LAKE_VICTORIA_DESCRIPTION" Language="ru_RU">
-		  <Text>Ð§ÑƒÐ´Ð¾ Ð¿Ñ€Ð¸Ñ€Ð¾Ð´Ñ‹ Ð½Ð° 4 ÐºÐ»ÐµÑ‚ÐºÐ¸. Ð¯Ð²Ð»ÑÐµÑ‚ÑÑ Ð¾Ð·ÐµÑ€Ð¾Ð¼ Ð¸ Ð¸ÑÑ‚Ð¾Ñ‡Ð½Ð¸ÐºÐ¾Ð¼ Ð¿Ñ€ÐµÑÐ½Ð¾Ð¹ Ð²Ð¾Ð´Ñ‹. +3 [ICON_FOOD] Ð¿Ð¸Ñ‰Ð¸, +1 [ICON_CULTURE] ÐºÑƒÐ»ÑŒÑ‚ÑƒÑ€Ñ‹, +1 [ICON_PRODUCTION] Ð¿Ñ€Ð¾Ð¸Ð·Ð²Ð¾Ð´ÑÑ‚Ð²Ð° Ð¸ +1 [ICON_GOLD] Ð·Ð¾Ð»Ð¾Ñ‚Ð°.</Text>
+		  <Text>Чудо природы на 4 клетки. Является озером и источником пресной воды. +3 [ICON_FOOD] пищи, +1 [ICON_CULTURE] культуры, +1 [ICON_PRODUCTION] производства и +1 [ICON_GOLD] золота.</Text>
 	</Replace>	
 	<Replace Tag="LOC_FEATURE_LAKE_VICTORIA_QUOTE" Language="ru_RU">
-		  <Text>"Ð¯ Ð²Ð¸Ð´ÐµÐ», Ñ‡Ñ‚Ð¾ ÑÑ‚Ð°Ñ€Ñ‹Ð¹ Ð¾Ñ‚ÐµÑ† ÐÐ¸Ð», Ð±ÐµÐ· Ð²ÑÑÐºÐ¾Ð³Ð¾ ÑÐ¾Ð¼Ð½ÐµÐ½Ð¸Ñ, Ð±ÐµÑ€ÐµÑ‚ ÑÐ²Ð¾Ðµ Ð½Ð°Ñ‡Ð°Ð»Ð¾ Ð² Ð’Ð¸ÐºÑ‚Ð¾Ñ€Ð¸Ñ-ÐÑŒÑÐ½Ð·Ð°, Ð¸, ÐºÐ°Ðº Ñ Ð¸ Ð¿Ñ€ÐµÐ´ÑÐºÐ°Ð·Ñ‹Ð²Ð°Ð», ÑÑ‚Ð¾ Ð¾Ð·ÐµÑ€Ð¾ ÑÐ²Ð»ÑÐµÑ‚ÑÑ Ð²ÐµÐ»Ð¸ÐºÐ¸Ð¼ Ð¸ÑÑ‚Ð¾Ñ‡Ð½Ð¸ÐºÐ¾Ð¼ ÑÐ²ÑÑ‰ÐµÐ½Ð½Ð¾Ð¹ Ñ€ÐµÐºÐ¸, ÐºÐ¾Ñ‚Ð¾Ñ€Ð°Ñ ÑƒÐ±Ð°ÑŽÐºÐ°Ð»Ð° Ð¿ÐµÑ€Ð²Ð¾Ð³Ð¾ Ñ‚Ð¾Ð»ÐºÐ¾Ð²Ð°Ñ‚ÐµÐ»Ñ Ð½Ð°ÑˆÐµÐ¹ Ñ€ÐµÐ»Ð¸Ð³Ð¸Ð¾Ð·Ð½Ð¾Ð¹ Ð²ÐµÑ€Ñ‹." [NEWLINE] - Ð”Ð¶Ð¾Ð½ Ð¥Ð°Ð½Ð½Ð¸Ð½Ð³ Ð¡Ð¿Ð¸Ðº</Text>
+		  <Text>"Я видел, что старый отец Нил, без всякого сомнения, берет свое начало в Виктория-Ньянза, и, как я и предсказывал, это озеро является великим источником священной реки, которая убаюкала первого толкователя нашей религиозной веры." [NEWLINE] - Джон Ханнинг Спик</Text>
 	</Replace>	
 	<Replace Tag="LOC_PEDIA_FEATURES_PAGE_FEATURE_LAKE_VICTORIA_CHAPTER_HISTORY_PARA_1" Language="ru_RU">
-		  <Text>With a surface area over 26,000 square miles (68,800 kmÂ²), Lake Victoria is the largest lake in Africa, the second largest freshwater lake on Earth, and the largest tropical lake in the world. Two large rivers leave the lake, the White Nile and the Katonga. The first historical records of the lake come from Arab traders seeking gold, ivory and other commodities from the natives as they pushed inland from the coast. The search by European explorers for the source of the Nile led to the discovery of the lake by the Englishman John Speke in 1858 AD, who named it after the then British monarch.</Text>
+		  <Text>With a surface area over 26,000 square miles (68,800 km²), Lake Victoria is the largest lake in Africa, the second largest freshwater lake on Earth, and the largest tropical lake in the world. Two large rivers leave the lake, the White Nile and the Katonga. The first historical records of the lake come from Arab traders seeking gold, ivory and other commodities from the natives as they pushed inland from the coast. The search by European explorers for the source of the Nile led to the discovery of the lake by the Englishman John Speke in 1858 AD, who named it after the then British monarch.</Text>
 	</Replace>	
-<!-- = LenÃ§Ã³is Maranhenses = -->
+<!-- = Lençóis Maranhenses = -->
 	<Replace Tag="LOC_FEATURE_LENCOIS_MARANHENSES_NAME" Language="ru_RU">
-		  <Text>Ð›ÐµÐ½ÑÐ¾Ð¹Ñ-ÐœÐ°Ñ€Ð°Ð½ÑŒÐµÐ½ÑÐ¸Ñ</Text>
+		  <Text>Ленсойс-Мараньенсис</Text>
 	</Replace>
 	<Replace Tag="LOC_FEATURE_LENCOIS_MARANHENSES_DESCRIPTION" Language="ru_RU">
-		  <Text>Ð§ÑƒÐ´Ð¾ Ð¿Ñ€Ð¸Ñ€Ð¾Ð´Ñ‹ Ð½Ð° 2 ÐºÐ»ÐµÑ‚ÐºÐ¸. Ð˜ÑÑ‚Ð¾Ñ‡Ð½Ð¸Ðº Ð¿Ñ€ÐµÑÐ½Ð¾Ð¹ Ð²Ð¾Ð´Ñ‹. +2 [ICON_FOOD] Ð¿Ð¸Ñ‰Ð¸, +3 [ICON_CULTURE] ÐºÑƒÐ»ÑŒÑ‚ÑƒÑ€Ñ‹. +1 [ICON_CULTURE] ÐºÑƒÐ»ÑŒÑ‚ÑƒÑ€Ñ‹ Ð½Ð° Ñ€Ð°Ð²Ð½Ð¸Ð½Ð½Ñ‹Ñ… Ð¿Ð¾Ð¹Ð¼Ð°Ñ… Ð¸ Ð² Ð¿ÑƒÑÑ‚Ñ‹Ð½Ðµ, ÐµÑÐ»Ð¸ Ð²Ñ‹ Ð²Ð»Ð°Ð´ÐµÐµÑ‚Ðµ Ñ…Ð¾Ñ‚Ñ Ð±Ñ‹ Ð¾Ð´Ð½Ð¾Ð¹ Ð¸Ð· ÑÑ‚Ð¸Ñ… ÐºÐ»ÐµÑ‚Ð¾Ðº.</Text>
+		  <Text>Чудо природы на 2 клетки. Источник пресной воды. +2 [ICON_FOOD] пищи, +3 [ICON_CULTURE] культуры. +1 [ICON_CULTURE] культуры на равнинных поймах и в пустыне, если вы владеете хотя бы одной из этих клеток.</Text>
 	</Replace>	
 	<Replace Tag="LOC_FEATURE_LENCOIS_MARANHENSES_QUOTE" Language="ru_RU">
-		  <Text>"Ð¯ Ð²Ð¸Ð´ÐµÐ» Ð»ÑƒÐ³Ð° Ñ Ð±ÐµÐ»Ñ‹Ð¼ Ð¸ Ð·Ð¾Ð»Ð¾Ñ‚Ñ‹Ð¼ Ð¿ÐµÑÐºÐ¾Ð¼, ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ðµ Ð¿Ð¾ÑÑ‚Ð¾ÑÐ½Ð½Ð¾ Ð¼ÐµÐ½ÑÐ»Ð¸ ÑÐ²Ð¾ÑŽ Ñ„Ð¾Ñ€Ð¼Ñƒ Ð² Ð·Ð°Ð²Ð¸ÑÐ¸Ð¼Ð¾ÑÑ‚Ð¸ Ð¾Ñ‚ Ð½Ð°ÑÑ‚Ñ€Ð¾ÐµÐ½Ð¸Ñ Ð¸ Ð¿Ñ€Ð¸Ñ…Ð¾Ñ‚Ð¸ Ð²ÐµÑ‚Ñ€Ð°." [NEWLINE] - Ð“ÐµÑ€Ñ‚ ÐœÐ°ÑƒÑ€Ð¸ÑÐ¸Ð¾ Ð‘Ð°Ñ</Text>
+		  <Text>"Я видел луга с белым и золотым песком, которые постоянно меняли свою форму в зависимости от настроения и прихоти ветра." [NEWLINE] - Герт Маурисио Бас</Text>
 	</Replace>	
 	<Replace Tag="LOC_PEDIA_FEATURES_PAGE_FEATURE_LENCOIS_MARANHENSES_CHAPTER_HISTORY_PARA_1" Language="ru_RU">
-		  <Text>Located in MaranhÃ£o state in northeastern Brazil, LenÃ§Ã³is Maranhenses National Park is composed of 380,000 acres of rolling sand dunes that flood with freshwater during the rainy season. The park is home to a range of species, four of which are endangered, and due to its unique physical properties it has become a popular destination for ecotourists.</Text>
+		  <Text>Located in Maranhão state in northeastern Brazil, Lençóis Maranhenses National Park is composed of 380,000 acres of rolling sand dunes that flood with freshwater during the rainy season. The park is home to a range of species, four of which are endangered, and due to its unique physical properties it has become a popular destination for ecotourists.</Text>
 	</Replace>	
 <!-- = Krakatoa = -->
 	<Replace Tag="LOC_FEATURE_KRAKATOA_NAME" Language="ru_RU">
-		  <Text>ÐšÑ€Ð°ÐºÐ°Ñ‚Ð°Ñƒ</Text>
+		  <Text>Кракатау</Text>
 	</Replace>
 	<Replace Tag="LOC_FEATURE_KRAKATOA_DESCRIPTION" Language="ru_RU">
-		  <Text>ÐÐµÐ¿Ñ€Ð¾Ñ…Ð¾Ð´Ð¸Ð¼Ð¾Ðµ Ñ‡ÑƒÐ´Ð¾ Ð¿Ñ€Ð¸Ñ€Ð¾Ð´Ñ‹ Ð½Ð° Ð¾Ð´Ð½Ñƒ ÐºÐ»ÐµÑ‚ÐºÑƒ. Ð’ÑƒÐ»ÐºÐ°Ð½. Ð¡Ð¾ÑÐµÐ´Ð½Ð¸Ðµ ÐºÐ»ÐµÑ‚ÐºÐ¸ Ð¿Ð¾Ð»ÑƒÑ‡Ð°ÑŽÑ‚ +2 [ICON_SCIENCE] Ð½Ð°ÑƒÐºÐ¸. Ð£Ð»ÑƒÑ‡ÑˆÐ°ÐµÑ‚ ÐºÐ»ÐµÑ‚ÐºÐ¸ Ð¿Ð¾ÑÐ»Ðµ Ð¸Ð·Ð²ÐµÑ€Ð¶ÐµÐ½Ð¸Ñ Ð² Ð·Ð°Ð²Ð¸ÑÐ¸Ð¼Ð¾ÑÑ‚Ð¸ Ð¾Ñ‚ ÑƒÐ±Ð¸Ñ‚Ñ‹Ñ… [ICON_Citizen] Ð¶Ð¸Ñ‚ÐµÐ»ÐµÐ¹ Ð¸ Ð¿Ð¾Ð²Ñ€ÐµÐ¶Ð´ÐµÐ½Ð¸Ð¹ Ð¸Ð½Ñ„Ñ€Ð°ÑÑ‚Ñ€ÑƒÐºÑ‚ÑƒÑ€Ñ‹. Ð’ÑÐµÐ³Ð´Ð° Ð°ÐºÑ‚Ð¸Ð²ÐµÐ½.</Text>
+		  <Text>Непроходимое чудо природы на одну клетку. Вулкан. Соседние клетки получают +2 [ICON_SCIENCE] науки. Улучшает клетки после извержения в зависимости от убитых [ICON_Citizen] жителей и повреждений инфраструктуры. Всегда активен.</Text>
 	</Replace>	
 	<Replace Tag="LOC_FEATURE_KRAKATOA_QUOTE" Language="ru_RU">
-		  <Text>"Ð¯ Ñ Ð¸Ð·ÑƒÐ¼Ð»ÐµÐ½Ð¸ÐµÐ¼ ÑƒÐ²Ð¸Ð´ÐµÐ», Ñ‡Ñ‚Ð¾ Ð¾ÑÑ‚Ñ€Ð¾Ð² ÐšÑ€Ð°ÐºÐ°Ñ‚Ð°Ñƒ Ð»ÐµÐ¶Ð°Ð» Ð½Ð° Ð½Ð°ÑˆÐ¸Ñ… Ð³Ð»Ð°Ð·Ð°Ñ… Ð¿Ð¾Ð»Ð½Ð¾ÑÑ‚ÑŒÑŽ Ð²Ñ‹Ð¶Ð¶ÐµÐ½Ð½Ñ‹Ð¼ Ð¸ Ð±ÐµÑÐ¿Ð»Ð¾Ð´Ð½Ñ‹Ð¼ Ð¸ Ñ‡Ñ‚Ð¾ Ð² Ñ‡ÐµÑ‚Ñ‹Ñ€ÐµÑ… Ð¼ÐµÑÑ‚Ð°Ñ… Ð¸Ð·Ð²ÐµÑ€Ð³Ð°Ð»Ð¸ÑÑŒ Ð±Ð¾Ð»ÑŒÑˆÐ¸Ðµ ÐºÑƒÑÐºÐ¸ Ð¾Ð³Ð½Ñ." [NEWLINE] - Ð˜Ð¾Ð³Ð°Ð½Ð½ Ð’Ð¸Ð»ÑŒÐ³ÐµÐ»ÑŒÐ¼ Ð¤Ð¾Ð³ÐµÐ»ÑŒ</Text>
+		  <Text>"Я с изумлением увидел, что остров Кракатау лежал на наших глазах полностью выжженным и бесплодным и что в четырех местах извергались большие куски огня." [NEWLINE] - Иоганн Вильгельм Фогель</Text>
 	</Replace>	
 	<Replace Tag="LOC_PEDIA_FEATURES_PAGE_FEATURE_KRAKATOA_CHAPTER_HISTORY_PARA_1" Language="ru_RU">
 		  <Text>Krakatoa is a volcanic island located in Indonesia, between the islands of Java and Sumatra. The volcano exploded violently in August, 1883 with a force equivalent to 13,000 times the power of the Hiroshima nuclear bomb. The blast is widely regarded as the loudest sound ever recorded. The eruption destroyed over half of the island, and was heard in parts of Australia, some 3,200 kilometers (2,000 miles) away. Some 37,000 people were killed by the eruption and subsequent tsunamis. The volcano has been emitting lava steadily for the past eighty years, rebuilding the cone at a rate of about 5 meters per year (15 feet per year).</Text>
 	</Replace>	
 		<Replace Tag="LOC_RANDOM_EVENT_KRAKATOA_GENTLE_NAME" Language="ru_RU">
-		  <Text>ÐœÑÐ³ÐºÐ¾Ðµ Ð¸Ð·Ð²ÐµÑ€Ð¶ÐµÐ½Ð¸Ðµ</Text>
+		  <Text>Мягкое извержение</Text>
 	</Replace>
 		<Replace Tag="LOC_RANDOM_EVENT_KRAKATOA_GENTLE_DESCRIPTION" Language="ru_RU">
-		  <Text>Ð”Ñ‹Ð¼ Ð¿Ð¾Ð´Ð½Ð¸Ð¼Ð°ÐµÑ‚ÑÑ Ð¾Ñ‚ Ð³Ð¾Ñ€Ñ‹ Ð¾Ð³Ð½Ñ, ÐºÐ¾Ñ‚Ð¾Ñ€ÑƒÑŽ Ð»ÑŽÐ´Ð¸ Ð½Ð°Ð·Ñ‹Ð²Ð°ÑŽÑ‚ ÐšÑ€Ð°ÐºÐ°Ñ‚Ð°Ñƒ. ÐœÐ¾Ð¶ÐµÑ‚ Ð»Ð¸ ÑÑ‚Ð¾ Ð±Ñ‹Ñ‚ÑŒ Ð¿Ñ€Ð¸Ð·Ð½Ð°ÐºÐ¾Ð¼ Ð³Ñ€ÑÐ´ÑƒÑ‰ÐµÐ³Ð¾?</Text>
+		  <Text>Дым поднимается от горы огня, которую люди называют Кракатау. Может ли это быть признаком грядущего?</Text>
 	</Replace>
 		<Replace Tag="LOC_RANDOM_EVENT_KRAKATOA_CATASTROPHIC_NAME" Language="ru_RU">
-		  <Text>ÐšÐ°Ñ‚Ð°ÑÑ‚Ñ€Ð¾Ñ„Ð¸Ñ‡ÐµÑÐºÐ¾Ðµ Ð¸Ð·Ð²ÐµÑ€Ð¶ÐµÐ½Ð¸Ðµ</Text>
+		  <Text>Катастрофическое извержение</Text>
 	</Replace>
 		<Replace Tag="LOC_RANDOM_EVENT_KRAKATOA_CATASTROPHIC_DESCRIPTION" Language="ru_RU">
-		  <Text>Ð”Ð¾Ð»Ð¶Ð½Ñ‹ Ð»Ð¸ Ð¼Ñ‹ Ð¾ÑÑ‚Ð°Ð²Ð¸Ñ‚ÑŒ Ð½Ð°ÑˆÐ¸Ñ… Ð±Ð¾Ð³Ð¾Ð²? ÐšÐ¾Ð³Ð´Ð° Ð¼Ñ‹ Ð¿Ð¾ÑÐ¼Ð¾Ñ‚Ñ€ÐµÐ»Ð¸ Ð½Ð° Ð³Ð¾Ð»ÑƒÐ±Ð¾Ðµ Ð½ÐµÐ±Ð¾ Ð¸ Ð¿Ð¾Ð¿Ñ€Ð¾ÑÐ¸Ð»Ð¸ Ð´Ð¾Ð¶Ð´Ñ, ÐšÑ€Ð°ÐºÐ°Ñ‚Ð°Ñƒ Ð¾Ñ‚Ð²ÐµÑ‚Ð¸Ð» Ð¾Ð³Ð½ÐµÐ¼.</Text>
+		  <Text>Должны ли мы оставить наших богов? Когда мы посмотрели на голубое небо и попросили дождя, Кракатау ответил огнем.</Text>
 	</Replace>
 	<Replace Tag="LOC_RANDOM_EVENT_KRAKATOA_MEGACOLOSSAL_NAME" Language="ru_RU">
-		  <Text>ÐœÐµÐ³Ð°ÐºÐ¾Ð»Ð¾ÑÑÐ°Ð»ÑŒÐ½Ð¾Ðµ Ð¸Ð·Ð²ÐµÑ€Ð¶ÐµÐ½Ð¸Ðµ</Text>
+		  <Text>Мегаколоссальное извержение</Text>
 	</Replace>
 	<Replace Tag="LOC_RANDOM_EVENT_KRAKATOA_MEGACOLOSSAL_DESCRIPTION" Language="ru_RU">
-		  <Text>ÐŸÑ€Ð¾ÐºÐ»ÑÑ‚Ð° Ð·ÐµÐ¼Ð»Ñ, Ð½Ð° ÐºÐ¾Ñ‚Ð¾Ñ€ÑƒÑŽ ÐšÑ€Ð°ÐºÐ°Ñ‚Ð°Ñƒ Ð¾Ñ‚Ð±Ñ€Ð°ÑÑ‹Ð²Ð°ÐµÑ‚ ÑÐ²Ð¾ÑŽ Ð¼Ð¾Ð³ÑƒÑ‡ÑƒÑŽ Ñ‚ÐµÐ½ÑŒ. Ð˜ Ð¾Ð³Ð¾Ð½ÑŒ, Ð¸ ÐºÐ°Ð¼ÐµÐ½ÑŒ Ð²Ð¾Ð·Ð´ÐµÐ¹ÑÑ‚Ð²Ð¾Ð²Ð°Ð»Ð¸ Ð½Ð° Ð½Ð°Ñ. Ð˜Ð±Ð¾ Ð¸Ð·-Ð¿Ð¾Ð´ Ð·ÐµÐ¼Ð»Ð¸ Ð¼Ñ‹ Ð±Ñ‹Ð»Ð¸ Ð²Ð·ÑÑ‚Ñ‹ Ð¸Ð· Ð¿ÐµÐ¿Ð»Ð°, ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ð¹ Ð¼Ñ‹ ÐµÑÑ‚ÑŒ ... Ð¸ Ð² Ð¿ÐµÐ¿ÐµÐ» Ð¼Ñ‹ Ð²ÐµÑ€Ð½ÑƒÐ»Ð¸ÑÑŒ.</Text>
+		  <Text>Проклята земля, на которую Кракатау отбрасывает свою могучую тень. И огонь, и камень воздействовали на нас. Ибо из-под земли мы были взяты из пепла, который мы есть ... и в пепел мы вернулись.</Text>
 	</Replace>
 			<!-- = Mosi-oa-Tunya = -->
 		<Replace Tag="LOC_FEATURE_MOSI_OA_TUNYA_NAME" Language="ru_RU">
-		  <Text>ÐœÐ¾ÑÐ¸-Ð¾Ð°-Ð¢ÑƒÐ½ÑŒÑ</Text>
+		  <Text>Моси-оа-Тунья</Text>
 	</Replace>
 	<Replace Tag="LOC_FEATURE_MOSI_OA_TUNYA_DESCRIPTION" Language="ru_RU">
-		  <Text>ÐÐµÐ¿Ñ€Ð¾Ñ…Ð¾Ð´Ð¸Ð¼Ð¾Ðµ Ñ‡ÑƒÐ´Ð¾ Ð¿Ñ€Ð¸Ñ€Ð¾Ð´Ñ‹ Ð½Ð° Ð¾Ð´Ð½Ñƒ ÐºÐ»ÐµÑ‚ÐºÑƒ. Ð˜ÑÑ‚Ð¾Ñ‡Ð½Ð¸Ðº Ð¿Ñ€ÐµÑÐ½Ð¾Ð¹ Ð²Ð¾Ð´Ñ‹. Ð¡Ð¾ÑÐµÐ´Ð½Ð¸Ðµ ÐºÐ»ÐµÑ‚ÐºÐ¸ Ð¿Ð¾Ð»ÑƒÑ‡Ð°ÑŽÑ‚ +2 [ICON_FOOD] Ð¿Ð¸Ñ‰Ð¸. Ð”Ð°ÐµÑ‚ +4 Ð¿Ñ€ÐµÑÑ‚Ð¸Ð¶Ð° ÑÐ¾ÑÐµÐ´Ð½Ð¸Ð¼ ÐºÐ»ÐµÑ‚ÐºÐ°Ð¼.</Text>
+		  <Text>Непроходимое чудо природы на одну клетку. Источник пресной воды. Соседние клетки получают +2 [ICON_FOOD] пищи. Дает +4 престижа соседним клеткам.</Text>
 	</Replace>	
 	<Replace Tag="LOC_FEATURE_MOSI_OA_TUNYA_QUOTE" Language="ru_RU">
 		  <Text>"Creeping with awe to the verge, I peered down into a large rent and saw that a stream of a thousand yards broad leaped down a hundred feet, and then became suddenly compressed into a space of fifteen or twenty yards, the most wonderful sight I had witnessed in Africa."[NEWLINE]- David Livingstone</Text>
@@ -539,13 +539,13 @@
 	</Replace>	
 			<!-- = Motlatse Canyon = -->
 		<Replace Tag="LOC_FEATURE_MOTLATSE_CANYON_NAME" Language="ru_RU">
-		  <Text>ÐšÐ°Ð½ÑŒÐ¾Ð½ ÐœÐ¾Ñ‚Ð»ÐµÑ‚Ñ</Text>
+		  <Text>Каньон Мотлетс</Text>
 	</Replace>
 	<Replace Tag="LOC_FEATURE_MOTLATSE_CANYON_DESCRIPTION" Language="ru_RU">
-		  <Text>ÐÐµÐ¿Ñ€Ð¾Ñ…Ð¾Ð´Ð¸Ð¼Ð¾Ðµ Ñ‡ÑƒÐ´Ð¾ Ð¿Ñ€Ð¸Ñ€Ð¾Ð´Ñ‹ Ð½Ð° 4 ÐºÐ»ÐµÑ‚ÐºÐ¸. Ð¡Ð¾ÑÐµÐ´Ð½Ð¸Ðµ ÐºÐ»ÐµÑ‚ÐºÐ¸ Ð¿Ð¾Ð»ÑƒÑ‡Ð°ÑŽÑ‚ +1 [ICON_CULTURE] ÐºÑƒÐ»ÑŒÑ‚ÑƒÑ€Ñ‹ Ð¸ +1 [ICON_Faith] Ð²ÐµÑ€Ñ‹.</Text>
+		  <Text>Непроходимое чудо природы на 4 клетки. Соседние клетки получают +1 [ICON_CULTURE] культуры и +1 [ICON_Faith] веры.</Text>
 	</Replace>	
 	<Replace Tag="LOC_FEATURE_MOTLATSE_CANYON_QUOTE" Language="ru_RU">
-		  <Text>"Ð¯ ÑÑ‡Ð¸Ñ‚Ð°ÑŽ, Ñ‡Ñ‚Ð¾ Ð®Ð¶Ð½Ð°Ñ ÐÑ„Ñ€Ð¸ÐºÐ° - ÑÐ°Ð¼Ð¾Ðµ ÐºÑ€Ð°ÑÐ¸Ð²Ð¾Ðµ Ð¼ÐµÑÑ‚Ð¾ Ð½Ð° Ð·ÐµÐ¼Ð»Ðµ. ÐŸÐ¾ Ð¾Ð±Ñ‰ÐµÐ¼Ñƒ Ð¿Ñ€Ð¸Ð·Ð½Ð°Ð½Ð¸ÑŽ, Ñ Ð¿Ñ€ÐµÐ´Ð²Ð·ÑÑ‚, Ð½Ð¾ Ñ Ð´ÑƒÐ¼Ð°ÑŽ, Ñ‡Ñ‚Ð¾ Ð´Ð°Ð¶Ðµ ÑÐ°Ð¼Ñ‹Ð¹ Ñ‰ÐµÐ¿ÐµÑ‚Ð¸Ð»ÑŒÐ½Ñ‹Ð¹ ÐºÑ€Ð¸Ñ‚Ð¸Ðº ÑÐ¾Ð³Ð»Ð°ÑÐ¸Ñ‚ÑÑ Ñ Ñ‚ÐµÐ¼, Ñ‡Ñ‚Ð¾ Ð½Ð°Ð¼ Ð´Ð°Ñ€Ð¾Ð²Ð°Ð½Ð° Ð¿Ð¾Ð¸ÑÑ‚Ð¸Ð½Ðµ Ñ‡ÑƒÐ´ÐµÑÐ½Ð°Ñ Ð·ÐµÐ¼Ð»Ñ." [NEWLINE] - ÐÐµÐ»ÑŒÑÐ¾Ð½ ÐœÐ°Ð½Ð´ÐµÐ»Ð°</Text>
+		  <Text>"Я считаю, что Южная Африка - самое красивое место на земле. По общему признанию, я предвзят, но я думаю, что даже самый щепетильный критик согласится с тем, что нам дарована поистине чудесная земля." [NEWLINE] - Нельсон Мандела</Text>
 	</Replace>	
 	<Replace Tag="LOC_PEDIA_FEATURES_PAGE_FEATURE_MOTLATSE_CANYON_CHAPTER_HISTORY_PARA_1" Language="ru_RU">
 		  <Text>The Motlatse Canyon is a significant natural feature of South Africa, located in Mpumalanga, and forming the northern part of the Drakensberg escarpment. Located in the Blyde River Canyon Nature Reserve, it is 25 kilometers in length and is, on average, around 750 meters deep, sporting some of the deepest precipitous cliffs of any canyon on the planet.</Text>
@@ -555,32 +555,32 @@
 	</Replace>	
 	<!-- = Namib Sand Sea = -->
 		<Replace Tag="LOC_FEATURE_NAMIB_NAME" Language="ru_RU">
-		  <Text>ÐÐ°Ð±Ð¸Ð±</Text>
+		  <Text>Набиб</Text>
 	</Replace>
 	<Replace Tag="LOC_FEATURE_NAMIB_DESCRIPTION" Language="ru_RU">
-		  <Text>Ð§ÑƒÐ´Ð¾ Ð¿Ñ€Ð¸Ñ€Ð¾Ð´Ñ‹ Ð½Ð° 3 ÐºÐ»ÐµÑ‚ÐºÐ¸. +2 [ICON_CULTURE] ÐºÑƒÐ»ÑŒÑ‚ÑƒÑ€Ñ‹, +2 [ICON_PRODUCTION] Ð¿Ñ€Ð¾Ð¸Ð·Ð²Ð¾Ð´ÑÑ‚Ð²Ð° Ð¸ +2 [ICON_GOLD] Ð·Ð¾Ð»Ð¾Ñ‚Ð°. Ð Ð°Ð·Ð²ÐµÐ´Ñ‹Ð²Ð°Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ðµ ÑŽÐ½Ð¸Ñ‚Ñ‹, Ð¿Ñ€Ð¾ÑˆÐµÐ´ÑˆÐ¸Ðµ Ð¿Ð¾ Ð½ÐµÐ¼Ñƒ, Ð¿Ð¾Ð»ÑƒÑ‡Ð°ÑŽÑ‚ ÑÐ¿Ð¾ÑÐ¾Ð±Ð½Ð¾ÑÑ‚ÑŒ "ÐšÐ¾Ñ‡ÐµÐ²Ð½Ð¸ÐºÐ¸ Ð¿ÑƒÑÑ‚Ñ‹Ð½Ð¸" (+1 [ICON_Movement] Ð¾Ñ‡ÐºÐ¾ Ð¿ÐµÑ€ÐµÐ¼ÐµÑ‰ÐµÐ½Ð¸Ñ Ð´Ð¾ ÐºÐ¾Ð½Ñ†Ð° Ð¸Ð³Ñ€Ñ‹).</Text>
+		  <Text>Чудо природы на 3 клетки. +2 [ICON_CULTURE] культуры, +2 [ICON_PRODUCTION] производства и +2 [ICON_GOLD] золота. Разведывательные юниты, прошедшие по нему, получают способность "Кочевники пустыни" (+1 [ICON_Movement] очко перемещения до конца игры).</Text>
 	</Replace>	
 	<Replace Tag="LOC_FEATURE_NAMIB_QUOTE" Language="ru_RU">
-		  <Text>"ÐœÐ½Ðµ Ð½Ñ€Ð°Ð²Ð¸Ñ‚ÑÑ ÑÐ»Ñ‹ÑˆÐ°Ñ‚ÑŒ Ð·Ð²ÑƒÐº, Ð¸Ð·Ð´Ð°Ð²Ð°ÐµÐ¼Ñ‹Ð¹ Ð¿ÐµÑÑ‡Ð°Ð½Ñ‹Ð¼Ð¸ Ð´ÑŽÐ½Ð°Ð¼Ð¸, Ñ Ð¾Ð´Ð¸Ð½ Ð¸Ð· Ñ‚ÐµÑ…, ÐºÑ‚Ð¾ Ð²Ð¾ÑÐ¿Ñ€Ð¸Ð½Ð¸Ð¼Ð°ÐµÑ‚ Ñ€Ð¸Ñ‚Ð¼ Ð¿ÐµÐ¹Ð·Ð°Ð¶Ð°, Ð·Ð°Ð¿Ð¸ÑÐ°Ð½Ð½Ñ‹Ð¹ Ð½Ð° Ð¼Ð½Ð¾Ð³Ð¸Ñ… ÐºÐ°Ñ€Ñ‚Ð¸Ð½Ð°Ñ…, Ñ Ð¾Ð´Ð¸Ð½ Ð¸Ð· Ñ‚Ñ‹ÑÑÑ‡ Ð»ÑŽÐ´ÐµÐ¹, ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ðµ Ð·Ð½Ð°ÑŽÑ‚, Ñ‡Ñ‚Ð¾ Ñ Ð½Ð°ÐºÐ¾Ð½ÐµÑ† Ð´Ð¾Ð¼Ð°." [NEWLINE] - ÐœÐ²ÑƒÐ»Ð° Ð¯ ÐÐ°Ð½Ð³Ð¾Ð»Ð¾</Text>
+		  <Text>"Мне нравится слышать звук, издаваемый песчаными дюнами, я один из тех, кто воспринимает ритм пейзажа, записанный на многих картинах, я один из тысяч людей, которые знают, что я наконец дома." [NEWLINE] - Мвула Я Нанголо</Text>
 	</Replace>	
 	<Replace Tag="LOC_PEDIA_FEATURES_PAGE_FEATURE_NAMIB_CHAPTER_HISTORY_PARA_1" Language="ru_RU">
 		  <Text>The Namib is a coastal desert in southern Africa, whose name is of Nama origin and means 'vast place'. The Namib stretches for more than 2,000km along the Atlantic coasts of Angola, Namibia, and South Africa. Having endured arid, or semi-arid conditions for roughly 55-80 million years, the Namib may be the oldest desert in the world, containing some of the world's driest regions. Owing to its aridity, the Namib is almost totally uninhabited except for a small number of scattered settlements, which have historically served as trading posts for the routes of traders and missionaries that cross the desert.</Text>
 	</Replace>	
 	<Replace Tag="LOC_ABILITY_NAMIB_BUFF_NAME" Language="ru_RU">
-		  <Text>ÐšÐ¾Ñ‡ÐµÐ²Ð½Ð¸ÐºÐ¸ Ð¿ÑƒÑÑ‚Ñ‹Ð½Ð¸</Text>
+		  <Text>Кочевники пустыни</Text>
 	</Replace>
 	<Replace Tag="LOC_ABILITY_NAMIB_BUFF_DESCRIPTION" Language="ru_RU">
-		  <Text>ÐšÐ¾Ñ‡ÐµÐ²Ð½Ð¸ÐºÐ¸ Ð¿ÑƒÑÑ‚Ñ‹Ð½Ð¸: +1 [ICON_Movement] Ð¾Ñ‡ÐºÐ¾ Ð¿ÐµÑ€ÐµÐ¼ÐµÑ‰ÐµÐ½Ð¸Ñ</Text>
+		  <Text>Кочевники пустыни: +1 [ICON_Movement] очко перемещения</Text>
 	</Replace>	
 	<!-- = Rock of Gibraltar = -->
 	<Replace Tag="LOC_FEATURE_GIBRALTAR_NAME" Language="ru_RU">
-		  <Text>Ð“Ð¸Ð±Ñ€Ð°Ð»Ñ‚Ð°Ñ€ÑÐºÐ°Ñ ÑÐºÐ°Ð»Ð°</Text>
+		  <Text>Гибралтарская скала</Text>
 	</Replace>
 	<Replace Tag="LOC_FEATURE_GIBRALTAR_DESCRIPTION" Language="ru_RU">
-		  <Text>ÐÐµÐ¿Ñ€Ð¾Ñ…Ð¾Ð´Ð¸Ð¼Ð¾Ðµ Ñ‡ÑƒÐ´Ð¾ Ð¿Ñ€Ð¸Ñ€Ð¾Ð´Ñ‹ Ð½Ð° Ð¾Ð´Ð½Ñƒ ÐºÐ»ÐµÑ‚ÐºÑƒ. Ð¡Ð¾ÑÐµÐ´Ð½Ð¸Ðµ ÐºÐ»ÐµÑ‚ÐºÐ¸ Ð¿Ð¾Ð»ÑƒÑ‡Ð°ÑŽÑ‚ +1 [ICON_FOOD] Ð¿Ð¸Ñ‰Ð¸ Ð¸ +1 [ICON_GOLD] Ð·Ð¾Ð»Ð¾Ñ‚Ð¾.</Text>
+		  <Text>Непроходимое чудо природы на одну клетку. Соседние клетки получают +1 [ICON_FOOD] пищи и +1 [ICON_GOLD] золото.</Text>
 	</Replace>	
 	<Replace Tag="LOC_FEATURE_GIBRALTAR_QUOTE" Language="ru_RU">
-		  <Text>"ÐŸÐ¾ÑÐ¼Ð¾Ñ‚Ñ€Ð¸Ñ‚Ðµ Ð²Ð¾ÐºÑ€ÑƒÐ³, Ð¼Ð°Ð»ÑŒÑ‡Ð¸ÐºÐ¸ Ð¼Ð¾Ð¸, Ð¸ Ð¿Ð¾ÑÐ¼Ð¾Ñ‚Ñ€Ð¸Ñ‚Ðµ, ÐºÐ°Ðº Ð¿Ñ€ÐµÐºÑ€Ð°ÑÐ½Ð° Ð¡ÐºÐ°Ð»Ð° Ð² ÑÐ²ÐµÑ‚Ðµ ÑÐ»Ð°Ð²Ð½Ð¾Ð³Ð¾ Ð¾Ð³Ð½Ñ." [NEWLINE] - Ð”Ð¶Ð¾Ñ€Ð´Ð¶ ÐžÐ³Ð°ÑÑ‚ÐµÑ Ð­Ð»Ð¸Ð¾Ñ‚Ñ‚</Text>
+		  <Text>"Посмотрите вокруг, мальчики мои, и посмотрите, как прекрасна Скала в свете славного огня." [NEWLINE] - Джордж Огастес Элиотт</Text>
 	</Replace>	
 	<Replace Tag="LOC_PEDIA_FEATURES_PAGE_FEATURE_GIBRALTAR_CHAPTER_HISTORY_PARA_1" Language="ru_RU">
 		  <Text>Gibraltar is a peninsula containing a remarkable rock formation at the mouth of the Mediterranean Sea. Captured from Spain by the English and Dutch in 1704 and ceded to England in 1713, Gibraltar has been a British possession ever since (much to the annoyance of Spain, which wants it back). Commanding the entrance to the Atlantic from the Mediterranean, Gibraltar has been a major British naval base for three hundred years. Most of Gibraltar is covered by the 'Rock', a huge formation of shale, sandstone and limestone thrust up by the unimaginable power of plate tectonics. The Rock stands some 430 meters (1400 feet) in height. At one time Gibraltar was a massive fortification allowing Britain to dominate the narrow Mediterranean-Atlantic passage, but today the island is more of a nature preserve and tourist destination than it is a military base.</Text>
@@ -589,10 +589,10 @@
 	
 	<!-- = Old Faithful = -->
 	<Replace Tag="LOC_FEATURE_OLD_FAITHFUL_NAME" Language="ru_RU">
-		  <Text>ÐžÐ»Ð´-Ð¤ÐµÐ¹Ñ‚Ñ„ÑƒÐ»</Text>
+		  <Text>Олд-Фейтфул</Text>
 	</Replace>
 	<Replace Tag="LOC_FEATURE_OLD_FAITHFUL_DESCRIPTION" Language="ru_RU">
-		  <Text>Ð§ÑƒÐ´Ð¾ Ð¿Ñ€Ð¸Ñ€Ð¾Ð´Ñ‹ Ð½Ð° Ð¾Ð´Ð½Ñƒ ÐºÐ»ÐµÑ‚ÐºÑƒ. +3 [ICON_SCIENCE] Ð½Ð°ÑƒÐºÐ¸, +2 [ICON_FOOD] Ð¿Ð¸Ñ‰Ð¸, +1 [ICON_Faith] Ð²ÐµÑ€Ð° Ð¸ +1 [ICON_GOLD] Ð·Ð¾Ð»Ð¾Ñ‚Ð°. ÐŸÐ¾Ð²Ñ‹ÑˆÐµÐ½Ð½Ñ‹Ð¹ Ð±Ð¾Ð½ÑƒÑ ÑÐ¾ÑÐµÐ´ÑÑ‚Ð²Ð° Ð´Ð»Ñ ÐºÐ°Ð¼Ð¿ÑƒÑÐ°.</Text>
+		  <Text>Чудо природы на одну клетку. +3 [ICON_SCIENCE] науки, +2 [ICON_FOOD] пищи, +1 [ICON_Faith] вера и +1 [ICON_GOLD] золота. Повышенный бонус соседства для кампуса.</Text>
 	</Replace>	
 	<Replace Tag="LOC_FEATURE_OLD_FAITHFUL_QUOTE" Language="ru_RU">
 		  <Text>"It spouted at regular intervals nine times during our stay, the columns of boiling water being thrown from ninety to one hundred and twenty-five feet at each discharge, which lasted from fifteen to twenty minutes. We gave it the name of Old Faithful."[NEWLINE]- Nathaniel P. Langford</Text>
@@ -601,46 +601,46 @@
 		  <Text>Old Faithful is a geyser found in Yellowstone National Park, in Wyoming, US. First seen by Europeans in 1870 (and by natives some 10,000 years before that), Old Faithful was thus named because of the regularity of its eruption. The geyser shoots a column of boiling water to a height of some 30-50 meters (100-175 feet) every 60-90 minutes (the interval determined by the ferocity of the previous eruption). Geysers occur when subterranean water hits magma (molten rock). The water is instantly turned to steam, which rushes out the nearest available opening at tremendously high pressure. Old Faithful and the other 250 geysers in Yellowstone are enjoyed by some three million visitors each year.</Text>
 	</Replace>	
 	<Replace Tag="LOC_DISTRICT_OLD_FAITHFUL_SCIENCE" Language="ru_RU">
-			<Text>+{1_num} [ICON_SCIENCE] Ð½Ð°ÑƒÐºÐ¸ Ð·Ð° ÑÐ¾ÑÐµÐ´ÑÑ‚Ð²Ð¾ Ñ ÐžÐ»Ð´-Ð¤ÐµÐ¹Ñ‚Ñ„ÑƒÐ».</Text>
+			<Text>+{1_num} [ICON_SCIENCE] науки за соседство с Олд-Фейтфул.</Text>
 	</Replace>		
 	<!-- = Lakes of Ounianga = -->
 		<Replace Tag="LOC_FEATURE_OUNIANGA_NAME" Language="ru_RU">
-		  <Text>ÐžÐ·ÐµÑ€Ð° Ð£Ð½Ð¸Ð°Ð½Ð³Ð°</Text>
+		  <Text>Озера Унианга</Text>
 	</Replace>
 	<Replace Tag="LOC_FEATURE_OUNIANGA_DESCRIPTION" Language="ru_RU">
-		  <Text>Ð§ÑƒÐ´Ð¾ Ð¿Ñ€Ð¸Ñ€Ð¾Ð´Ñ‹ Ð½Ð° 2 ÐºÐ»ÐµÑ‚ÐºÐ¸. Ð˜ÑÑ‚Ð¾Ñ‡Ð½Ð¸Ðº Ð¿Ñ€ÐµÑÐ½Ð¾Ð¹ Ð²Ð¾Ð´Ñ‹. +2 [ICON_FOOD] Ð¿Ð¸Ñ‰Ð¸, +2 [ICON_CULTURE] ÐºÑƒÐ»ÑŒÑ‚ÑƒÑ€Ñ‹ Ð¸ +2 [ICON_GOLD] Ð·Ð¾Ð»Ð¾Ñ‚Ð°. +1 [ICON_FOOD] Ð¿Ð¸Ñ‰Ð¸ Ð½Ð° ÑÐ¾ÑÐµÐ´Ð½Ð¸Ñ… ÐºÐ»ÐµÑ‚ÐºÐ°Ñ….</Text>
+		  <Text>Чудо природы на 2 клетки. Источник пресной воды. +2 [ICON_FOOD] пищи, +2 [ICON_CULTURE] культуры и +2 [ICON_GOLD] золота. +1 [ICON_FOOD] пищи на соседних клетках.</Text>
 	</Replace>	
 	<Replace Tag="LOC_FEATURE_OUNIANGA_QUOTE" Language="ru_RU">
-		  <Text>"Ð’Ð½Ð°Ñ‡Ð°Ð»Ðµ ÑÐ·Ñ‹ÐºÐ¾Ð¼ Ð¿ÑƒÑÑ‚Ñ‹Ð½Ð¸ Ð±Ñ‹Ð»Ð° Ñ‚Ñ€Ð°Ð²Ð°, Ñ€Ð°ÑÐ¿ÑƒÑÐºÐ°ÑŽÑ‰Ð°ÑÑÑ Ð¿Ð¾Ð´ Ð¿Ð¾Ñ€Ñ‹Ð²Ð°Ð¼Ð¸ Ð²ÐµÑ‚Ñ€Ð°, Ð²Ñ‹ÑÐ¾ÐºÐ¸Ðµ Ð¿Ð°Ð»ÑŒÐ¼Ñ‹, Ñ€Ð°ÑÐºÐ°Ñ‡Ð¸Ð²Ð°ÑŽÑ‰Ð¸ÐµÑÑ Ð² ÑÐµÐ·Ð¾Ð½ Ð¿Ð¾ÑÐµÐ²Ð°, Ð¸ Ð·Ð¾Ð»Ð°, Ð¿ÐµÑ€ÐµÐ½Ð¾ÑÐ¸Ð¼Ð°Ñ Ð²Ð¾Ð·Ð´ÑƒÑ…Ð¾Ð¼ Ðº Ð³Ð¾Ð»ÑƒÐ±Ð¾Ð¼Ñƒ Ð³Ð¾ÑÑ‚ÐµÐ¿Ñ€Ð¸Ð¸Ð¼ÑÑ‚Ð²Ñƒ Ñ‚ÐµÐ¿Ð»Ð¾Ð³Ð¾ Ð¿ÐµÑÐºÐ°. ÐžÐ½Ð° Ð±Ñ‹Ð»Ð° Ð½Ð°ÑˆÐ¸Ð¼ Ð¿ÐµÑ€Ð²Ñ‹Ð¼ Ð¸ÑÑ‚Ð¾Ñ‡Ð½Ð¸ÐºÐ¾Ð¼, Ð½Ð°ÑˆÐµÐ¹ Ð¼Ð°Ñ‚ÐµÑ€ÑŒÑŽ, ÐºÐ¾Ñ‚Ð¾Ñ€Ð°Ñ Ð´ÐµÑ€Ð¶Ð°Ð»Ð° Ð½Ð°Ñ, Ð° Ð·Ð°Ñ‚ÐµÐ¼ Ð¾Ñ‚Ð´Ð°Ð»Ð° Ð² ÑÐ¿Ð¾Ñ…Ñƒ Ð³Ð¾Ñ€Ð¾Ð´Ð¾Ð² Ð¾Ð¶Ð¸Ð´Ð°Ð½Ð¸Ñ."[NEWLINE]- ÐÐ»ÑŒ-ÐœÑƒÐ½ÑÐ¸Ñ„ Ð°Ð»ÑŒ-Ð’Ð°Ñ…Ð°Ð¹Ð±Ð¸</Text>
+		  <Text>"Вначале языком пустыни была трава, распускающаяся под порывами ветра, высокие пальмы, раскачивающиеся в сезон посева, и зола, переносимая воздухом к голубому гостеприимству теплого песка. Она была нашим первым источником, нашей матерью, которая держала нас, а затем отдала в эпоху городов ожидания."[NEWLINE]- Аль-Мунсиф аль-Вахайби</Text>
 	</Replace>	
 	<Replace Tag="LOC_PEDIA_FEATURES_PAGE_FEATURE_OUNIANGA_CHAPTER_HISTORY_PARA_1" Language="ru_RU">
 		  <Text>Lakes of Ounianga are a series of eighteen interconnected lakes in the hyper arid Ennedi region of the Sahara desert, occupying a basin in the mountains of West Tibesti and Ennedi East. It constitutes an exceptional natural landscape of great beauty with striking colours and shapes. The saline, hyper saline and freshwater lakes are supplied by groundwater and are found in two groups 40 km apart. Ounianga Kebir comprises four lakes, the largest of which, Yoan, covers an area of 358 ha and is 27 m deep. Its highly saline waters only sustain algae and some microorganisms. The second group, Ounianga Serir, comprises fourteen lakes separated by sand dunes. Floating reeds cover almost half the surface of these lakes reducing evaporation. Lake Teli has the largest surface area but is less than 10 m deep. With their high quality freshwater, some of these lakes are home to aquatic fauna, particularly fish.</Text>
 	</Replace>	
 	<!-- = Salar de Uyuni = -->
 		<Replace Tag="LOC_FEATURE_SALAR_DE_UYUNI_NAME" Language="ru_RU">
-		  <Text>Ð£ÑŽÐ½Ð¸</Text>
+		  <Text>Уюни</Text>
 	</Replace>
 	<Replace Tag="LOC_FEATURE_SALAR_DE_UYUNI_DESCRIPTION" Language="ru_RU">
-		  <Text>Ð§ÑƒÐ´Ð¾ Ð¿Ñ€Ð¸Ñ€Ð¾Ð´Ñ‹ Ð½Ð° 4 ÐºÐ»ÐµÑ‚ÐºÐ¸. +2 [ICON_SCIENCE] Ð½Ð°ÑƒÐºÐ¸, +2 [ICON_PRODUCTION] Ð¿Ñ€Ð¾Ð¸Ð·Ð²Ð¾Ð´ÑÑ‚Ð²Ð¾ Ð¸ +4 [ICON_GOLD] Ð·Ð¾Ð»Ð¾Ñ‚Ð°. ÐŸÐ¾Ð²Ñ‹ÑˆÐµÐ½Ð½Ñ‹Ð¹ Ð±Ð¾Ð½ÑƒÑ ÑÐ¾ÑÐµÐ´ÑÑ‚Ð²Ð° Ð´Ð»Ñ Ñ†ÐµÐ½Ñ‚Ñ€Ð° ÐºÐ¾Ð¼Ð¼ÐµÑ€Ñ†Ð¸Ð¸.</Text>
+		  <Text>Чудо природы на 4 клетки. +2 [ICON_SCIENCE] науки, +2 [ICON_PRODUCTION] производство и +4 [ICON_GOLD] золота. Повышенный бонус соседства для центра коммерции.</Text>
 	</Replace>	
 	<Replace Tag="LOC_FEATURE_SALAR_DE_UYUNI_QUOTE" Language="ru_RU">
-		  <Text>"Ð¯ Ð·Ð°Ð´Ñ€Ð¾Ð¶Ð°Ð» Ð² ÑÑ‚Ð¾Ð¹ Ð¿ÑƒÑÑ‚Ð¾Ñ‚Ðµ, ÐºÐ¾Ð³Ð´Ð° ÑƒÑÐ»Ñ‹ÑˆÐ°Ð» Ð³Ð¾Ð»Ð¾Ñ ÑÐ¾Ð»Ð¸ Ð² Ð¿ÑƒÑÑ‚Ñ‹Ð½Ðµ."[NEWLINE]- ÐŸÐ°Ð±Ð»Ð¾ ÐÐµÑ€ÑƒÐ´Ð°</Text>
+		  <Text>"Я задрожал в этой пустоте, когда услышал голос соли в пустыне."[NEWLINE]- Пабло Неруда</Text>
 	</Replace>	
 	<Replace Tag="LOC_PEDIA_FEATURES_PAGE_FEATURE_SALAR_DE_UYUNI_CHAPTER_HISTORY_PARA_1" Language="ru_RU">
 		  <Text>Situated in southwest Bolivia, near the Chilean border and the Atacama Desert, lies Salar de Uyuni; the largest salt flat on Earth at 10,582 square kilometers, roughly 100 times the size of the Bonneville Salt Flats in the United States. The Salar was formed a result of transformations between several prehistoric lakes. Covered by a few meters of salt crust, it has an extraordinary flatness with the average elevation variations within one meter over the entire area of the Salar. The large area, clear skies, and exceptional flatness of the surface make it an ideal object for calibrating the altimeters of Earth observation satellites.</Text>
 	</Replace>	
 	<Replace Tag="LOC_DISTRICT_SALAR_DE_UYUNI_GOLD" Language="ru_RU">
-			<Text>+{1_num} [ICON_GOLD] Ð·Ð¾Ð»Ð¾Ñ‚Ð¾ Ð·Ð° ÑÐ¾ÑÐµÐ´ÑÑ‚Ð²Ð¾ Ñ Ð£ÑŽÐ½Ð¸.</Text>
+			<Text>+{1_num} [ICON_GOLD] золото за соседство с Уюни.</Text>
 	</Replace>
 	<!-- = Mount Sinai = -->
 	<Replace Tag="LOC_FEATURE_SINAI_NAME" Language="ru_RU">
-		  <Text>Ð“Ð¾Ñ€Ð° Ð¡Ð¸Ð½Ð°Ð¹</Text>
+		  <Text>Гора Синай</Text>
 	</Replace>
 	<Replace Tag="LOC_FEATURE_SINAI_DESCRIPTION" Language="ru_RU">
-		  <Text>ÐÐµÐ¿Ñ€Ð¾Ñ…Ð¾Ð´Ð¸Ð¼Ð¾Ðµ Ñ‡ÑƒÐ´Ð¾ Ð¿Ñ€Ð¸Ñ€Ð¾Ð´Ñ‹ Ð½Ð° Ð¾Ð´Ð½Ñƒ ÐºÐ»ÐµÑ‚ÐºÑƒ. Ð¯Ð²Ð»ÑÐµÑ‚ÑÑ Ð³Ð¾Ñ€Ð¾Ð¹. Ð¡Ð¾ÑÐµÐ´Ð½Ð¸Ðµ ÐºÐ»ÐµÑ‚ÐºÐ¸ Ð¿Ð¾Ð»ÑƒÑ‡Ð°ÑŽÑ‚ +2 [ICON_Faith] Ð²ÐµÑ€Ñ‹. Ð ÐµÐ»Ð¸Ð³Ð¸Ð¾Ð·Ð½Ñ‹Ðµ ÑŽÐ½Ð¸Ñ‚Ñ‹, Ð¿Ñ€Ð¾ÑˆÐµÐ´ÑˆÐ¸Ðµ Ñ€ÑÐ´Ð¾Ð¼, Ð¿Ð¾Ð»ÑƒÑ‡Ð°ÑŽÑ‚ +15 [ICON_Strength] Ðº Ð±Ð¾ÐµÐ²Ð¾Ð¹ Ð¼Ð¾Ñ‰Ð¸ Ð² Ñ€ÐµÐ»Ð¸Ð³Ð¸Ð¾Ð·Ð½Ñ‹Ñ… Ð±Ð°Ñ‚Ð°Ð»Ð¸ÑÑ….</Text>
+		  <Text>Непроходимое чудо природы на одну клетку. Является горой. Соседние клетки получают +2 [ICON_Faith] веры. Религиозные юниты, прошедшие рядом, получают +15 [ICON_Strength] к боевой мощи в религиозных баталиях.</Text>
 	</Replace>	
 	<Replace Tag="LOC_FEATURE_SINAI_QUOTE" Language="ru_RU">
-		  <Text>"ÐšÐ¾Ð³Ð´Ð° Ð“Ð¾ÑÐ¿Ð¾Ð´ÑŒ Ð·Ð°ÐºÐ¾Ð½Ñ‡Ð¸Ð» Ð³Ð¾Ð²Ð¾Ñ€Ð¸Ñ‚ÑŒ Ñ ÐœÐ¾Ð¸ÑÐµÐµÐ¼ Ð½Ð° Ð³Ð¾Ñ€Ðµ Ð¡Ð¸Ð½Ð°Ð¹, Ð¾Ð½ Ð´Ð°Ð» ÐµÐ¼Ñƒ Ð´Ð²Ðµ ÑÐºÑ€Ð¸Ð¶Ð°Ð»Ð¸ Ð·Ð°ÐºÐ¾Ð½Ð° Ð·Ð°Ð²ÐµÑ‚Ð°, ÐºÐ°Ð¼ÐµÐ½Ð½Ñ‹Ðµ ÑÐºÑ€Ð¸Ð¶Ð°Ð»Ð¸, Ð½Ð°Ñ‡ÐµÑ€Ñ‚Ð°Ð½Ð½Ñ‹Ðµ Ð¿ÐµÑ€ÑÑ‚Ð¾Ð¼ Ð‘Ð¾Ð³Ð°." [NEWLINE] - Ð˜ÑÑ…Ð¾Ð´ 31:18</Text>
+		  <Text>"Когда Господь закончил говорить с Моисеем на горе Синай, он дал ему две скрижали закона завета, каменные скрижали, начертанные перстом Бога." [NEWLINE] - Исход 31:18</Text>
 	</Replace>	
 	<Replace Tag="LOC_PEDIA_FEATURES_PAGE_FEATURE_SINAI_CHAPTER_HISTORY_PARA_1" Language="ru_RU">
 		  <Text>Found on the Sinai Peninsula of Egypt, Mount Sinai is among the most revered holy sites recognized by the followers of Judaism, Christianity, and Islam. Mount Sinai is believed to be the location where Moses first received the Ten Commandments from God during the Israelites' exodus from Egypt, making the peak an important site for religious pilgrims from around the world.</Text>
@@ -649,29 +649,29 @@
 		  <Text>Ten Commandments</Text>
 	</Replace>
 	<Replace Tag="LOC_ABILITY_SINAI_BUFF_DESCRIPTION" Language="ru_RU">
-		  <Text> +15 [ICON_Strength] Ð±Ð¾ÐµÐ²Ð¾Ð¹ Ð¼Ð¾Ñ‰Ð¸ Ð² Ñ€ÐµÐ»Ð¸Ð³Ð¸Ð¾Ð·Ð½Ñ‹Ñ… Ð±Ð°Ñ‚Ð°Ð»Ð¸ÑÑ….</Text>
+		  <Text> +15 [ICON_Strength] боевой мощи в религиозных баталиях.</Text>
 	</Replace>	
 	
 	
 	<!-- = Sri Pada = -->
 	<Replace Tag="LOC_FEATURE_SRI_PADA_NAME" Language="ru_RU">
-		  <Text>ÐÐ´Ð°Ð¼Ð¾Ð² ÐŸÐ¸Ðº</Text>
+		  <Text>Адамов Пик</Text>
 	</Replace>
 	<Replace Tag="LOC_FEATURE_SRI_PADA_DESCRIPTION" Language="ru_RU">
-		  <Text>ÐÐµÐ¿Ñ€Ð¾Ñ…Ð¾Ð´Ð¸Ð¼Ð¾Ðµ Ñ‡ÑƒÐ´Ð¾ Ð¿Ñ€Ð¸Ñ€Ð¾Ð´Ñ‹ Ð½Ð° Ð¾Ð´Ð½Ñƒ ÐºÐ»ÐµÑ‚ÐºÑƒ. Ð¯Ð²Ð»ÑÐµÑ‚ÑÑ Ð³Ð¾Ñ€Ð¾Ð¹. Ð¡Ð¾ÑÐµÐ´Ð½Ð¸Ðµ ÐºÐ»ÐµÑ‚ÐºÐ¸ Ð¿Ð¾Ð»ÑƒÑ‡Ð°ÑŽÑ‚ +1 [ICON_FOOD] Ð¿Ð¸Ñ‰Ð¸ Ð¸ +1 [ICON_Faith] Ð²ÐµÑ€Ñ‹.</Text>
+		  <Text>Непроходимое чудо природы на одну клетку. Является горой. Соседние клетки получают +1 [ICON_FOOD] пищи и +1 [ICON_Faith] веры.</Text>
 	</Replace>	
 	<Replace Tag="LOC_FEATURE_SRI_PADA_QUOTE" Language="ru_RU">
-		  <Text>"Ð§Ñ€ÐµÐ·Ð²Ñ‹Ñ‡Ð°Ð¹Ð½Ð¾ Ñ‡ÑƒÐ´ÐµÑÐ½Ð¾Ðµ Ð·Ñ€ÐµÐ»Ð¸Ñ‰Ðµ, Ð½Ð°Ð´ÐµÐ»ÐµÐ½Ð½Ð¾Ðµ Ð²Ñ‹ÑÐ¾Ñ‡Ð°Ð¹ÑˆÐ¸Ð¼ Ð²ÐµÐ»Ð¸ÐºÐ¾Ð»ÐµÐ¿Ð¸ÐµÐ¼." [NEWLINE] - ÐœÐ°Ñ…Ð°Ð±Ñ…Ð°Ñ€Ð°Ñ‚Ð°</Text>
+		  <Text>"Чрезвычайно чудесное зрелище, наделенное высочайшим великолепием." [NEWLINE] - Махабхарата</Text>
 	</Replace>	
 	<Replace Tag="LOC_PEDIA_FEATURES_PAGE_FEATURE_SRI_PADA_CHAPTER_HISTORY_PARA_1" Language="ru_RU">
 		  <Text>Towering above Sri Lanka, Sri Pada is a large mountain peak with an unusually conical shape that is held sacred by a number of religions for the footprint found at its peak. The footprint, a large depression found in a rock formation on the summit, has been attributed to Buddha, Shiva, and the biblical figure Adam, leading to a reverence among followers of Buddhism, Hinduism, and Islam. Each year, thousands of pilgrims trek for hours up the mountain to pay their respects at the holy site.</Text>
 	</Replace>	
 	<!-- = Vredefort Dome = -->
 		<Replace Tag="LOC_FEATURE_VREDEFORT_DOME_NAME" Language="ru_RU">
-		  <Text>ÐšÑ€Ð°Ñ‚ÐµÑ€ Ð’Ñ€ÐµÐ´ÐµÑ„Ð¾Ñ€Ñ‚</Text>
+		  <Text>Кратер Вредефорт</Text>
 	</Replace>
 	<Replace Tag="LOC_FEATURE_VREDEFORT_DOME_DESCRIPTION" Language="ru_RU">
-		  <Text>Ð§ÑƒÐ´Ð¾ Ð¿Ñ€Ð¸Ñ€Ð¾Ð´Ñ‹ Ð½Ð° 2 ÐºÐ»ÐµÑ‚ÐºÐ¸. +2 [ICON_FOOD] Ð¿Ð¸Ñ‰Ð¸, +1 [ICON_PRODUCTION] Ð¿Ñ€Ð¾Ð¸Ð·Ð²Ð¾Ð´ÑÑ‚Ð²Ð°, +2 [ICON_SCIENCE] Ð½Ð°ÑƒÐºÐ¸ Ð¸ +1 [ICON_CULTURE] ÐºÑƒÐ»ÑŒÑ‚ÑƒÑ€Ñ‹.</Text>
+		  <Text>Чудо природы на 2 клетки. +2 [ICON_FOOD] пищи, +1 [ICON_PRODUCTION] производства, +2 [ICON_SCIENCE] науки и +1 [ICON_CULTURE] культуры.</Text>
 	</Replace>	
 	<Replace Tag="LOC_FEATURE_VREDEFORT_DOME_QUOTE" Language="ru_RU">
 		  <Text>"When geologists first wandered the spectacular ring of hills straddling the Vaal River north of Vredefort nearly 150 years ago, they immediately recognised that the unusually shattered and uptilted rocks bore witness to an exceptionally violent event in the distant past."[NEWLINE]- Wolf Uwe Reimold</Text>
@@ -681,13 +681,13 @@
 	</Replace>	
 	<!-- = Wulingyuan = -->
 	<Replace Tag="LOC_FEATURE_WULINGYUAN_NAME" Language="ru_RU">
-		  <Text>Ð£Ð»Ð¸Ð½ÑŠÑŽÐ°Ð½ÑŒ</Text>
+		  <Text>Улинъюань</Text>
 	</Replace>
 	<Replace Tag="LOC_FEATURE_WULINGYUAN_DESCRIPTION" Language="ru_RU">
-		  <Text>Ð§ÑƒÐ´Ð¾ Ð¿Ñ€Ð¸Ñ€Ð¾Ð´Ñ‹ Ð½Ð° 2 Ð½ÐµÐ¿Ñ€Ð¾Ñ…Ð¾Ð´Ð¸Ð¼Ñ‹Ðµ ÐºÐ»ÐµÑ‚ÐºÐ¸. Ð¡Ð¾ÑÐµÐ´Ð½Ð¸Ðµ ÐºÐ»ÐµÑ‚ÐºÐ¸ Ð¿Ð¾Ð»ÑƒÑ‡Ð°ÑŽÑ‚ +1 [ICON_CULTURE] ÐºÑƒÐ»ÑŒÑ‚ÑƒÑ€Ñ‹</Text>
+		  <Text>Чудо природы на 2 непроходимые клетки. Соседние клетки получают +1 [ICON_CULTURE] культуры</Text>
 	</Replace>	
 	<Replace Tag="LOC_FEATURE_WULINGYUAN_QUOTE" Language="ru_RU">
-		  <Text>"Ð˜Ð· Ð´ÐµÑÑÑ‚Ð¸ Ñ‚Ñ‹ÑÑÑ‡ Ð´Ð¾Ð»Ð¸Ð½ Ð´ÐµÑ€ÐµÐ²ÑŒÑ ÐºÐ°ÑÐ°ÑŽÑ‚ÑÑ Ð½ÐµÐ±Ð°, Ð½Ð° Ñ‚Ñ‹ÑÑÑ‡Ð°Ñ… Ð²ÐµÑ€ÑˆÐ¸Ð½ ÐºÑ€Ð¸Ñ‡Ð°Ñ‚ ÐºÑƒÐºÑƒÑˆÐºÐ¸, Ð¸ Ð¿Ð¾ÑÐ»Ðµ Ð½Ð¾Ñ‡Ð¸ Ð³Ð¾Ñ€Ð½Ð¾Ð³Ð¾ Ð´Ð¾Ð¶Ð´Ñ Ñ ÐºÐ°Ð¶Ð´Ð¾Ð¹ Ð²ÐµÑ€ÑˆÐ¸Ð½Ñ‹ Ð¸ÑÑ…Ð¾Ð´ÑÑ‚ ÑÐ¾Ñ‚Ð½Ð¸ ÑˆÐµÐ»ÐºÐ¾Ð²Ñ‹Ñ… ÐºÐ°ÑÐºÐ°Ð´Ð¾Ð²." [NEWLINE] - Ð’Ð°Ð½ Ð’ÑÐ¹</Text>
+		  <Text>"Из десяти тысяч долин деревья касаются неба, на тысячах вершин кричат кукушки, и после ночи горного дождя с каждой вершины исходят сотни шелковых каскадов." [NEWLINE] - Ван Вэй</Text>
 	</Replace>	
 	<Replace Tag="LOC_PEDIA_FEATURES_PAGE_FEATURE_WULINGYUAN_CHAPTER_HISTORY_PARA_1" Language="ru_RU">
 		  <Text>Wulingyuan is a scenic and historical site in south-central China. It is noted for more than 3,000 quartzite sandstone pillars and peaks, many over 200 meters in height, along with ravines, gorges, pools, lakes, rivers and waterfalls. It features 40 caves and two natural bridges, Xianrenqiao (Bridge of the Immortals) and Tianqiashengkong (Bridge Across the Sky).</Text>
