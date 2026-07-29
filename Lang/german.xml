@@ -13,6 +13,12 @@
 		<Replace Tag="LOC_MAP_TEMPERATURE_EXTRA_COLD_DESCRIPTION" Language="de_DE">
 			<Text>Die Karte ist vollständig mit Tundra bedeckt.</Text>
 		</Replace>
+		<Replace Tag="LOC_MAP_RICH_RIVERLANDS_NAME" Language="de_DE">
+            <Text>Reiche Flusslandschaften</Text>
+        </Replace>
+        <Replace Tag="LOC_MAP_RICH_RIVERLANDS_DESCRIPTION" Language="de_DE">
+            <Text>Hochland mit zahlreichen Flüssen, Seen und Ressourcen. Jede Kartengröße verwendet ein um eine Stufe kleineres Raster für eine dichtere, umkämpftere Landschaft.</Text>
+        </Replace>
 		<Replace Tag="LOC_MAP_RICH_HIGHLANDS_NAME" Language="de_DE">
             <Text>Reiches Hochland</Text>
         </Replace>
@@ -50,11 +56,29 @@
 		<Replace Tag="LOC_GAME_BBM_EXTRA_HILLS_DESC" Language="de_DE">
 			<Text>Füge zusätzliche Hügel hinzu, um ein weniger flaches Gelände mit mehr strategischen Möglichkeiten zu schaffen.</Text>
 		</Replace>
+		<Replace Tag="LOC_BBM_BREAK_CLUMPS_NAME" Language="de_DE">
+			<Text>Berggruppen aufbrechen</Text>
+		</Replace>
+		<Replace Tag="LOC_BBM_BREAK_CLUMPS_DESC" Language="de_DE">
+			<Text>Zerlegt große Gebirgsblöcke, indem es innere Berge (4 oder mehr aneinandergrenzende Berge) in Hügel umwandelt, wodurch die Spawn-Wahrscheinlichkeit in der Nähe von Gebirgszügen verbessert wird.</Text>
+		</Replace>
+		<Replace Tag="LOC_BBM_BREAK_DESERT_NAME" Language="de_DE">
+			<Text>Wüstengebiete aufbrechen</Text>
+		</Replace>
+		<Replace Tag="LOC_BBM_BREAK_DESERT_DESC" Language="de_DE">
+			<Text>NICHT VERWENDEN, WENN MALI IM SPIEL IST. Teilt große zusammenhängende Wüstenregionen in kleine, verstreute Flecken auf. Wüstenfelder mit 3 oder mehr angrenzenden Wüstenfeldern werden in Ebenen umgewandelt, wodurch verhindert wird, dass ein Spieler neben einer nicht besiedelbaren Wüste festsitzt, während kleine Wüstencluster für Wunder erhalten bleiben.</Text>
+		</Replace>
+		<Replace Tag="LOC_BBM_LUX_EXP1_NAME" Language="de_DE">
+			<Text>[EXPERIMENTELL] Luxus-Mindestanzahl</Text>
+		</Replace>
+		<Replace Tag="LOC_BBM_LUX_EXP1_DESC" Language="de_DE">
+			<Text>>EXPERIMENTELL. Stellt sicher, dass jeder Spieler mindestens 7 Luxusressourcenfelder im Umkreis von 6 Hexfeldern um seine Hauptstadt hat. Spieler, die diese Mindestanzahl nicht erreichen, erhalten zusätzliche, dem Kontinent entsprechende Luxusressourcen in der Nähe. High-Roll-Starts sind davon nicht betroffen. Funktioniert auf allen Karten.</Text>
+		</Replace>
 		<Replace Tag="LOC_MAP_WRAPAROUND_NAME" Language="de_DE">
 			<Text>Weltumrundung</Text>
 		</Replace>
 		<Replace Tag="LOC_BBM_WRAP_DEFAULT_NAME" Language="de_DE">
-			<Text>Standard</Text>
+			<Text>Standart</Text>
 		</Replace>
 		<Replace Tag="LOC_BBM_WRAP_DEFAULT_DESC" Language="de_DE">
 			<Text>Karteneigenschaften bleiben unverändert.</Text>
@@ -518,7 +542,7 @@
 			<Text>Felsen von Gibraltar</Text>
 		</Replace>
 		<Replace Tag="LOC_FEATURE_GIBRALTAR_DESCRIPTION" Language="de_DE">
-			<Text>Unpassierbares Naturwunder auf einem Feld:[NEWLINE][NEWLINE]• Erscheint als Bergfeld auf einem Grasland- oder Graslandhügelfeld, angrenzend an ein Küstenfeld.[NEWLINE]• +1 [ICON_FOOD] Nahrung und +1 [ICON_GOLD] Gold für angrenzende Felder.[NEWLINE]• +2 Anziehungskraft für angrenzende Felder.</Text>
+			<Text>Unpassierbares Naturwunder auf einem Feld:[NEWLINE][NEWLINE]• Erscheint als Bergfeld auf einem Grasland- oder Graslandhügelfeld, angrenzend an ein Küstenfeld.[NEWLINE]• +1 [ICON_FOOD] Nahrung, +1 [ICON_PRODUCTION] Produktion und +1 [ICON_GOLD] Gold für angrenzende Felder.[NEWLINE]• +2 Anziehungskraft für angrenzende Felder.</Text>
 		</Replace>
 		<Replace Tag="LOC_FEATURE_GIBRALTAR_QUOTE" Language="de_DE">
 			<Text>"Schaut euch um, meine Jungs, und betrachtet, wie schön der Felsen im Licht des glorreichen Feuers erscheint."[NEWLINE]- George Augustus Eliott</Text>
@@ -719,7 +743,7 @@
 			<Text>Victoria-See</Text>
 		</Replace>
 		<Replace Tag="LOC_FEATURE_LAKE_VICTORIA_DESCRIPTION" Language="de_DE">
-			<Text>Naturwunder auf 4 Feldern:[NEWLINE][NEWLINE]• Bietet Süßwasser.[NEWLINE]• Erscheint als Seefeld auf Grasland-, Graslandhügel-, Ebenen- oder Ebenenhügelfeldern.[NEWLINE]• +2 [ICON_FOOD] Nahrung, +1 [ICON_PRODUCTION] Produktion, +1 [ICON_GOLD] Gold und +1 [ICON_CULTURE] Kultur.[NEWLINE]• +2 Anziehungskraft für angrenzende Felder.</Text>
+			<Text>Naturwunder auf 4 Feldern:[NEWLINE][NEWLINE]• Bietet Süßwasser.[NEWLINE]• Erscheint als Seefeld auf Grasland-, Graslandhügel-, Ebenen- oder Ebenenhügelfeldern.[NEWLINE]• +3 [ICON_FOOD] Nahrung, +1 [ICON_PRODUCTION] Produktion, +1 [ICON_GOLD] Gold und +1 [ICON_CULTURE] Kultur.[NEWLINE]• +2 Anziehungskraft für angrenzende Felder.</Text>
 		</Replace>
 		<Replace Tag="LOC_FEATURE_LAKE_VICTORIA_QUOTE" Language="de_DE">
 			<Text>"Ich sah, dass der alte Vater Nil ohne Zweifel im Victoria-Nyanza entspringt, und wie ich prophezeit hatte, ist dieser See die große Quelle des heiligen Flusses, der den ersten Erklärer unseres Glaubens wiegt."[NEWLINE]- John Hanning Speke</Text>
