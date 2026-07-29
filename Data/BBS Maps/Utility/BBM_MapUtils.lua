@@ -4195,7 +4195,8 @@ function BreakMountainClumps()
 				end
 				-- 4+ adjacent mountains = clump interior; convert to hills.
 				-- Mountain terrain is always hills+1 in the Civ6 enum.
-				if adjMountains >= 4 then
+				-- Skip volcanoes (mirrors HexMap:TerraformMountainToHill behaviour).
+				if adjMountains >= 4 and plot:GetFeatureType() ~= g_FEATURE_VOLCANO then
 					TerrainBuilder.SetTerrainType(plot, plot:GetTerrainType() - 1);
 				end
 			end
@@ -4218,7 +4219,7 @@ function BreakMountainClumps()
 						break;
 					end
 				end
-				if inChain then
+				if inChain and plot:GetFeatureType() ~= g_FEATURE_VOLCANO then
 					TerrainBuilder.SetTerrainType(plot, plot:GetTerrainType() - 1);
 				end
 			end
@@ -4252,7 +4253,7 @@ function BreakMountainClumps()
 					end
 					if inTriangle then break; end
 				end
-				if inTriangle then
+				if inTriangle and plot:GetFeatureType() ~= g_FEATURE_VOLCANO then
 					TerrainBuilder.SetTerrainType(plot, plot:GetTerrainType() - 1);
 				end
 			end
@@ -4338,7 +4339,7 @@ function BreakDesertPatches()
 	scatterCount = math.min(scatterCount, #plainsTiles);
 	for i = 1, scatterCount do
 		local plot = Map.GetPlotByIndex(plainsTiles[i]);
-		if plot ~= nil then
+		if plot ~= nil and plot:GetFeatureType() == g_FEATURE_NONE then
 			if plot:GetTerrainType() == 4 then
 				TerrainBuilder.SetTerrainType(plot, 7); -- DESERT_HILLS
 			else

@@ -710,7 +710,7 @@ function AddRivers()
 
 	for iPass, passCondition in ipairs(passConditions) do
 
-		local riverSourceRange = 3.0;  -- was 2.8; higher = fewer river starts near existing water
+		local riverSourceRange = 2.4;  -- was 2.8; higher = fewer river starts near existing water
 		local seaWaterRange    = seaWaterRangeDefault / 4;
 
 		local iW, iH = Map.GetGridSize();
