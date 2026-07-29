@@ -4258,6 +4258,7 @@ function BreakMountainClumps()
 				end
 			end
 		end
+	end
 
 	-- Mountain-to-hills conversion runs after AddFeatures, so new grass-hills tiles can
 	-- end up with jungle (which is only valid on plains terrain in Civ6).
@@ -4267,7 +4268,6 @@ function BreakMountainClumps()
 				and plot:GetFeatureType() == g_FEATURE_JUNGLE then
 			TerrainBuilder.SetTerrainType(plot, g_TERRAIN_TYPE_PLAINS_HILLS);
 		end
-	end
 	end
 end
 
@@ -4279,6 +4279,7 @@ end
 function BreakDesertPatches()
 	local iW, iH = Map.GetGridSize();
 	local desertConverted = 0;
+	local convertedPlots = {};
 
 	for pass = 1, 3 do
 		local toConvert = {};
@@ -4312,11 +4313,28 @@ function BreakDesertPatches()
 				else
 					TerrainBuilder.SetTerrainType(plot, 3); -- PLAINS
 				end
+				table.insert(convertedPlots, i);
 				desertConverted = desertConverted + 1;
 			end
 		end
 	end
 	print("- Desert patches broken up, tiles converted: ", desertConverted);
+
+	-- Add jungle to ~60% of converted plains tiles; forest to ~60% of converted grassland tiles.
+	-- Deduplicates by checking feature is still NONE (a tile may appear in multiple pass lists).
+	for _, i in ipairs(convertedPlots) do
+		local plot = Map.GetPlotByIndex(i);
+		if plot ~= nil and plot:GetFeatureType() == g_FEATURE_NONE then
+			local t = plot:GetTerrainType();
+			if (t == g_TERRAIN_TYPE_PLAINS or t == g_TERRAIN_TYPE_PLAINS_HILLS)
+					and TerrainBuilder.GetRandomNumber(10, "DesertConvert jungle") < 6 then
+				TerrainBuilder.SetFeatureType(plot, g_FEATURE_JUNGLE);
+			elseif (t == g_TERRAIN_TYPE_GRASS or t == g_TERRAIN_TYPE_GRASS_HILLS)
+					and TerrainBuilder.GetRandomNumber(10, "DesertConvert forest") < 6 then
+				TerrainBuilder.SetFeatureType(plot, g_FEATURE_FOREST);
+			end
+		end
+	end
 
 	-- Scatter ~10 isolated desert tiles randomly across plains to restore variety.
 	-- Only converts plains/plains-hills with no adjacent desert (stays isolated).
