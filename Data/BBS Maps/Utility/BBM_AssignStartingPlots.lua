@@ -347,6 +347,7 @@ function BBM_AssignStartingPlots.Create(args)
             bbm_game_config.BBM_MAP_SCRIPT == MapScripts.MAP_PANGAEA_ULTIMA or
             bbm_game_config.BBM_MAP_SCRIPT == MapScripts.MAP_HIGHLANDS or
             bbm_game_config.BBM_MAP_SCRIPT == MapScripts.MAP_RICH_HIGHLANDS or
+            bbm_game_config.BBM_MAP_SCRIPT == MapScripts.MAP_RICH_RIVERLANDS or
             bbm_game_config.BBM_MAP_SCRIPT == MapScripts.MAP_LAKES
         )
         
@@ -381,6 +382,11 @@ function BBM_AssignStartingPlots.Create(args)
         CallFiraxisPlacement(args);
     end   
     
+    -- EXPERIMENTAL: luxury floor guarantee (runs after start assignment, before returning)
+    if MapConfiguration.GetValue("BBMLuxExp1") == true then
+        BoostLuxuryFloor();
+    end
+
     print("-----------------------")
     print("Ending BBM Placement",  os.date("%c"))
     print("-----------------------")

@@ -107,12 +107,6 @@ function GenerateMap()
 		terrainTypes = GenerateTerrainTypes(plotTypes, g_iW, g_iH, g_iFlags, true, temperature);
 	end
 	ApplyBaseTerrain(plotTypes, terrainTypes, g_iW, g_iH);
-	
-	-- -- optimize terrain to limit desert
-    OptimizeDesert();
-
-	-- -- normalize settleable tiles to reach ~2700
-	--NormalizeSettleableTiles();
 
 	AreaBuilder.Recalculate();
 	TerrainBuilder.AnalyzeChokepoints();
@@ -133,6 +127,13 @@ function GenerateMap()
 	end
 
 	AreaBuilder.Recalculate();
+
+	-- Normalize settleable tiles AFTER AddTerrainFromContinents so ridge/mountain
+	-- conversion is already done and we're working against the final terrain state.
+	-- Low sea level maps are already large enough; skip normalization for them.
+	if MapConfiguration.GetValue("sea_level") ~= 1 then
+		NormalizeSettleableTiles();
+	end
 
 	-- set a local parameter for more rivers without affecting rainforest and woods
 	local riverArgs = {rainfall = 3}; -- Higher rainfall = more rivers (values 1-4)
@@ -198,6 +199,11 @@ function GenerateMap()
     
 	-- write map stats to the log
     local mapStats = PrintMapStatistics();
+
+	-- when luxury floor is active, also log density so we can verify the boost worked
+	if MapConfiguration.GetValue("BBMLuxExp1") == true then
+		PrintLuxuryDensityStats();
+	end
 
 end
 
@@ -461,8 +467,60 @@ function GeneratePlotTypes(world_age)
 		end
 	end
 
-	
-	
+	-- Enforce a minimum land tile count by expanding the coastline.
+	-- New tiles receive terrain from GenerateTerrainTypes based on latitude —
+	-- no forced terrain conversion, the map just gets a bigger pangaea.
+	-- Low sea level already generates enough land naturally; skip to avoid adding polar tiles.
+	if sea_level ~= 1 then
+		local landTarget = math.floor(g_iW * g_iH * 0.565);
+		local landCount = 0;
+		for i = 0, (g_iW * g_iH) - 1 do
+			if plotTypes[i] ~= g_PLOT_TYPE_OCEAN then
+				landCount = landCount + 1;
+			end
+		end
+		print("Land floor check: current=" .. landCount .. " target=" .. landTarget);
+		if landCount < landTarget then
+			local toAdd = landTarget - landCount;
+			-- Collect ocean tiles adjacent to land (excluding map border rows/cols)
+			local candidates = {};
+			for y = 1, g_iH - 2 do
+				for x = 1, g_iW - 2 do
+					local i = y * g_iW + x;
+					if plotTypes[i] == g_PLOT_TYPE_OCEAN then
+						for dir = 0, 5 do
+							local adj = Map.GetAdjacentPlot(x, y, dir);
+							if adj ~= nil then
+								local ai = adj:GetY() * g_iW + adj:GetX();
+								if plotTypes[ai] ~= g_PLOT_TYPE_OCEAN then
+									table.insert(candidates, i);
+									break;
+								end
+							end
+						end
+					end
+				end
+			end
+			-- Shuffle and convert up to toAdd tiles
+			for i = #candidates, 2, -1 do
+				local j = TerrainBuilder.GetRandomNumber(i, "Land floor shuffle") + 1;
+				candidates[i], candidates[j] = candidates[j], candidates[i];
+			end
+			local added = 0;
+			for i = 1, math.min(toAdd, #candidates) do
+				-- ~20% chance of hills, matching AddExtraHills base rate,
+				-- so new coast tiles look natural rather than all flat.
+				if TerrainBuilder.GetRandomNumber(100, "Land floor hills") < 20 then
+					plotTypes[candidates[i]] = g_PLOT_TYPE_HILLS;
+				else
+					plotTypes[candidates[i]] = g_PLOT_TYPE_LAND;
+				end
+				added = added + 1;
+			end
+			print("Land floor: added " .. added .. " coastal tiles.");
+		end
+	end
+
 	return plotTypes;
 end
 
@@ -505,85 +563,6 @@ function ExtendCoastTiles()
     print("Extended coast with " .. #coastPlots .. " coast tiles (minimal 1-tile approach)");
 end
 
--- Simplified function to optimize terrain with better climate distribution
-function OptimizeDesert()
-    print("Optimizing desert - randomly converting excess desert tiles");
-
-    local g_iW, g_iH = Map.GetGridSize();
-    local desertTiles = {};
-    local initialDesertCount = 0;
-    
-    -- Define terrain class constants
-    local TERRAIN_CLASS_DESERT = 3;
-    
-    -- Define terrain types needed for conversion
-    local TERRAIN_TYPE_PLAINS = 3;
-    local TERRAIN_TYPE_GRASS = 0;
-    
-    -- First, identify all desert tiles
-    for y = 0, g_iH - 1 do
-        for x = 0, g_iW - 1 do
-            local plot = Map.GetPlot(x, y);
-            if plot and not plot:IsWater() and not plot:IsMountain() then
-                if plot:GetTerrainClassType() == TERRAIN_CLASS_DESERT then
-                    initialDesertCount = initialDesertCount + 1;
-                    table.insert(desertTiles, {x = x, y = y});
-                end
-            end
-        end
-    end
-
-    -- Set target desert count (70-80 tiles)
-    local targetDesertCount = 70 + TerrainBuilder.GetRandomNumber(10, "Desert Count Variation");
-    
-    -- Calculate how many to convert
-    local desertToKeep = math.min(initialDesertCount, targetDesertCount);
-    local desertToConvert = initialDesertCount - desertToKeep;
-    
-    print("Initial desert count: " .. initialDesertCount);
-    print("Target desert count: " .. targetDesertCount);
-    print("Desert tiles to convert: " .. desertToConvert);
-    
-    -- If we need to convert desert tiles
-    if desertToConvert > 0 then
-        -- Shuffle the desert tiles to randomize which ones we'll convert
-        for i = #desertTiles, 2, -1 do
-            local j = TerrainBuilder.GetRandomNumber(i, "Shuffle desert tiles") + 1;
-            desertTiles[i], desertTiles[j] = desertTiles[j], desertTiles[i];
-        end
-        
-        -- Convert the required number of desert tiles
-        local converted = 0;
-        for i = 1, math.min(desertToConvert, #desertTiles) do
-            local plotData = desertTiles[i];
-            local plot = Map.GetPlot(plotData.x, plotData.y);
-            
-            -- Make sure it's still desert
-            if plot and plot:GetTerrainClassType() == TERRAIN_CLASS_DESERT then
-                -- Calculate normalized distance from equator
-                local distFromEquator = math.abs((g_iH / 2) - plotData.y);
-                local normalizedDist = distFromEquator / (g_iH * 0.5);
-                
-                -- Determine terrain type (more plains near equator, more grass away)
-                local plainsChance = 70 - (normalizedDist * 40);
-                
-                -- Convert to plains or grass
-                if TerrainBuilder.GetRandomNumber(100, "Desert Conversion") < plainsChance then
-                    TerrainBuilder.SetTerrainType(plot, TERRAIN_TYPE_PLAINS, plot:IsHills(), plot:IsMountain());
-                else
-                    TerrainBuilder.SetTerrainType(plot, TERRAIN_TYPE_GRASS, plot:IsHills(), plot:IsMountain());
-                end
-                
-                converted = converted + 1;
-            end
-        end
-        
-        print("Desert optimization complete - converted " .. converted .. " desert tiles");
-        print("Final desert count: approximately " .. (initialDesertCount - converted));
-    else
-        print("No desert conversion needed - already at or below target count");
-    end
-end
 -------------------------------------------------------------------------------
 
 function SmoothLonelyCoastlines(plotTypes)
@@ -1208,6 +1187,96 @@ end
 
 
 -------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+-- EXPERIMENTAL: Log luxury resource density around each player start
+-------------------------------------------------------------------------------
+function PrintLuxuryDensityStats()
+    local iW, iH = Map.GetGridSize();
+
+    -- Build a lookup of luxury resource indices
+    local luxuryTypes = {};
+    for row in GameInfo.Resources() do
+        if row.ResourceClassType == "RESOURCECLASS_LUXURY" then
+            luxuryTypes[row.Index] = row.ResourceType;
+        end
+    end
+
+    -- Find major civ starting plots only (excludes city states)
+    local startPlots = {};
+    local majorIDs = PlayerManager.GetAliveMajorIDs();
+    for _, playerID in ipairs(majorIDs) do
+        local startPlot = Players[playerID]:GetStartingPlot();
+        if startPlot ~= nil then
+            table.insert(startPlots, startPlot);
+        end
+    end
+
+    if #startPlots == 0 then
+        print("LUX DENSITY: No starting plots found.");
+        return;
+    end
+
+    print("==================== LUXURY DENSITY STATS ====================");
+    print("Checking " .. #startPlots .. " starts at radius 3 and radius 6");
+
+    local minR3 = 999; local maxR3 = 0; local totalR3 = 0;
+    local minR6 = 999; local maxR6 = 0; local totalR6 = 0;
+
+    for i, startPlot in ipairs(startPlots) do
+        local sx = startPlot:GetX();
+        local sy = startPlot:GetY();
+        local countR3 = 0; local typesR3 = {};
+        local countR6 = 0; local typesR6 = {};
+
+        for dx = -6, 6 do
+            for dy = -6, 6 do
+                local nx = (sx + dx + iW) % iW;
+                local ny = sy + dy;
+                if ny >= 0 and ny < iH then
+                    local dist = Map.GetPlotDistance(sx, sy, nx, ny);
+                    if dist <= 6 then
+                        local plot = Map.GetPlot(nx, ny);
+                        if plot ~= nil then
+                            local resIdx = plot:GetResourceType();
+                            if resIdx >= 0 and luxuryTypes[resIdx] then
+                                countR6 = countR6 + 1;
+                                typesR6[resIdx] = true;
+                                if dist <= 3 then
+                                    countR3 = countR3 + 1;
+                                    typesR3[resIdx] = true;
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+        end
+
+        local uR3 = 0; for _ in pairs(typesR3) do uR3 = uR3 + 1; end
+        local uR6 = 0; for _ in pairs(typesR6) do uR6 = uR6 + 1; end
+
+        print("  Start " .. i .. " (" .. sx .. "," .. sy .. "):"
+            .. "  r3=" .. countR3 .. " tiles/" .. uR3 .. " types"
+            .. "  |  r6=" .. countR6 .. " tiles/" .. uR6 .. " types");
+
+        if countR3 < minR3 then minR3 = countR3; end
+        if countR3 > maxR3 then maxR3 = countR3; end
+        totalR3 = totalR3 + countR3;
+        if countR6 < minR6 then minR6 = countR6; end
+        if countR6 > maxR6 then maxR6 = countR6; end
+        totalR6 = totalR6 + countR6;
+    end
+
+    local n = #startPlots;
+    local avgR3 = math.floor(totalR3 / n * 10 + 0.5) / 10;
+    local avgR6 = math.floor(totalR6 / n * 10 + 0.5) / 10;
+    print("  -- Summary --");
+    print("  Radius 3: min=" .. minR3 .. "  max=" .. maxR3 .. "  avg=" .. avgR3);
+    print("  Radius 6: min=" .. minR6 .. "  max=" .. maxR6 .. "  avg=" .. avgR6);
+    print("==============================================================");
+end
+
+-------------------------------------------------------------------------------
 -- Function to print detailed map statistics
 -- This function collects and prints statistics about the map, including terrain distribution and water coverage.
 function PrintMapStatistics()
@@ -1383,8 +1452,19 @@ end
 -------------------------------------------------------------------------------
 function NormalizeSettleableTiles()
     local g_iW, g_iH = Map.GetGridSize();
-    local targetSettleableTiles = g_iW * g_iH * 0.46;
-    local acceptableVariance = g_iW * g_iH * 0.01;
+    -- Scale target modestly with sea level. Low = more land = slightly higher target,
+    -- but use a flat offset rather than proportional to avoid over-converting tundra.
+    local sea_level = MapConfiguration.GetValue("sea_level");
+    local seaLevelOffset;
+    if sea_level == 1 then
+        seaLevelOffset = 150; -- Low sea: a bit more settleable
+    elseif sea_level == 3 then
+        seaLevelOffset = -150; -- High sea: a bit less
+    else
+        seaLevelOffset = 0; -- Normal or random
+    end
+    local targetSettleableTiles = math.floor(g_iW * g_iH * 0.408) + seaLevelOffset; -- ~2350 floor → ~2450-2520 final after post-processing
+    local acceptableVariance = math.floor(g_iW * g_iH * 0.013); -- ~75 tiles on large map
     local extremeCaseThreshold = g_iW * g_iH * 0.035
     print("Normalizing settleable tiles (plains and grassland) to around "..targetSettleableTiles.." - EXCLUDING DESERT");
 
@@ -1589,96 +1669,73 @@ function NormalizeSettleableTiles()
     
     -- Process based on whether we need more or fewer settleable tiles
     if tileDifference > 0 then
-        -- Need MORE settleable tiles
-        print("Need to ADD " .. tileDifference .. " settleable tiles (using only tundra/snow)");
-        
+        -- Need MORE settleable tiles.
+        -- Use boundary expansion: only convert tundra/snow tiles that are adjacent to
+        -- existing plains/grassland. This extends the temperate belt inward naturally
+        -- instead of scattering random green tiles across the tundra.
+        print("Need to ADD " .. tileDifference .. " settleable tiles (boundary expansion)");
+
         local converted = 0;
-        local northConverted = 0; 
-        local southConverted = 0;
-        
-        -- First pass: convert tundra only in alternating north/south bands
-        for _, y in ipairs(latitudeOrder) do
-            -- Check if we need to balance north/south conversions
-            local isNorth = (y < equatorY);
-            local canConvertHere = true;
-            
-            if northConverted > southConverted + 20 and isNorth then
-                canConvertHere = false; -- Skip northern conversions to balance
-            elseif southConverted > northConverted + 20 and not isNorth then
-                canConvertHere = false; -- Skip southern conversions to balance
-            end
-            
-            if canConvertHere then
-                -- Shuffle the non-settleable plots at this latitude for more natural distribution
-                local nonSettleablePlots = {};
-                
-                -- ONLY include tundra plots (NOT desert) at this latitude
-                for _, plot in ipairs(plotsByLatitude[y].tundra) do
-                    table.insert(nonSettleablePlots, plot);
-                end
-                for _, plot in ipairs(plotsByLatitude[y].tundraHills) do
-                    table.insert(nonSettleablePlots, plot);
-                end
-                
-                -- If extreme case, also consider snow
-                if extremeCase then
-                    for _, plot in ipairs(plotsByLatitude[y].snow) do
-                        table.insert(nonSettleablePlots, plot);
-                    end
-                    for _, plot in ipairs(plotsByLatitude[y].snowHills) do
-                        table.insert(nonSettleablePlots, plot);
-                    end
-                end
-                
-                ShuffleList(nonSettleablePlots);
-                
-                -- Convert plots at this latitude
-                for _, plotData in ipairs(nonSettleablePlots) do
-                    if converted >= tileDifference then
-                        break;
-                    end
-                    
-                    local plot = Map.GetPlot(plotData.x, plotData.y);
-                    local newType = GetNextTerrainType(plotData.y, plotData.type, "settleable");
-                    
-                    -- Direct terrain type conversion
-                    TerrainBuilder.SetTerrainType(plot, newType);
-                    
-                    -- Verify the conversion worked
-                    if plot:GetTerrainType() == newType then
-                        converted = converted + 1;
-                        if isNorth then
-                            northConverted = northConverted + 1;
-                        else
-                            southConverted = southConverted + 1;
+
+        -- Up to 10 passes; each pass expands the temperate boundary one tile inward.
+        for pass = 1, 10 do
+            if converted >= tileDifference then break; end
+
+            -- Collect all tundra/snow tiles that touch at least one plains/grassland tile.
+            local frontier = {};
+            for y = 0, g_iH - 1 do
+                for x = 0, g_iW - 1 do
+                    local plot = Map.GetPlot(x, y);
+                    if plot then
+                        local t = plot:GetTerrainType();
+                        if t == TERRAIN_TYPE_TUNDRA or t == TERRAIN_TYPE_TUNDRA_HILLS or
+                           t == TERRAIN_TYPE_SNOW  or t == TERRAIN_TYPE_SNOW_HILLS  then
+                            for dir = 0, 5 do
+                                local adj = Map.GetAdjacentPlot(x, y, dir);
+                                if adj then
+                                    local at = adj:GetTerrainType();
+                                    if at == TERRAIN_TYPE_PLAINS      or at == TERRAIN_TYPE_PLAINS_HILLS or
+                                       at == TERRAIN_TYPE_GRASS       or at == TERRAIN_TYPE_GRASS_HILLS  then
+                                        table.insert(frontier, {x = x, y = y, t = t});
+                                        break;
+                                    end
+                                end
+                            end
                         end
-                        
-                        if converted % 20 == 0 then
-                            print("  - Converted " .. converted .. " tiles (North: " .. northConverted .. ", South: " .. southConverted .. ")");
-                        end
-                    end
-                    
-                    if converted >= tileDifference then
-                        break;
                     end
                 end
             end
-            
-            if converted >= tileDifference then
+
+            if #frontier == 0 then
+                print("  Pass " .. pass .. ": no boundary tiles left, stopping.");
                 break;
             end
+
+            -- Shuffle so we convert evenly around the map, not just one side.
+            ShuffleList(frontier);
+
+            local passConverted = 0;
+            for _, data in ipairs(frontier) do
+                if converted >= tileDifference then break; end
+                local plot = Map.GetPlot(data.x, data.y);
+                local isHills = (data.t == TERRAIN_TYPE_TUNDRA_HILLS or data.t == TERRAIN_TYPE_SNOW_HILLS);
+                -- Convert to plains (not grassland) — matches the surrounding temperate biome
+                -- and avoids bright green tiles appearing deep in the polar region.
+                local newType = isHills and TERRAIN_TYPE_PLAINS_HILLS or TERRAIN_TYPE_PLAINS;
+                TerrainBuilder.SetTerrainType(plot, newType);
+                converted = converted + 1;
+                passConverted = passConverted + 1;
+            end
+
+            print("  Pass " .. pass .. ": converted " .. passConverted .. " boundary tiles (total so far: " .. converted .. ")");
         end
-        
-        print("Successfully converted " .. converted .. " tiles to settleable terrain");
-        print("North/South balance: " .. northConverted .. "/" .. southConverted);
-        
-        -- If we couldn't convert enough tundra/snow tiles, notify the user
+
+        print("Boundary expansion complete: " .. converted .. " tiles converted to plains.");
         if converted < tileDifference then
-            print("WARNING: Could only convert " .. converted .. " of " .. tileDifference .. " needed tiles");
-            print("Not enough tundra/snow to reach the target settleable count.");
+            print("WARNING: Could only reach " .. converted .. " of " .. tileDifference .. " needed tiles.");
         end
     end
-    
+
     -- Verify final result with more detailed breakdown
     local finalGrass = 0;
     local finalGrassHills = 0;

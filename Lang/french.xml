@@ -732,6 +732,24 @@
 		<Replace Tag="LOC_BBM_WRAP_YES_DESC" language="fr_FR">
 			<Text>On peut faire le tour du monde sur la carte</Text>
 		</Replace>
+		<Replace Tag="LOC_BBM_BREAK_CLUMPS_NAME" Language="fr_FR">
+			<Text>Disperser les massifs montagneux</Text>
+		</Replace>
+		<Replace Tag="LOC_BBM_BREAK_CLUMPS_DESC" Language="fr_FR">
+			<Text>Érode les grands massifs montagneux en convertissant les montagnes intérieures (4+ montagnes adjacentes) en collines, améliorant la viabilité des installations près des chaînes de montagnes.</Text>
+		</Replace>
+		<Replace Tag="LOC_BBM_BREAK_DESERT_NAME" Language="fr_FR">
+			<Text>Disperser les étendues désertiques</Text>
+		</Replace>
+		<Replace Tag="LOC_BBM_BREAK_DESERT_DESC" Language="fr_FR">
+			<Text>NE PAS UTILISER SI MALI EST DANS LA PARTIE. Fragmente les grandes régions désertiques contiguës en petits îlots épars. Les cases désertiques ayant 3+ voisins désertiques adjacents sont converties en plaines, empêchant qu'un joueur se retrouve coincé près d'un désert non colonisable tout en conservant de petits îlots pour les merveilles naturelles.</Text>
+		</Replace>
+		<Replace Tag="LOC_BBM_LUX_EXP1_NAME" Language="fr_FR">
+			<Text>Garantie de densité de luxes</Text>
+		</Replace>
+		<Replace Tag="LOC_BBM_LUX_EXP1_DESC" Language="fr_FR">
+			<Text>Garantit à chaque joueur au moins 7 cases de ressources de luxe dans un rayon de 6 hexagones autour de sa capitale. Les joueurs en dessous de ce seuil reçoivent des ressources de luxe supplémentaires adaptées à leur continent. Les départs favorisés ne sont pas pénalisés. Fonctionne sur toutes les cartes.</Text>
+		</Replace>
 		<Replace Tag="LOC_BBM_WRAP_NO_NAME" language="fr_FR">
 			<Text>Sans tour du monde</Text>
 		</Replace>

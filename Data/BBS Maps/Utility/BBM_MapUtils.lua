@@ -5,6 +5,7 @@
 MapScripts = {};
 MapScripts.MAP_HIGHLANDS = "Highlands_XP2.lua"
 MapScripts.MAP_RICH_HIGHLANDS = "rich_highlands_xp2.lua"
+MapScripts.MAP_RICH_RIVERLANDS = "rich_riverlands.lua"
 MapScripts.MAP_LAKES = "Lakes.lua"
 MapScripts.MAP_INLAND_SEA = "InlandSea.lua"
 MapScripts.MAP_SEVEN_SEAS = "Seven_Seas.lua"
@@ -882,6 +883,10 @@ function HexMap:SetMinimumDistanceMajorToMajorCivs()
         or self.mapScript == MapScripts.MAP_LAKES 
         or self.mapScript == MapScripts.MAP_RICH_HIGHLANDS then
             return 15;
+        elseif self.mapScript == MapScripts.MAP_RICH_RIVERLANDS then
+            -- Small uses a Tiny grid (60x38) so needs a reduced distance.
+            if Map.GetMapSize() <= 1 then return 11; end
+            return 14;
         elseif self.mapScript == MapScripts.MAP_INLAND_SEA 
         or self.mapScript == MapScripts.MAP_PANGAEA_ULTIMA then
             return 14;
@@ -4164,4 +4169,352 @@ function NormalizeContinents(g_iW, g_iH)
             contId, originalPercent, finalPercent, change))
     end
     print("----------------------------------------")
+end
+
+---------------------------------------
+-- Shared terrain utility
+---------------------------------------
+
+-- Erodes large mountain clumps and breaks long chains.
+-- Pass 1 (x3): converts mountains with 4+ adjacent mountains to hills (blob interiors).
+-- Pass 2 (x2): converts mountains that are the middle of a straight chain of 3+
+--              (mountain on both sides of any hex axis) to hills.
+-- Call after AddCliffs. Safe to use on any map.
+function BreakMountainClumps()
+	local iW, iH = Map.GetGridSize();
+
+	-- Pass 1: break blob interiors (4+ adjacent mountains).
+	for pass = 1, 3 do
+		for i = 0, (iW * iH) - 1, 1 do
+			local plot = Map.GetPlotByIndex(i);
+			if plot ~= nil and plot:IsMountain() and not plot:IsNaturalWonder() then
+				local adjMountains = 0;
+				for direction = 0, DirectionTypes.NUM_DIRECTION_TYPES - 1, 1 do
+					local adj = Map.GetAdjacentPlot(plot:GetX(), plot:GetY(), direction);
+					if adj ~= nil and adj:IsMountain() then
+						adjMountains = adjMountains + 1;
+					end
+				end
+				-- 4+ adjacent mountains = clump interior; convert to hills.
+				-- Mountain terrain is always hills+1 in the Civ6 enum.
+				-- Skip volcanoes (mirrors HexMap:TerraformMountainToHill behaviour).
+				if adjMountains >= 4 and plot:GetFeatureType() ~= g_FEATURE_VOLCANO then
+					TerrainBuilder.SetTerrainType(plot, plot:GetTerrainType() - 1);
+				end
+			end
+		end
+	end
+
+	-- Pass 2: break straight chains (mountain on both sides of any hex axis).
+	-- The 3 opposite-direction pairs on a hex grid: (0,3), (1,4), (2,5).
+	local oppositePairs = {{0, 3}, {1, 4}, {2, 5}};
+	for pass = 1, 2 do
+		for i = 0, (iW * iH) - 1, 1 do
+			local plot = Map.GetPlotByIndex(i);
+			if plot ~= nil and plot:IsMountain() and not plot:IsNaturalWonder() then
+				local inChain = false;
+				for _, pair in ipairs(oppositePairs) do
+					local adjA = Map.GetAdjacentPlot(plot:GetX(), plot:GetY(), pair[1]);
+					local adjB = Map.GetAdjacentPlot(plot:GetX(), plot:GetY(), pair[2]);
+					if adjA ~= nil and adjB ~= nil and adjA:IsMountain() and adjB:IsMountain() then
+						inChain = true;
+						break;
+					end
+				end
+				if inChain and plot:GetFeatureType() ~= g_FEATURE_VOLCANO then
+					TerrainBuilder.SetTerrainType(plot, plot:GetTerrainType() - 1);
+				end
+			end
+		end
+	end
+
+	-- Pass 3: break triangles (3 mutually adjacent mountains).
+	-- On a hex grid, two neighbors are also adjacent to each other when their
+	-- direction indices are consecutive (mod 6). If any two adjacent mountain
+	-- neighbors satisfy this, the current tile is part of a tight triangle.
+	-- 5 passes handles compound formations that require multiple erosion rounds.
+	for pass = 1, 5 do
+		for i = 0, (iW * iH) - 1, 1 do
+			local plot = Map.GetPlotByIndex(i);
+			if plot ~= nil and plot:IsMountain() and not plot:IsNaturalWonder() then
+				local mountainDirs = {};
+				for direction = 0, DirectionTypes.NUM_DIRECTION_TYPES - 1, 1 do
+					local adj = Map.GetAdjacentPlot(plot:GetX(), plot:GetY(), direction);
+					if adj ~= nil and adj:IsMountain() then
+						table.insert(mountainDirs, direction);
+					end
+				end
+				local inTriangle = false;
+				for a = 1, #mountainDirs do
+					for b = a + 1, #mountainDirs do
+						local diff = (mountainDirs[b] - mountainDirs[a]) % 6;
+						if diff == 1 or diff == 5 then
+							inTriangle = true;
+							break;
+						end
+					end
+					if inTriangle then break; end
+				end
+				if inTriangle and plot:GetFeatureType() ~= g_FEATURE_VOLCANO then
+					TerrainBuilder.SetTerrainType(plot, plot:GetTerrainType() - 1);
+				end
+			end
+		end
+	end
+
+	-- Mountain-to-hills conversion runs after AddFeatures, so new grass-hills tiles can
+	-- end up with jungle (which is only valid on plains terrain in Civ6).
+	for i = 0, (iW * iH) - 1, 1 do
+		local plot = Map.GetPlotByIndex(i);
+		if plot ~= nil and plot:GetTerrainType() == g_TERRAIN_TYPE_GRASS_HILLS
+				and plot:GetFeatureType() == g_FEATURE_JUNGLE then
+			TerrainBuilder.SetTerrainType(plot, g_TERRAIN_TYPE_PLAINS_HILLS);
+		end
+	end
+end
+
+---------------------------------------
+-- Breaks up large contiguous desert regions into small scattered patches.
+-- 3 passes: any desert tile with 3+ adjacent desert neighbors is a blob interior;
+-- convert to plains (or plains hills), preserving hill status.
+-- Natural wonders that happen to be desert terrain are skipped.
+function BreakDesertPatches()
+	local iW, iH = Map.GetGridSize();
+	local desertConverted = 0;
+	local convertedPlots = {};
+
+	for pass = 1, 3 do
+		local toConvert = {};
+		for i = 0, (iW * iH) - 1, 1 do
+			local plot = Map.GetPlotByIndex(i);
+			if plot ~= nil and not plot:IsWater() and not plot:IsNaturalWonder() then
+				local terrainType = plot:GetTerrainType();
+				if terrainType == 6 or terrainType == 7 then -- DESERT or DESERT_HILLS
+					local adjDesert = 0;
+					for direction = 0, DirectionTypes.NUM_DIRECTION_TYPES - 1, 1 do
+						local adj = Map.GetAdjacentPlot(plot:GetX(), plot:GetY(), direction);
+						if adj ~= nil then
+							local adjTerrain = adj:GetTerrainType();
+							if adjTerrain == 6 or adjTerrain == 7 then
+								adjDesert = adjDesert + 1;
+							end
+						end
+					end
+					if adjDesert >= 3 then
+						table.insert(toConvert, i);
+					end
+				end
+			end
+		end
+		for _, i in ipairs(toConvert) do
+			local plot = Map.GetPlotByIndex(i);
+			if plot ~= nil then
+				-- Preserve hills: desert hills -> plains hills, desert flat -> plains flat
+				if plot:GetTerrainType() == 7 then
+					TerrainBuilder.SetTerrainType(plot, 4); -- PLAINS_HILLS
+				else
+					TerrainBuilder.SetTerrainType(plot, 3); -- PLAINS
+				end
+				table.insert(convertedPlots, i);
+				desertConverted = desertConverted + 1;
+			end
+		end
+	end
+	print("- Desert patches broken up, tiles converted: ", desertConverted);
+
+	-- Add jungle to ~60% of converted plains tiles; forest to ~60% of converted grassland tiles.
+	-- Deduplicates by checking feature is still NONE (a tile may appear in multiple pass lists).
+	for _, i in ipairs(convertedPlots) do
+		local plot = Map.GetPlotByIndex(i);
+		if plot ~= nil and plot:GetFeatureType() == g_FEATURE_NONE then
+			local t = plot:GetTerrainType();
+			if (t == g_TERRAIN_TYPE_PLAINS or t == g_TERRAIN_TYPE_PLAINS_HILLS)
+					and TerrainBuilder.GetRandomNumber(10, "DesertConvert jungle") < 6 then
+				TerrainBuilder.SetFeatureType(plot, g_FEATURE_JUNGLE);
+			elseif (t == g_TERRAIN_TYPE_GRASS or t == g_TERRAIN_TYPE_GRASS_HILLS)
+					and TerrainBuilder.GetRandomNumber(10, "DesertConvert forest") < 6 then
+				TerrainBuilder.SetFeatureType(plot, g_FEATURE_FOREST);
+			end
+		end
+	end
+
+	-- Scatter ~10 isolated desert tiles randomly across plains to restore variety.
+	-- Only converts plains/plains-hills with no adjacent desert (stays isolated).
+	local plainsTiles = {};
+	for i = 0, (iW * iH) - 1, 1 do
+		local plot = Map.GetPlotByIndex(i);
+		if plot ~= nil and not plot:IsWater() and not plot:IsNaturalWonder() then
+			local t = plot:GetTerrainType();
+			if t == 3 or t == 4 then -- PLAINS or PLAINS_HILLS
+				local hasAdjDesert = false;
+				for direction = 0, DirectionTypes.NUM_DIRECTION_TYPES - 1, 1 do
+					local adj = Map.GetAdjacentPlot(plot:GetX(), plot:GetY(), direction);
+					if adj ~= nil then
+						local at = adj:GetTerrainType();
+						if at == 6 or at == 7 then hasAdjDesert = true; break; end
+					end
+				end
+				if not hasAdjDesert then
+					table.insert(plainsTiles, i);
+				end
+			end
+		end
+	end
+	-- Shuffle and pick ~10 (8 + 0..4)
+	for i = #plainsTiles, 2, -1 do
+		local j = TerrainBuilder.GetRandomNumber(i, "Scatter desert shuffle") + 1;
+		plainsTiles[i], plainsTiles[j] = plainsTiles[j], plainsTiles[i];
+	end
+	local scatterCount = 20 + TerrainBuilder.GetRandomNumber(11, "Scatter desert count");
+	scatterCount = math.min(scatterCount, #plainsTiles);
+	for i = 1, scatterCount do
+		local plot = Map.GetPlotByIndex(plainsTiles[i]);
+		if plot ~= nil and plot:GetFeatureType() == g_FEATURE_NONE then
+			if plot:GetTerrainType() == 4 then
+				TerrainBuilder.SetTerrainType(plot, 7); -- DESERT_HILLS
+			else
+				TerrainBuilder.SetTerrainType(plot, 6); -- DESERT
+			end
+		end
+	end
+	print("- Scattered isolated desert tiles added: ", scatterCount);
+end
+
+-------------------------------------------------------------------------------
+-- LUXURY FLOOR: post-placement guarantee — adds continent-appropriate luxury
+-- tiles near any start that has fewer than LUX_FLOOR within radius 6.
+-- Triggered by the "BBMLuxExp1" toggle; works on all maps via BBS_Assign hook.
+-------------------------------------------------------------------------------
+local LUX_FLOOR = 7;
+
+local function BBM_BuildLuxuryLookup()
+    local byIndex = {};
+    local isLux   = {};
+    for row in GameInfo.Resources() do
+        if row.ResourceClassType == "RESOURCECLASS_LUXURY" then
+            byIndex[row.Index] = { hash = row.Hash, name = row.ResourceType };
+            isLux[row.Index]   = true;
+        end
+    end
+    return byIndex, isLux;
+end
+
+local function BBM_GetLuxNearStart(startPlot, radius, isLux, iW, iH)
+    local sx          = startPlot:GetX();
+    local sy          = startPlot:GetY();
+    local count       = 0;
+    local existingTypes = {};
+    for dx = -radius, radius do
+        for dy = -radius, radius do
+            local nx = (sx + dx + iW) % iW;
+            local ny = sy + dy;
+            if ny >= 0 and ny < iH then
+                if Map.GetPlotDistance(sx, sy, nx, ny) <= radius then
+                    local plot = Map.GetPlot(nx, ny);
+                    if plot then
+                        local ri = plot:GetResourceType();
+                        if ri >= 0 and isLux[ri] then
+                            count = count + 1;
+                            existingTypes[ri] = true;
+                        end
+                    end
+                end
+            end
+        end
+    end
+    return count, existingTypes;
+end
+
+local function BBM_GetContLuxTypes(startPlot, isLux)
+    local contID    = startPlot:GetContinentType();
+    local contPlots = Map.GetContinentPlots(contID);
+    local types     = {};
+    for _, idx in ipairs(contPlots) do
+        local p = Map.GetPlotByIndex(idx);
+        if p then
+            local ri = p:GetResourceType();
+            if ri >= 0 and isLux[ri] then types[ri] = true; end
+        end
+    end
+    return types;
+end
+
+local function BBM_BuildLuxCandidates(startPlot, rMin, rMax, contTypes, luxByIdx, iW, iH)
+    local sx      = startPlot:GetX();
+    local sy      = startPlot:GetY();
+    local cands   = {};
+    local typeArr = {};
+    for ri, _ in pairs(contTypes) do table.insert(typeArr, ri); end
+
+    for dx = -rMax, rMax do
+        for dy = -rMax, rMax do
+            local nx = (sx + dx + iW) % iW;
+            local ny = sy + dy;
+            if ny >= 0 and ny < iH then
+                local dist = Map.GetPlotDistance(sx, sy, nx, ny);
+                if dist >= rMin and dist <= rMax then
+                    local plot = Map.GetPlot(nx, ny);
+                    if plot and not plot:IsWater() and plot:GetResourceType() < 0 then
+                        typeArr = GetShuffledCopyOfTable(typeArr);
+                        for _, ri in ipairs(typeArr) do
+                            local info = luxByIdx[ri];
+                            if info and ResourceBuilder.CanHaveResource(plot, info.hash) then
+                                table.insert(cands, { plot = plot, resIdx = ri });
+                                break;
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+    return GetShuffledCopyOfTable(cands);
+end
+
+function BoostLuxuryFloor()
+    local iW, iH          = Map.GetGridSize();
+    local luxByIdx, isLux = BBM_BuildLuxuryLookup();
+    local majorIDs        = PlayerManager.GetAliveMajorIDs();
+    local totalAdded      = 0;
+
+    print("==================== LUX FLOOR: BOOST ====================");
+    for _, pid in ipairs(majorIDs) do
+        local sp = Players[pid]:GetStartingPlot();
+        if sp then
+            local count, existingTypes = BBM_GetLuxNearStart(sp, 6, isLux, iW, iH);
+            if count < LUX_FLOOR then
+                local needed    = LUX_FLOOR - count;
+                local contTypes = BBM_GetContLuxTypes(sp, isLux);
+                -- Prefer types the player doesn't already have; fall back to all cont types
+                local newTypes = {};
+                for ri, _ in pairs(contTypes) do
+                    if not existingTypes[ri] then newTypes[ri] = true; end
+                end
+                local preferredTypes = (next(newTypes) ~= nil) and newTypes or contTypes;
+                local cands     = BBM_BuildLuxCandidates(sp, 2, 6, preferredTypes, luxByIdx, iW, iH);
+                -- If not enough candidates from new types, top up from all cont types
+                if #cands < needed then
+                    local fallbackCands = BBM_BuildLuxCandidates(sp, 2, 6, contTypes, luxByIdx, iW, iH);
+                    for _, c in ipairs(fallbackCands) do table.insert(cands, c); end
+                end
+                local placed    = 0;
+                for _, cand in ipairs(cands) do
+                    if placed >= needed then break; end
+                    local info = luxByIdx[cand.resIdx];
+                    if info then
+                        ResourceBuilder.SetResourceType(cand.plot, info.hash, 1);
+                        placed     = placed + 1;
+                        totalAdded = totalAdded + 1;
+                    end
+                end
+                print("  Player " .. pid .. " (" .. sp:GetX() .. "," .. sp:GetY() .. "):"
+                    .. " r6=" .. count .. " -> +" .. placed .. "/" .. needed .. " placed");
+            else
+                print("  Player " .. pid .. " (" .. sp:GetX() .. "," .. sp:GetY() .. "):"
+                    .. " r6=" .. count .. " OK");
+            end
+        end
+    end
+    print("  Total luxury tiles added: " .. totalAdded);
+    print("===========================================================");
 end
