@@ -693,10 +693,10 @@
 		  <Text>Wulingyuan is a scenic and historical site in south-central China. It is noted for more than 3,000 quartzite sandstone pillars and peaks, many over 200 meters in height, along with ravines, gorges, pools, lakes, rivers and waterfalls. It features 40 caves and two natural bridges, Xianrenqiao (Bridge of the Immortals) and Tianqiashengkong (Bridge Across the Sky).</Text>
 	</Replace>		
 	        <Replace Tag="LOC_BBM_LUX_EXP1_NAME" Language="ru_RU">
-            <Text>[EXPERIMENTAL] Минимальное количество редких ресурсов в пределах 6 клеток от столицы</Text>
+            <Text>Минимальное количество редких ресурсов в пределах 6 клеток от столицы</Text>
         </Replace>
         <Replace Tag="LOC_BBM_LUX_EXP1_DESC" Language="ru_RU">
-            <Text>EXPERIMENTAL. Гарантирует каждому игроку минимум 7 редких ресурсов в пределах 6 клеток от столицы. Игроки с меньшим количеством получают дополнительные редкие ресурсы в радиусе 6 клеток от столицы в соответствии с их континентом. Работает на всех картах.</Text>
+            <Text>Гарантирует каждому игроку минимум 7 редких ресурсов в пределах 6 клеток от столицы. Игроки с меньшим количеством получают дополнительные редкие ресурсы в радиусе 6 клеток от столицы в соответствии с их континентом. Работает на всех картах.</Text>
         </Replace>
         </LocalizedText>
 
