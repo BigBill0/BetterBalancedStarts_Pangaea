@@ -752,10 +752,10 @@ function GetMapInitData(MapSize)
 	--   Large    → Standard dimensions (84×54)  ← CPL 10-man FFA standard
 	--   Huge     → Large   dimensions (96×60)
 	local sizeDownMap = {
-		MAPSIZE_SMALL    = {W=60,  H=38},
-		MAPSIZE_STANDARD = {W=74,  H=46},
-		MAPSIZE_LARGE    = {W=84,  H=54},
-		MAPSIZE_HUGE     = {W=96,  H=60},
+		MAPSIZE_SMALL    = {W=64,  H=40},
+		MAPSIZE_STANDARD = {W=78,  H=49},
+		MAPSIZE_LARGE    = {W=89,  H=57},
+		MAPSIZE_HUGE     = {W=102, H=64},
 	};
 	for sizeName, dims in pairs(sizeDownMap) do
 		local sizeRow = GameInfo.Maps[sizeName];
