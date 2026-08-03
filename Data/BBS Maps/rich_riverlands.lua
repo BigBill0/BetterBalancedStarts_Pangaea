@@ -753,8 +753,8 @@ function GetMapInitData(MapSize)
 	--   Huge     → Large   dimensions (96×60)
 	local sizeDownMap = {
 		MAPSIZE_SMALL    = {W=64,  H=40},
-		MAPSIZE_STANDARD = {W=78,  H=49},
-		MAPSIZE_LARGE    = {W=89,  H=57},
+		MAPSIZE_STANDARD = {W=78,  H=48},
+		MAPSIZE_LARGE    = {W=88,  H=56},
 		MAPSIZE_HUGE     = {W=102, H=64},
 	};
 	for sizeName, dims in pairs(sizeDownMap) do
