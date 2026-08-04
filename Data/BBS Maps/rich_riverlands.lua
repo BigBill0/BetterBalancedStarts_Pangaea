@@ -108,7 +108,7 @@ function GenerateMap()
 	-- AddFlatLakes skips hills and mountains, preserving the highlands character.
 	local numLargeLakes = math.ceil(GameInfo.Maps[Map.GetMapSize()].Continents / 2);
 	AddLakes(numLargeLakes);
-	AddFlatLakes(5);
+	AddFlatLakes(4);
 	AreaBuilder.Recalculate();
 
 	AddFeatures();
@@ -123,6 +123,7 @@ function GenerateMap()
 	local nwGen = BBS_NaturalWonderGenerator.Create(args);
 
 	AddFeaturesFromContinents();
+	ConvertIceToSnow();
 	MarkCoastalLowlands();
 
 	local iContinentBoundaryPlots = GetContinentBoundaryPlotCount(g_iW, g_iH);
@@ -193,7 +194,7 @@ function GeneratePlotTypes()
    
 	
 	local lakes = 15;
-	local lake_grain = 3;
+	local lake_grain = 4;
 	
 	local fracFlags = {};
 	
@@ -285,6 +286,27 @@ function AddFlatLakes(numPasses)
 			end
 		end
 	end
+end
+
+function ConvertIceToSnow()
+	local iW, iH = Map.GetGridSize();
+	local count = 0;
+	for x = 0, iW - 1 do
+		for y = 0, iH - 1 do
+			local plot = Map.GetPlot(x, y);
+			if plot:GetFeatureType() == g_FEATURE_ICE and plot:IsWater() then
+				TerrainBuilder.SetFeatureType(plot, g_FEATURE_NONE);
+				-- 60% tundra hills, 40% flat tundra
+				if TerrainBuilder.GetRandomNumber(10, "IceToTundra") < 6 then
+					TerrainBuilder.SetTerrainType(plot, g_TERRAIN_TYPE_TUNDRA_HILLS);
+				else
+					TerrainBuilder.SetTerrainType(plot, g_TERRAIN_TYPE_TUNDRA);
+				end
+				count = count + 1;
+			end
+		end
+	end
+	print("ConvertIceToSnow: converted " .. count .. " tiles to tundra");
 end
 
 function GetRiverValueAtPlot(plot)
@@ -710,7 +732,7 @@ function AddRivers()
 
 	for iPass, passCondition in ipairs(passConditions) do
 
-		local riverSourceRange = 2.4;  -- was 2.8; higher = fewer river starts near existing water
+		local riverSourceRange = 1.0;  -- was 2.8; higher = fewer river starts near existing water
 		local seaWaterRange    = seaWaterRangeDefault / 4;
 
 		local iW, iH = Map.GetGridSize();
@@ -752,10 +774,10 @@ function GetMapInitData(MapSize)
 	--   Large    → Standard dimensions (84×54)  ← CPL 10-man FFA standard
 	--   Huge     → Large   dimensions (96×60)
 	local sizeDownMap = {
-		MAPSIZE_SMALL    = {W=64,  H=40},
-		MAPSIZE_STANDARD = {W=78,  H=48},
-		MAPSIZE_LARGE    = {W=88,  H=56},
-		MAPSIZE_HUGE     = {W=102, H=64},
+		MAPSIZE_SMALL    = {W=60,  H=38},
+		MAPSIZE_STANDARD = {W=74,  H=46},
+		MAPSIZE_LARGE    = {W=84,  H=54},
+		MAPSIZE_HUGE     = {W=96, H=60},
 	};
 	for sizeName, dims in pairs(sizeDownMap) do
 		local sizeRow = GameInfo.Maps[sizeName];
