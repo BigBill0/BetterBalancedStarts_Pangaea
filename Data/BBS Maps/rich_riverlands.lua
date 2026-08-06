@@ -76,6 +76,23 @@ function GenerateMap()
 	
 	AreaBuilder.Recalculate();
 	TerrainBuilder.AnalyzeChokepoints();
+
+	-- Place polar ice by latitude so ConvertIceToSnow runs before StampContinents.
+	local iceLat = 0.78;
+	for x = 0, g_iW - 1 do
+		for y = 0, g_iH - 1 do
+			local lat = math.abs((g_iH / 2) - y) / (g_iH / 2);
+			if lat >= iceLat then
+				local plot = Map.GetPlot(x, y);
+				if plot:IsWater() and TerrainBuilder.CanHaveFeature(plot, g_FEATURE_ICE) then
+					TerrainBuilder.SetFeatureType(plot, g_FEATURE_ICE);
+				end
+			end
+		end
+	end
+	ConvertIceToSnow();
+	AreaBuilder.Recalculate();
+
 	TerrainBuilder.StampContinents();
 	
 	-- Normalize continent sizes
@@ -123,7 +140,6 @@ function GenerateMap()
 	local nwGen = BBS_NaturalWonderGenerator.Create(args);
 
 	AddFeaturesFromContinents();
-	ConvertIceToSnow();
 	MarkCoastalLowlands();
 
 	local iContinentBoundaryPlots = GetContinentBoundaryPlotCount(g_iW, g_iH);
@@ -295,14 +311,25 @@ function ConvertIceToSnow()
 		for y = 0, iH - 1 do
 			local plot = Map.GetPlot(x, y);
 			if plot:GetFeatureType() == g_FEATURE_ICE and plot:IsWater() then
-				TerrainBuilder.SetFeatureType(plot, g_FEATURE_NONE);
-				-- 60% tundra hills, 40% flat tundra
-				if TerrainBuilder.GetRandomNumber(10, "IceToTundra") < 6 then
-					TerrainBuilder.SetTerrainType(plot, g_TERRAIN_TYPE_TUNDRA_HILLS);
-				else
-					TerrainBuilder.SetTerrainType(plot, g_TERRAIN_TYPE_TUNDRA);
+				-- Skip if a river terminates here; converting to land would make it invisible in 3D.
+				local adjRiver = false;
+				for dir = 0, DirectionTypes.NUM_DIRECTION_TYPES - 1 do
+					local adj = Map.GetAdjacentPlot(x, y, dir);
+					if adj ~= nil and not adj:IsWater() and adj:IsRiver() then
+						adjRiver = true;
+						break;
+					end
 				end
-				count = count + 1;
+				if not adjRiver then
+					TerrainBuilder.SetFeatureType(plot, g_FEATURE_NONE);
+					-- 60% tundra hills, 40% flat tundra
+					if TerrainBuilder.GetRandomNumber(10, "IceToTundra") < 6 then
+						TerrainBuilder.SetTerrainType(plot, g_TERRAIN_TYPE_TUNDRA_HILLS);
+					else
+						TerrainBuilder.SetTerrainType(plot, g_TERRAIN_TYPE_TUNDRA);
+					end
+					count = count + 1;
+				end
 			end
 		end
 	end
@@ -712,7 +739,7 @@ function AddRivers()
 	-- Higher plotsPerRiverEdge = fewer rivers per land area.
 	local riverSourceRangeDefault = GlobalParameters.RIVER_SOURCE_RANGE_DEFAULT or 4;
 	local seaWaterRangeDefault = 3;
-	local plotsPerRiverEdge = 42;
+	local plotsPerRiverEdge = 1;
 
 	print("Map Generation - Adding Rivers");
 
@@ -732,7 +759,7 @@ function AddRivers()
 
 	for iPass, passCondition in ipairs(passConditions) do
 
-		local riverSourceRange = 1.0;  -- was 2.8; higher = fewer river starts near existing water
+		local riverSourceRange = 2.8;  -- was 2.8; higher = fewer river starts near existing water
 		local seaWaterRange    = seaWaterRangeDefault / 4;
 
 		local iW, iH = Map.GetGridSize();
